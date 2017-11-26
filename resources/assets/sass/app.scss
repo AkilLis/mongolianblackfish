@@ -1,0 +1,19 @@
+
+// Fonts
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+// Variables
+@import "variables";
+
+// Bootstrap
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+h2 {
+	color: $brand-black;
+	font-weight: bold;
+}
+
+h3 h4 h5 h6 {
+	color: $brand-black;
+}
+
