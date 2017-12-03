@@ -1,0 +1,3 @@
+export const GET_RIVERS = "GET_RIVERS"
+export const GET_RIVERS_FULFILLED = "GET_RIVERS_FULFILLED"
+export const SET_RIVER = "SET_RIVER"
