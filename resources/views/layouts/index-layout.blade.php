@@ -62,8 +62,12 @@
                     </div>
                 </div>
                 <div class="copyright">
-                    <div class="container">
-                    <p style="color: #828282;">All Right Reserved Mongolian Black Fish Tour 2017.</p>
+                    <div class="container row" style="margin-left: auto; margin-right: auto; padding-left: 0px;">
+                        <p class="col-md-10" style="color: #828282;">All Right Reserved Mongolian Black Fish Tour 2017.</p>
+
+                        <div class="col-md-2 text-right">
+                            <img src="/images/simplood.png" height="14" />
+                        </div>
                     </div>
                 </div>
             </footer>

@@ -37595,13 +37595,17 @@ var staticRenderFns = [
                 [
                   _c(
                     "h6",
-                    { staticStyle: { "font-weight": "bold", color: "#fff" } },
+                    {
+                      staticClass: "font-sub",
+                      staticStyle: { "font-weight": "bold", color: "#fff" }
+                    },
                     [_vm._v("DEPARTURE")]
                   ),
                   _vm._v(" "),
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -37622,6 +37626,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#60B383" }
                     },
                     [_vm._v("GROUP SIZE")]
@@ -37630,6 +37635,7 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -37650,6 +37656,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#DCA852" }
                     },
                     [_vm._v("DURATION")]
@@ -37658,6 +37665,7 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -37678,6 +37686,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#C58093" }
                     },
                     [_vm._v("TYPE")]
@@ -37686,6 +37695,7 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -37749,6 +37759,7 @@ var staticRenderFns = [
                       _c(
                         "h5",
                         {
+                          staticClass: "font-sub",
                           staticStyle: { color: "#fff", "text-align": "center" }
                         },
                         [_vm._v("BOOK TRIP")]
