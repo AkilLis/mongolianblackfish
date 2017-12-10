@@ -1615,6 +1615,48 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/CustomMap.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//import { mapGetters, mapActions } from 'vuex'
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    // created () {
+    //     this.$store.dispatch('getRivers')
+    // }, 
+
+    mounted: function mounted() {
+        // var map = new google.maps.Map(document.getElementById('map'), {
+        //   zoom: 6,
+        //   center: {
+        //     lat: 49.099725, 
+        //     lng: 102.901374}, 
+        // });     
+
+        // var kmlLayer = new google.maps.KmlLayer('http://localhost:8000/images/mbf.kmz', {
+        //   suppressInfoWindows: true,
+        //   preserveViewport: false,
+        //   map: map
+        // });
+    }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/Example.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1736,6 +1778,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity__ = __webpack_require__("./node_modules/flickity/js/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flickity__);
+//
+//
+//
+//
 //
 //
 //
@@ -4272,7 +4318,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.lake-container {\n  position: absolute;\n  top: 500px;\n  width: calc(1170px - 30px);\n  height: 700px;\n  padding-left: 125px;\n  padding-right: 125px;\n}\n.lake-card {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.lake-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.lake-card-selected {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n}\n.lake-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
+exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.lake-container {\n  position: absolute;\n  top: 600px;\n  width: calc(1170px - 30px);\n  height: 700px;\n  padding-left: 125px;\n  padding-right: 125px;\n}\n.lake-card {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.lake-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.lake-card-selected {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n}\n.lake-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
 
 // exports
 
@@ -4288,6 +4334,21 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 // module
 exports.push([module.i, "\n.trip-container {\n  padding-left: 140px;\n  padding-right: 140px;\n  margin-left: auto;\n  margin-right: auto;\n}\n.carousel-cell {\n  width: 100%;\n}\n.trip-cover {\n  background-size: cover;\n  background-position: center;\n  width: 340px;\n  height: 528px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  border: 4px solid #fff;\n}\n.trip-cover:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n}\n.trip-detail {\n  background: #fff;\n  height: 87px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n  border-right: 3px solid #9BD2E6;\n  margin-left: 0px;\n  border-radius: 5px;\n}\n.trip-row {\n  padding-top: 10px;\n  padding-bottom: 10px;\n}\n.purchase-btn {\n  background: #E56451;\n  border-radius: 5px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  height: 60px;\n  padding-right: 0px;\n}\n.purchase-btn:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n  background: #DA5542;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/CustomMap.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n#map {\n  height: 600px;\n}\n", ""]);
 
 // exports
 
@@ -37409,11 +37470,16 @@ var render = function() {
               }),
               _vm._v(" "),
               _c("div", { staticClass: "row text-center" }, [
-                _c("h3", [_vm._v("LAKE")]),
+                _c("h3", { staticClass: "font-sub" }, [_vm._v("LAKE")]),
                 _vm._v(" "),
-                _c("h2", { style: { color: _vm.colorFilter(index) } }, [
-                  _vm._v(_vm._s(river.name.toUpperCase()))
-                ])
+                _c(
+                  "h2",
+                  {
+                    staticClass: "font-sub",
+                    style: { color: _vm.colorFilter(index) }
+                  },
+                  [_vm._v(_vm._s(river.name.toUpperCase()))]
+                )
               ]),
               _vm._v(" "),
               _c("div", { staticClass: "triangle" })
@@ -37503,17 +37569,21 @@ var staticRenderFns = [
       [
         _c("div", { staticClass: "carousel-cell" }, [
           _c("div", { staticClass: "col-md-5" }, [
-            _c("div", {
-              staticClass: "trip-cover",
-              staticStyle: {
-                "background-image":
-                  "url('http://localhost:8000/images/trip/canyon.jpg')"
-              }
-            })
+            _c("a", { attrs: { href: "/tour/1" } }, [
+              _c("div", {
+                staticClass: "trip-cover",
+                staticStyle: {
+                  "background-image":
+                    "url('http://localhost:8000/images/trip/canyon.jpg')"
+                }
+              })
+            ])
           ]),
           _vm._v(" "),
           _c("div", { staticClass: "col-md-7" }, [
-            _c("h1", [_vm._v("Classic Canyon Tour")]),
+            _c("a", { attrs: { href: "/tour/1" } }, [
+              _c("h1", [_vm._v("Classic Canyon Tour")])
+            ]),
             _vm._v(" "),
             _c("div", { staticClass: "row trip-detail" }, [
               _c(
@@ -37895,6 +37965,47 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-90d45af8\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/CustomMap.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _vm._m(0, false, false)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container row margin-auto" }, [
+      _c("h1", [_vm._v("\n        Travel map to Sheshged\n    ")]),
+      _vm._v(" "),
+      _c("div", { attrs: { id: "map" } }, [
+        _c("iframe", {
+          attrs: {
+            src:
+              "https://www.google.com/maps/d/u/0/embed?mid=17qxnH3FB8lytoFNycOSkyUKXeTGUlvqg",
+            width: "1170",
+            height: "600"
+          }
+        })
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-90d45af8", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-303b7167\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/LakeList.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37939,6 +38050,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dd6c226\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripList.vue", function() {
      var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7dd6c226\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/CustomMap.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/CustomMap.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("7c6ebd8f", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CustomMap.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CustomMap.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -49965,6 +50103,7 @@ window.Vue = __webpack_require__("./node_modules/vue/dist/vue.common.js");
 Vue.component('example', __webpack_require__("./resources/assets/js/components/Example.vue"));
 Vue.component('lake-list', __webpack_require__("./resources/assets/js/components/river/LakeList.vue"));
 Vue.component('trip-list', __webpack_require__("./resources/assets/js/components/trip/TripList.vue"));
+Vue.component('custom-map', __webpack_require__("./resources/assets/js/components/CustomMap.vue"));
 
 var app = new Vue({
   el: '#app',
@@ -50036,6 +50175,59 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/CustomMap.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/CustomMap.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/CustomMap.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-90d45af8\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/CustomMap.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/CustomMap.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-90d45af8", Component.options)
+  } else {
+    hotAPI.reload("data-v-90d45af8", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
 
 /***/ }),
 

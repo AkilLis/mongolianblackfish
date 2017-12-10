@@ -20,8 +20,8 @@
                     </div>
                     
                     <div class="row text-center" >
-                        <h3>LAKE</h3>
-                        <h2 :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h2>
+                        <h3 class="font-sub">LAKE</h3>
+                        <h2 class="font-sub" :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h2>
                     </div>
                     
                     <div class="triangle"></div>
@@ -77,7 +77,7 @@
 
     .lake-container {
         position: absolute;
-        top: 500px;
+        top: 600px;
         width: -webkit-calc(1170px - 30px);
         width:    -moz-calc(1170px - 30px);
         width:         calc(1170px - 30px);

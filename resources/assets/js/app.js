@@ -19,8 +19,7 @@ import Parallax from 'parallax-js'
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('lake-list', require('./components/river/LakeList.vue'));
 Vue.component('trip-list', require('./components/trip/TripList.vue'));
-
-
+Vue.component('custom-map', require('./components/CustomMap.vue'));
 
 const app = new Vue({
     el: '#app',

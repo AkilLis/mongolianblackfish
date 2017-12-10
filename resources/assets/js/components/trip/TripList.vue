@@ -2,15 +2,19 @@
     <div class="container row trip-container main-carousel" style="padding-top: 580px; height: 1260px;">
         <div class="carousel-cell">
             <div class="col-md-5">
-                <div 
-                    class="trip-cover" 
-                    style="background-image:url('http://localhost:8000/images/trip/canyon.jpg')"
-                >
-                </div>
+                <a href="/tour/1">
+                    <div 
+                        class="trip-cover" 
+                        style="background-image:url('http://localhost:8000/images/trip/canyon.jpg')"
+                    >
+                    </div>
+                </a>
             </div>
 
             <div class="col-md-7" style="">
-                <h1>Classic Canyon Tour</h1>
+                <a href="/tour/1">
+                    <h1>Classic Canyon Tour</h1>
+                </a>
 
                 <div class="row trip-detail">
                     <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
