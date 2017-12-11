@@ -77,7 +77,7 @@
 
     .lake-container {
         position: absolute;
-        top: 600px;
+        top: 500px;
         width: -webkit-calc(1170px - 30px);
         width:    -moz-calc(1170px - 30px);
         width:         calc(1170px - 30px);

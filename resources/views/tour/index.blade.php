@@ -7,10 +7,10 @@
 	        </div>
 	    </div>
 
-	    <div class="tour-cover-text container">
+        <div class="tour-cover-text container">
             <h1 class="white" style="font-size: 48px; padding-left: 100px; padding-right: 100px;">Classic Canyon Tour to Shegshed</h1>
             <div class="departure-header">
-            	<h3 class="white" style="margin-top: 14px;">JULY 4-12 2018</h3>
+                <h3 class="white" style="margin-top: 14px;">JULY 4-12 2018</h3>
             </div>
 
             <div class="info-header row">
@@ -34,8 +34,8 @@
         </div>
 
         <div class="row portfolio-container">
-            <div style="height: 264px; width: 316px;">
-            </div>
+            <trip-gallery>
+            </trip-gallery>
         </div>
 
         <div class="overview-container container">
@@ -73,7 +73,7 @@ Read more about 45-minute Helicopter Flight Over the Grand Canyon from Tusayan, 
         </p>
         </div>
 
-        <div style="background: rgba(0,0,0,0.8); padding-top: 20px; padding-bottom: 20px; margin-top: 40px; margin-bottom: 40px;">
+        <div style="background: rgba(0,0,0,0.8); padding-top: 60px; padding-bottom: 60px; margin-top: 40px; margin-bottom: 40px;">
             <div class="container">
                 <h1 class="white" style="margin-top: 11px;">TOUR SCHEDULE</h1>
             </div>
@@ -88,7 +88,16 @@ Read more about 45-minute Helicopter Flight Over the Grand Canyon from Tusayan, 
         </custom-map>
 
 
-        
+        <nav class="action-button-container"> 
+            <div class="fab-question">
+                <h5 class="font-sub white">Are you ready for booking?</h5>
+            </div>
+            <div class="buttons">
+                <a tooltip="Book Now" href="#">
+                  <h4 class="white font-sub">$6.450</h4>
+                </a>
+            </div>
+        </nav>
 
     </div>
 @stop

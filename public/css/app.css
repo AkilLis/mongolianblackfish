@@ -8445,7 +8445,7 @@ footer {
 
 .cover-image {
   position: relative;
-  height: 900px;
+  height: 700px;
   background-size: cover;
   min-height: 700px;
   /* Create the parallax scrolling effect */
@@ -8469,7 +8469,7 @@ footer {
 
 .cover-text {
   position: absolute;
-  top: 300px;
+  top: 200px;
   height: 700px;
   left: 0;
   right: 0;
@@ -8480,7 +8480,7 @@ footer {
 }
 
 .cover-text-header {
-  font-size: 160px !important;
+  font-size: 140px !important;
   color: #fff !important;
   background: -webkit-linear-gradient(#fff, rgba(255, 255, 255, 0));
   -webkit-background-clip: text;
@@ -8502,7 +8502,6 @@ footer {
   height: 600px;
   background-size: cover;
   min-height: 600px;
-  border-radius: 50px;
   /* Create the parallax scrolling effect */
   background-position: center;
   background-repeat: no-repeat;
@@ -8517,8 +8516,8 @@ footer {
   left: 0;
   width: 100%;
   height: 600px;
-  background-image: -webkit-gradient(linear, left top, left bottom, from(#000), to(rgba(255, 255, 255, 0)));
-  background-image: linear-gradient(#000, rgba(255, 255, 255, 0));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));
 }
 
 .tour-cover-text {
@@ -8535,18 +8534,18 @@ footer {
   border: 3px solid #fff;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 60px;
+  margin-top: 10%;
   width: 230px;
 }
 
 .info-header {
-  width: 90%;
+  position: absolute;
+  bottom: 50px;
+  width: 80%;
+  left: 10%;
   height: 100px;
   padding-top: 15px;
   background: #fff;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 100px;
   -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);
 }
@@ -8554,10 +8553,116 @@ footer {
 .portfolio-container {
   background: rgba(0, 0, 0, 0.8);
   margin-top: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .overview-container {
   padding-top: 40px;
+}
+
+.action-button-container {
+  bottom: 50%;
+  position: fixed;
+  right: 0px;
+  z-index: 5;
+}
+
+.fab-question {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.buttons {
+  -webkit-box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 5px 11px -2px rgba(0, 0, 0, 0.18), 0px 4px 12px -7px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  display: block;
+  width: 150px;
+  height: 56px;
+  margin: 20px auto 0;
+  position: relative;
+  padding: 8px 20px;
+  -webkit-transition: all .1s ease-out;
+  transition: all .1s ease-out;
+}
+
+.buttons:active,
+.buttons:focus,
+.buttons:hover {
+  -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+          box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+}
+
+.buttons:not(:last-child) {
+  width: 40px;
+  height: 40px;
+  margin: 20px auto 0;
+  opacity: 0;
+  -webkit-transform: translateY(50px);
+  transform: translateY(50px);
+}
+
+.action-button-container:hover .buttons:not(:last-child) {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  margin: 15px auto 0;
+}
+
+/* Unessential styling for sliding up buttons at differnt speeds */
+
+.buttons:nth-last-child(1) {
+  -webkit-transition-delay: 25ms;
+  transition-delay: 25ms;
+  background-color: #E56451;
+}
+
+.buttons:not(:last-child):nth-last-child(2) {
+  -webkit-transition-delay: 50ms;
+  transition-delay: 20ms;
+  background: "#E56451";
+}
+
+.buttons:not(:last-child):nth-last-child(3) {
+  -webkit-transition-delay: 75ms;
+  transition-delay: 40ms;
+  background: "#E56451";
+}
+
+.buttons:not(:last-child):nth-last-child(4) {
+  -webkit-transition-delay: 100ms;
+  transition-delay: 60ms;
+  background: "#E56451";
+}
+
+/* Show tooltip content on hover */
+
+[tooltip]:before {
+  bottom: 25%;
+  font-family: arial;
+  font-weight: 600;
+  border-radius: 2px;
+  background: #585858;
+  color: #fff;
+  content: attr(tooltip);
+  font-size: 12px;
+  visibility: hidden;
+  opacity: 0;
+  padding: 5px 7px;
+  margin-right: 12px;
+  position: absolute;
+  right: 100%;
+  white-space: nowrap;
+}
+
+[tooltip]:hover:before,
+[tooltip]:hover:after {
+  visibility: visible;
+  opacity: 1;
 }
 
 /*! Flickity v2.0.10
