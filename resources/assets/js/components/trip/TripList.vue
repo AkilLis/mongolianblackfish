@@ -67,20 +67,20 @@
 
                 <div class="row trip-detail">
                     <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
-                        <h6 style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                        <h4 style="font-weight: bold; margin-top: 15px;">Sep, 24</h4>
+                        <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">SEP, 17</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                        <h4 style="font-weight: bold; margin-top: 15px;">2 MEMBER</h4>
+                        <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">6 MEMBER</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 style="font-weight: bold; color: #DCA852">DURATION</h6>
-                        <h4 style="font-weight: bold; margin-top: 15px;">6 DAYS</h4>
+                        <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">6 DAYS</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 style="font-weight: bold; color: #C58093">TYPE</h6>
-                        <h4 style="font-weight: bold; margin-top: 15px;">FLY FISH</h4>
+                        <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">FLY FISH</h4>
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@
                             </h2>
                         </div>
                         <div class="col-md-6" style="border-left: 1px dashed #fff;">
-                            <h5 style="color: #fff; text-align: center">BOOK TRIP</h5>
+                            <h5 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h5>
                         </div>
                     </div>
                 </div>

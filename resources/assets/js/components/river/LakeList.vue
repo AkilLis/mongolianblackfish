@@ -4,7 +4,8 @@
             <div class="row">
                 <div 
                     v-for="(river, index) in rivers.data" 
-                    class="col-md-4" 
+                    class="col-md-4"
+                    :id="'river-card'+index" 
                     :class="river.id == selectedRiver.id ? 'lake-card-selected': 'lake-card'" 
                     :style="{
                         left: (index) * 272 + 125 + 'px',
@@ -143,7 +144,24 @@
         transition: all 200ms ease-in;
         transform: scale(1.2);
         z-index: 3;
+        border-bottom: 2px solid #fff !important;
+    }
 
+    .lake-card-selected::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        top: calc(100% + 1px);
+        width: 0;
+        height: 0;
+        border-left: 173px solid transparent;
+        border-right: 173px solid transparent;
+        border-top: 40px solid #fff;
+        clear: both;
+        transition: all 200ms ease-in;
+        -ms-transition: all 200ms ease-in;
+        -moz-transition: all 200ms ease-in;
+        -webkit-transition: all 200ms ease-in;
     }
 
     .lake-card-selected:before {

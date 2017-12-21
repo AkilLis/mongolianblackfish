@@ -5,6 +5,8 @@
         </h1>
         <div id="map">
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17qxnH3FB8lytoFNycOSkyUKXeTGUlvqg" width="1170" height="600"></iframe>
+
+            <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1D2N6tVsjt88-oSxNQ9IZrT-1m9Y" width="1170" height="600"></iframe> -->
         </div>
     </div>
 </template>
@@ -25,7 +27,7 @@
             //     lng: 102.901374}, 
             // });     
 
-            // var kmlLayer = new google.maps.KmlLayer('http://localhost:8000/images/mbf.kmz', {
+            // var kmlLayer = new google.maps.KmlLayer('http://localhost:8000/images/test.kml', {
             //   suppressInfoWindows: true,
             //   preserveViewport: false,
             //   map: map

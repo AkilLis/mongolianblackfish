@@ -1631,6 +1631,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 //import { mapGetters, mapActions } from 'vuex'
 
@@ -1647,7 +1649,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         //     lng: 102.901374}, 
         // });     
 
-        // var kmlLayer = new google.maps.KmlLayer('http://localhost:8000/images/mbf.kmz', {
+        // var kmlLayer = new google.maps.KmlLayer('http://localhost:8000/images/test.kml', {
         //   suppressInfoWindows: true,
         //   preserveViewport: false,
         //   map: map
@@ -1695,6 +1697,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_vuex__ = __webpack_require__("./node_modules/vuex/dist/vuex.esm.js");
+//
 //
 //
 //
@@ -1984,6 +1987,107 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     //     }
     // },
 
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+//import Flickity from 'flickity'
+var Flickity = __webpack_require__("./node_modules/flickity-as-nav-for/as-nav-for.js");
+//import { mapGetters, mapActions } from 'vuex'
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+   data: function data() {
+      return {
+         day_schedule: [{
+            day: "1",
+            title: "land in Sevilla around 1pm"
+         }, {
+            day: "2",
+            title: "Sevilla day - take trian to cordoba at night"
+         }, {
+            day: "3",
+            title: "Cordoba day - 7pm train to Granada"
+         }, {
+            day: "4",
+            title: "Granada"
+         }, {
+            day: "5",
+            title: "Half day in Granada then fly/train to Madrid that evening - stay in madrid that night"
+         }, {
+            day: "6",
+            title: "Flight to san sebastian"
+         }, {
+            day: "7",
+            title: "San sebastian / flight to barca early afternoon"
+         }, {
+            day: "8",
+            title: "Barca"
+         }]
+      };
+   },
+   mounted: function mounted() {
+      var subFlkty = new Flickity('.carousel-sub', {
+         // options
+         cellAlign: 'left',
+         contain: true,
+         pageDots: false,
+         prevNextButtons: false
+      });
+
+      var flkty = new Flickity('.carousel-nav', {
+         // options
+         cellAlign: 'left',
+         contain: true,
+         asNavFor: document.querySelector('.carousel-sub'),
+         pageDots: false
+      });
+
+      //{  }
+   }
 });
 
 /***/ }),
@@ -4380,7 +4484,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.lake-container {\n  position: absolute;\n  top: 500px;\n  width: calc(1170px - 30px);\n  height: 700px;\n  padding-left: 125px;\n  padding-right: 125px;\n}\n.lake-card {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.lake-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.lake-card-selected {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n}\n.lake-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
+exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.lake-container {\n  position: absolute;\n  top: 500px;\n  width: calc(1170px - 30px);\n  height: 700px;\n  padding-left: 125px;\n  padding-right: 125px;\n}\n.lake-card {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.lake-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.lake-card-selected {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.lake-card-selected::after {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: calc(100% + 1px);\n  width: 0;\n  height: 0;\n  border-left: 173px solid transparent;\n  border-right: 173px solid transparent;\n  border-top: 40px solid #fff;\n  clear: both;\n  transition: all 200ms ease-in;\n  -ms-transition: all 200ms ease-in;\n  -moz-transition: all 200ms ease-in;\n  -webkit-transition: all 200ms ease-in;\n}\n.lake-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
 
 // exports
 
@@ -4425,7 +4529,22 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.carousel-img {\n  height: 360px;\n  width: 480px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  margin-right: 40px;\n}\n.carousel-img:before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 480px;\n    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));\n}\n", ""]);
+exports.push([module.i, "\n.carousel-img {\n  height: 240px;\n  width: 360px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  border-radius: 5px;\n  margin-right: 40px;\n}\n.carousel-img:before {\n    content: '';\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100%;\n    height: 480px;\n    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.6)), to(rgba(255, 255, 255, 0)));\n    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0));\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.day-container {\n  width: 60%;\n  margin-left: auto;\n  margin-right: auto;\n}\n.day-container .day-field.is-nav-selected {\n  background: #9bd2e6;\n}\n.day-container .day-field.is-nav-selected h4 {\n  color: #fff !important;\n}\n.flickity-prev-next-button.previous {\n  top: 45px;\n  left: -60px;\n}\n.flickity-prev-next-button.next {\n  top: 45px;\n  right: -60px;\n}\n.day-field {\n  height: 80px;\n  width: 80px;\n  margin-right: 10px;\n  background-color: #fff;\n  padding-top: 20px;\n}\n.carousel-sub {\n  margin-top: 40px;\n}\n.day-info {\n  background-color: rgba(255, 255, 255, 0.4);\n  padding: 20px 40px;\n}\n", ""]);
 
 // exports
 
@@ -4942,6 +5061,166 @@ utils.htmlInit = function( WidgetClass, namespace ) {
 // -----  ----- //
 
 return utils;
+
+}));
+
+
+/***/ }),
+
+/***/ "./node_modules/flickity-as-nav-for/as-nav-for.js":
+/***/ (function(module, exports, __webpack_require__) {
+
+var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*!
+ * Flickity asNavFor v2.0.1
+ * enable asNavFor for Flickity
+ */
+
+/*jshint browser: true, undef: true, unused: true, strict: true*/
+
+( function( window, factory ) {
+  // universal module definition
+  /*jshint strict: false */ /*globals define, module, require */
+  if ( true ) {
+    // AMD
+    !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+      __webpack_require__("./node_modules/flickity/js/index.js"),
+      __webpack_require__("./node_modules/fizzy-ui-utils/utils.js")
+    ], __WEBPACK_AMD_DEFINE_FACTORY__ = (factory),
+				__WEBPACK_AMD_DEFINE_RESULT__ = (typeof __WEBPACK_AMD_DEFINE_FACTORY__ === 'function' ?
+				(__WEBPACK_AMD_DEFINE_FACTORY__.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__)) : __WEBPACK_AMD_DEFINE_FACTORY__),
+				__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+  } else if ( typeof module == 'object' && module.exports ) {
+    // CommonJS
+    module.exports = factory(
+      require('flickity'),
+      require('fizzy-ui-utils')
+    );
+  } else {
+    // browser global
+    window.Flickity = factory(
+      window.Flickity,
+      window.fizzyUIUtils
+    );
+  }
+
+}( window, function factory( Flickity, utils ) {
+
+'use strict';
+
+// -------------------------- asNavFor prototype -------------------------- //
+
+// Flickity.defaults.asNavFor = null;
+
+Flickity.createMethods.push('_createAsNavFor');
+
+var proto = Flickity.prototype;
+
+proto._createAsNavFor = function() {
+  this.on( 'activate', this.activateAsNavFor );
+  this.on( 'deactivate', this.deactivateAsNavFor );
+  this.on( 'destroy', this.destroyAsNavFor );
+
+  var asNavForOption = this.options.asNavFor;
+  if ( !asNavForOption ) {
+    return;
+  }
+  // HACK do async, give time for other flickity to be initalized
+  var _this = this;
+  setTimeout( function initNavCompanion() {
+    _this.setNavCompanion( asNavForOption );
+  });
+};
+
+proto.setNavCompanion = function( elem ) {
+  elem = utils.getQueryElement( elem );
+  var companion = Flickity.data( elem );
+  // stop if no companion or companion is self
+  if ( !companion || companion == this ) {
+    return;
+  }
+
+  this.navCompanion = companion;
+  // companion select
+  var _this = this;
+  this.onNavCompanionSelect = function() {
+    _this.navCompanionSelect();
+  };
+  companion.on( 'select', this.onNavCompanionSelect );
+  // click
+  this.on( 'staticClick', this.onNavStaticClick );
+
+  this.navCompanionSelect( true );
+};
+
+proto.navCompanionSelect = function( isInstant ) {
+  if ( !this.navCompanion ) {
+    return;
+  }
+  // select slide that matches first cell of slide
+  var selectedCell = this.navCompanion.selectedCells[0];
+  var firstIndex = this.navCompanion.cells.indexOf( selectedCell );
+  var lastIndex = firstIndex + this.navCompanion.selectedCells.length - 1;
+  var selectIndex = Math.floor( lerp( firstIndex, lastIndex,
+    this.navCompanion.cellAlign ) );
+  this.selectCell( selectIndex, false, isInstant );
+  // set nav selected class
+  this.removeNavSelectedElements();
+  // stop if companion has more cells than this one
+  if ( selectIndex >= this.cells.length ) {
+    return;
+  }
+
+  var selectedCells = this.cells.slice( firstIndex, lastIndex + 1 );
+  this.navSelectedElements = selectedCells.map( function( cell ) {
+    return cell.element;
+  });
+  this.changeNavSelectedClass('add');
+};
+
+function lerp( a, b, t ) {
+  return ( b - a ) * t + a;
+}
+
+proto.changeNavSelectedClass = function( method ) {
+  this.navSelectedElements.forEach( function( navElem ) {
+    navElem.classList[ method ]('is-nav-selected');
+  });
+};
+
+proto.activateAsNavFor = function() {
+  this.navCompanionSelect( true );
+};
+
+proto.removeNavSelectedElements = function() {
+  if ( !this.navSelectedElements ) {
+    return;
+  }
+  this.changeNavSelectedClass('remove');
+  delete this.navSelectedElements;
+};
+
+proto.onNavStaticClick = function( event, pointer, cellElement, cellIndex ) {
+  if ( typeof cellIndex == 'number' ) {
+    this.navCompanion.selectCell( cellIndex );
+  }
+};
+
+proto.deactivateAsNavFor = function() {
+  this.removeNavSelectedElements();
+};
+
+proto.destroyAsNavFor = function() {
+  if ( !this.navCompanion ) {
+    return;
+  }
+  this.navCompanion.off( 'select', this.onNavCompanionSelect );
+  this.off( 'staticClick', this.onNavStaticClick );
+  delete this.navCompanion;
+};
+
+// -----  ----- //
+
+return Flickity;
 
 }));
 
@@ -37533,6 +37812,7 @@ var render = function() {
                 left: index * 272 + 125 + "px",
                 "border-bottom": "6px solid " + _vm.colorFilter(index)
               },
+              attrs: { id: "river-card" + index },
               on: {
                 click: function($event) {
                   _vm.onRiverClicked(river)
@@ -37873,19 +38153,23 @@ var staticRenderFns = [
                 [
                   _c(
                     "h6",
-                    { staticStyle: { "font-weight": "bold", color: "#fff" } },
+                    {
+                      staticClass: "font-sub",
+                      staticStyle: { "font-weight": "bold", color: "#fff" }
+                    },
                     [_vm._v("DEPARTURE")]
                   ),
                   _vm._v(" "),
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
                       }
                     },
-                    [_vm._v("Sep, 24")]
+                    [_vm._v("SEP, 17")]
                   )
                 ]
               ),
@@ -37900,6 +38184,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#60B383" }
                     },
                     [_vm._v("GROUP SIZE")]
@@ -37908,12 +38193,13 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
                       }
                     },
-                    [_vm._v("2 MEMBER")]
+                    [_vm._v("6 MEMBER")]
                   )
                 ]
               ),
@@ -37928,6 +38214,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#DCA852" }
                     },
                     [_vm._v("DURATION")]
@@ -37936,6 +38223,7 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -37956,6 +38244,7 @@ var staticRenderFns = [
                   _c(
                     "h6",
                     {
+                      staticClass: "font-sub",
                       staticStyle: { "font-weight": "bold", color: "#C58093" }
                     },
                     [_vm._v("TYPE")]
@@ -37964,6 +38253,7 @@ var staticRenderFns = [
                   _c(
                     "h4",
                     {
+                      staticClass: "font-sub",
                       staticStyle: {
                         "font-weight": "bold",
                         "margin-top": "15px"
@@ -38027,6 +38317,7 @@ var staticRenderFns = [
                       _c(
                         "h5",
                         {
+                          staticClass: "font-sub",
                           staticStyle: { color: "#fff", "text-align": "center" }
                         },
                         [_vm._v("BOOK TRIP")]
@@ -38170,6 +38461,90 @@ if (false) {
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-fd32f0c2\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "container" }, [
+    _c(
+      "div",
+      { staticClass: "carousel carousel-nav day-container" },
+      _vm._l(_vm.day_schedule, function(item, index) {
+        return _c("div", { staticClass: "day-field text-center" }, [
+          _c(
+            "h4",
+            {
+              staticClass: "yellow font-sub",
+              staticStyle: { "line-height": "0px" }
+            },
+            [_vm._v("DAY")]
+          ),
+          _vm._v(" "),
+          _c(
+            "h4",
+            {
+              staticClass: "yellow font-sub",
+              staticStyle: { color: "#464861 !important" }
+            },
+            [_vm._v(_vm._s(item.day))]
+          )
+        ])
+      })
+    ),
+    _vm._v(" "),
+    _c(
+      "div",
+      { staticClass: "carousel carousel-sub" },
+      _vm._l(_vm.day_schedule, function(item, index) {
+        return _c("div", { staticClass: "day-info container" }, [
+          _c("h3", [
+            _vm._v("Day " + _vm._s(item.day) + " - " + _vm._s(item.title))
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "The fishing is a combination of drift boat and wade-walk. This is a great river for both single and double-handed rods. The single-handed rods are used from the drift boats. The double-handed rods are generally fished from shore, but some guests use switch rods to great effect from the boat. Most guests bring a five-weight single hand for the trout and a seven, eight or nine weight single hand for the taimen. This river is great for double-handed rods, either spey or switch. It’s a wonderful thing to fire a Skagit line out across a camp pool at sunset and skate a big mouse pattern to a giant taimen."
+            )
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "Mongolia likely has the world’s healthiest taimen populations. We catch and release hundreds of taimen annually. Due in part to conservation efforts, the fishing has never been better. Every angler definitely has a chance to catch a trophy fish. However, taimen fishing is not easy. These fish are big, old and smart. A guest may have a double digit day."
+            )
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "When you sign up for a trip, we will provide you with a very detailed packing list. We supply all of the flies. You are responsible for bringing your own rods, waders, and other fishing gear."
+            )
+          ]),
+          _vm._v(
+            "\n\n        Taimen will absolutely explode on the fly, sometimes coming completely out of the water on the strike.  On witnessing this impressive smash and grab many anglers pull too soon and miss the hook up.  The trick is to keep stripping until you feel the weight of the fish, then set the hook.  If you miss the first strike, slam the fly right back on the water.  That big, angry and very frustrated taimen will frequently come right back around and absolutely hammer your fly on the second, third or even fourth try.  These taimen will often go airborne.  Like a big tarpon, they will tail walk along the river’s surface.  In skinny water, they will rocket across the river for greater depths.  The four-foot long predator on the end of your line will charge around the pool, bore deep and shake its head violently like a very, very big brown trout.\n\n        "
+          )
+        ])
+      })
+    )
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-fd32f0c2", module.exports)
+  }
+}
+
+/***/ }),
+
 /***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-303b7167\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/LakeList.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38268,6 +38643,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fc77660c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripGallery.vue", function() {
      var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fc77660c\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripGallery.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("5770603a", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripSchedule.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TripSchedule.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -50267,6 +50669,7 @@ Vue.component('example', __webpack_require__("./resources/assets/js/components/E
 Vue.component('lake-list', __webpack_require__("./resources/assets/js/components/river/LakeList.vue"));
 Vue.component('trip-list', __webpack_require__("./resources/assets/js/components/trip/TripList.vue"));
 Vue.component('trip-gallery', __webpack_require__("./resources/assets/js/components/trip/TripGallery.vue"));
+Vue.component('trip-schedule', __webpack_require__("./resources/assets/js/components/trip/TripSchedule.vue"));
 Vue.component('custom-map', __webpack_require__("./resources/assets/js/components/CustomMap.vue"));
 
 var app = new Vue({
@@ -50519,7 +50922,7 @@ var getRivers = function getRivers(_ref) {
         is_selected: false
     }, {
         id: 2,
-        name: "Shigshid",
+        name: "Sheshged",
         url: "http://localhost:8000/images/river/shegshid.jpg",
         is_selected: true
     }, {
@@ -50700,6 +51103,59 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-7dd6c226", Component.options)
   } else {
     hotAPI.reload("data-v-7dd6c226", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/components/trip/TripSchedule.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-fd32f0c2\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-fd32f0c2\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/trip/TripSchedule.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/trip/TripSchedule.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-fd32f0c2", Component.options)
+  } else {
+    hotAPI.reload("data-v-fd32f0c2", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true

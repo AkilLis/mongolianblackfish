@@ -73,16 +73,14 @@ Read more about 45-minute Helicopter Flight Over the Grand Canyon from Tusayan, 
         </p>
         </div>
 
-        <div style="background: rgba(0,0,0,0.8); padding-top: 60px; padding-bottom: 60px; margin-top: 40px; margin-bottom: 40px;">
+        <div style="background: rgba(0,0,0,0.8); padding-top: 60px; padding-bottom: 60px; margin-bottom: 40px;">
             <div class="container">
                 <h1 class="white" style="margin-top: 11px;">TOUR SCHEDULE</h1>
             </div>
         </div>
 
-        <div style="height: 1000px;">
-        </div>
-
-        
+        <trip-schedule>
+        </trip-schedule>
 
         <custom-map>
         </custom-map>

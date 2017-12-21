@@ -52,8 +52,8 @@
 
 <style lang="scss">
     .carousel-img {
-        height: 360px;
-        width: 480px;
+        height: 240px;
+        width: 360px;
         object-fit: cover;
         border-radius: 5px;
         margin-right: 40px;

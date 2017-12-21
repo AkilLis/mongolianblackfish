@@ -45,17 +45,62 @@
                                 <span class="font-sub white">+97699042312</span>
                             </div>
                             <div class="col-md-8 row" style="margin-top: 20px;">
-                                <div class="col-md-4" style="border-left: 1px solid #fff">
+                                <div class="col-md-4" style="border-left: 1px solid #fff; height: 200px;">
                                     <ul style="list-style-type:none;">
-                                      <li><a href="/"><h4 class="font-sub white">HOME</h4></a></li>
-                                      <li><a href="/"><h4 class="font-sub white">TOURS</h4></a></li>
-                                      <li><a href="/"><h4 class="font-sub white">RIVERS</h4></a></li>
-                                      <li><a href="/"><h4 class="font-sub white">BLOG</h4></a></li>
+                                      <li><a href="/">
+                                        <h4 class="font-sub white">HOME</h4></a></li>
+                                      <li style="margin: 20px 0px;"><a href="/"><h4 class="font-sub white">TOURS</h4></a></li>
+                                      <li style="margin: 20px 0px;"><a href="/"><h4 class="font-sub white">RIVERS</h4></a></li>
+                                      <li style="margin: 20px 0px;"><a href="/"><h4 class="font-sub white">BLOG</h4></a></li>
                                       <li><a href="/"><h4 class="font-sub white">CONTACT</h4></a></li>
                                     </ul> 
                                 </div>
-                                <div class="col-md-4" style="border-left: 1px solid #fff">
+                                <div class="col-md-4 text-center" style="border-left: 1px solid #fff; padding:0px 55px; height: 200px;">
                                     <h4 class="font-sub white">FOLLOW US</h4>
+
+                                    <div>
+                                        <a href="https://www.facebook.com/mongolian.blackfish.5">
+                                            <img 
+                                                src="/images/facebook.png"
+                                                height="50"
+                                                width="50"
+                                            />
+                                        </a>
+                                        <img 
+                                            style="margin-left: -5px"
+                                            src="/images/youtube.png"
+                                            height="50"
+                                            width="50"
+                                        />
+                                    </div>
+                                    <div>
+                                        <img 
+                                            src="/images/twitter.png"
+                                            height="50"
+                                            width="50"
+                                        />
+                                        <a href="https://www.instagram.com/mongolian_black_fish/">
+                                            <img 
+                                                src="/images/instagram.png"
+                                                style="margin-left: -5px"
+                                                height="50"
+                                                width="50"
+                                            />
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-md-4" style="border-left: 1px solid #fff; padding:0px 40px; height: 200px;">
+                                    <h6 class="white" style="line-height: 20px;">Get updates about new tours, travel tips, photo guide and ask question about the tours!</h6>
+
+                                    <form>
+                                        <div class="form-group">
+                                          <label class="white" style="font-weight: normal; font-size: 12px;" for="email">Email:</label>
+                                          <input type="text" placeholder="Type your email ..." class="form-control hollow-input" id="email">
+                                        </div>
+                                        <button class="btn-outline">
+                                            SEND
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -65,7 +110,7 @@
                     <div class="container row" style="margin-left: auto; margin-right: auto; padding-left: 0px;">
                         <p class="col-md-10" style="color: #828282;">All Right Reserved Mongolian Black Fish Tour 2017.</p>
 
-                        <div class="col-md-2 text-right">
+                        <div class="col-md-2 text-left">
                             <img src="/images/simplood.png" height="14" />
                         </div>
                     </div>
@@ -73,7 +118,37 @@
             </footer>
         </div>
 
+        <a href="javascript:" id="return-to-top">
+            <img src="/images/logo.png" width="30" height="30" />
+        </a>
+
         <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
+        <script type="text/javascript">
+            // ===== Scroll to Top ==== 
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(200);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+
+            $('#river-card1, #river-card2, #river-card0').click(function() {
+                //alert('clicked')
+                setTimeout(() => {
+                    $('body,html').animate({
+                        scrollTop : 1200                       // Scroll to top of body
+                    }, 500);
+                }, 500)
+            })
+
+
+        </script>
         
     </body>
 </html>

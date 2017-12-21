@@ -10,7 +10,7 @@ export const getRivers = ({ commit }) => {
                     is_selected: false,
                 }, {
                     id: 2,
-                    name: "Shigshid",
+                    name: "Sheshged",
                     url: "http://localhost:8000/images/river/shegshid.jpg",
                     is_selected: true,
                 }, {
