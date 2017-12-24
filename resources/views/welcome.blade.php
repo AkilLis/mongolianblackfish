@@ -5,7 +5,7 @@
         </lake-list>
         <div class="cover-text">
             <h1 class="cover-text-header">
-                TAIMEN FISH
+                TAIMEN<br />ADVENTURE
             </h1>
         </div>
         <div data-depth="1.00" class="row cover-image" style="background-image:url('/images/cover.jpg')">
@@ -13,10 +13,10 @@
         <trip-list>
         </trip-list>
         <div class="taimen-cover-image" style="background-image:url('/images/taimen.jpeg')">
-            <div class="container row" style="margin-left: auto; margin-right: auto;">
+            <div class="container" style="margin-left: auto; margin-right: auto;">
                 <div class="col-md-4" style="padding-left: 80px; padding-top: 80px; ">
                     <h1 style="color: #fff !important; font-weight: bold; word-wrap: break-word; width: 160px;">
-                        WHAT IS TAIMEN FISH?
+                        ABOUT TAIMEN
                     </h1>
                 </div>
                 <div class="col-md-8" style="padding-top: 40px; padding-right: 40px; ">
@@ -32,11 +32,13 @@ Mongolian taimen do not run out to the ocean or even lakes.   These behemoths sp
                 </div>
             </div>
         </div>
-        <div style="height: 500px;">
-        </div>
-        <footer>
-            123
-        </footer>
+        <div class="container" style="padding-top: 80px; padding-bottom: 80px">
+            <h1 class="text-center white">
+                OUR PARTNERS
+            </h1>
 
+            <partner-list>
+            </partner-list>
+        </div>
     </div>
 @stop

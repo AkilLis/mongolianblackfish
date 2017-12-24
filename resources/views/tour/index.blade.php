@@ -2,31 +2,29 @@
 @section('content') 
     <div id="scene" style="position: relative;">
         
-        <div class="container">
-	        <div data-depth="1.00" class="row tour-cover-image text-center" style="background-image:url('/images/river/orkhon.jpg')">
-	        </div>
-	    </div>
+        <div data-depth="1.00" class="row tour-cover-image text-center" style="background-image:url('/images/river/orkhon.jpg')">
+        </div>
 
         <div class="tour-cover-text container">
-            <h1 class="white" style="font-size: 48px; padding-left: 100px; padding-right: 100px;">Classic Canyon Tour to Shegshed</h1>
+            <h1 class="white tour-title">Classic Canyon Tour to Shegshed</h1>
             <div class="departure-header">
                 <h3 class="white" style="margin-top: 14px;">JULY 4-12 2018</h3>
             </div>
 
             <div class="info-header row">
-                <div class="col-md-3">
+                <div class="col-md-3 tour-plan">
                     <h4 class="font-sub" style="color: #DCA852">DEPARTURE DATE</h4>
                     <h5 class="font-sub">JULY 4-12 2018</h5>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 tour-plan">
                     <h4 class="font-sub" style="color: #DCA852">DURATION</h4>
                     <h5 class="font-sub">12 DAYS</h5>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 tour-plan">
                     <h4 class="font-sub" style="color: #DCA852">GROUP SIZE</h4>
                     <h5 class="font-sub">4 MEMBERS</h5>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-3 tour-plan">
                     <h4 class="font-sub" style="color: #DCA852">TYPE</h4>
                     <h5 class="font-sub">FLY FISHING</h5>
                 </div>
@@ -71,16 +69,7 @@ Excluding: Drinks, emergency land rescue if required, tips etc ….
 
 Read more about 45-minute Helicopter Flight Over the Grand Canyon from Tusayan, Arizona 2018 - Grand Canyon National Park at: https://www.viator.com/tours/Grand-Canyon-National-Park/45-minute-Helicopter-Flight-Over-the-Grand-Canyon-from-Tusayan-Arizona/d815-18678CS?pub=vcps
         </p>
-        </div>
 
-        <div style="background: rgba(0,0,0,0.8); padding-top: 60px; padding-bottom: 60px; margin-bottom: 40px;">
-            <div class="container">
-                <h1 class="white" style="margin-top: 11px;">TOUR SCHEDULE</h1>
-            </div>
-        </div>
-
-        <trip-schedule>
-        </trip-schedule>
 
         <custom-map>
         </custom-map>
@@ -92,7 +81,7 @@ Read more about 45-minute Helicopter Flight Over the Grand Canyon from Tusayan, 
             </div>
             <div class="buttons">
                 <a tooltip="Book Now" href="#">
-                  <h4 class="white font-sub">$6.450</h4>
+                  <h4 class="white font-sub">Book Now</h4>
                 </a>
             </div>
         </nav>

@@ -7,7 +7,7 @@
 
         
     </head>
-    <body style="background-image: url(../images/pattern-bg.png);">
+    <body>
         <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDDX7nlSayoGLZv1ovXsbAxL37XGsK9v8Q">
     </script>
@@ -17,7 +17,6 @@
         <div class="flex-center position-ref full-height" id="app">
             
             @yield('content')
-
             
             <footer>
                 <div class="ready-for-tour">
@@ -31,7 +30,7 @@
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="row" style="margin-bottom: 30px;">
-                                    <div class="col-md-3">
+                                    <div class="col-md-3 text-center">
                                         <img src="/images/logo.png" width="90" height="90" style="margin-top: 10px;" />
                                     </div>
                                     <div class="col-md-9" style="padding-left: 40px;">

@@ -15,4 +15,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/tailor-made', function() {
+	return view('tailor-made');
+});
+
+Route::get('/member-ship', function() {
+	return view('member-ship');
+});
+
 Route::resource('tour', 'TourController');

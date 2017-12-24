@@ -1,10 +1,10 @@
 <template>
-    <div class="container row margin-auto">
-        <h1>
+    <div class="container" style="padding-left: 0px; padding-right: 0px;">
+        <h1 style="color: #464861; margin-bottom: 40px;">
             Travel map to Sheshged
         </h1>
         <div id="map">
-            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17qxnH3FB8lytoFNycOSkyUKXeTGUlvqg" width="1170" height="600"></iframe>
+            <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17qxnH3FB8lytoFNycOSkyUKXeTGUlvqg" width="1090" height="600"></iframe>
 
             <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1D2N6tVsjt88-oSxNQ9IZrT-1m9Y" width="1170" height="600"></iframe> -->
         </div>

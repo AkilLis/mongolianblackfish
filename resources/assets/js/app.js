@@ -9,7 +9,6 @@ require('./bootstrap');
 window.Vue = require('vue');
 
 import store from './store'
-import Parallax from 'parallax-js'
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -17,6 +16,7 @@ import Parallax from 'parallax-js'
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('partner-list', require('./components/PartnerList.vue'));
 Vue.component('lake-list', require('./components/river/LakeList.vue'));
 Vue.component('trip-list', require('./components/trip/TripList.vue'));
 Vue.component('trip-gallery', require('./components/trip/TripGallery.vue'));
