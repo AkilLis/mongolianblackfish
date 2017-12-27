@@ -13,19 +13,19 @@
 
             <div class="info-header row">
                 <div class="col-md-3 tour-plan">
-                    <h4 class="font-sub" style="color: #DCA852">DEPARTURE DATE</h4>
+                    <h4 class="font-sub" style="color: #FECA08">DEPARTURE DATE</h4>
                     <h5 class="font-sub">JULY 4-12 2018</h5>
                 </div>
                 <div class="col-md-3 tour-plan">
-                    <h4 class="font-sub" style="color: #DCA852">DURATION</h4>
+                    <h4 class="font-sub" style="color: #FECA08">DURATION</h4>
                     <h5 class="font-sub">12 DAYS</h5>
                 </div>
                 <div class="col-md-3 tour-plan">
-                    <h4 class="font-sub" style="color: #DCA852">GROUP SIZE</h4>
+                    <h4 class="font-sub" style="color: #FECA08">GROUP SIZE</h4>
                     <h5 class="font-sub">4 MEMBERS</h5>
                 </div>
                 <div class="col-md-3 tour-plan">
-                    <h4 class="font-sub" style="color: #DCA852">TYPE</h4>
+                    <h4 class="font-sub" style="color: #FECA08">TYPE</h4>
                     <h5 class="font-sub">FLY FISHING</h5>
                 </div>
             </div>

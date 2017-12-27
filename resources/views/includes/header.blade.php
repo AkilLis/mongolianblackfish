@@ -56,7 +56,7 @@
                 </div>
                 <div class="col-md-4" style="margin-top: -20px;">
                     <a href="/"> 
-                        <img src="/images/logo.png" width="70" height="70" />
+                        <img src="/images/logo_white.png" width="70" height="70" />
                         <h4 class="font-sub" style="color: #fff">MONGOLIAN TOUR</h4>
                     </a>
                 </div>

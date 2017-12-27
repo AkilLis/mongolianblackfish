@@ -31,7 +31,7 @@
                             <div class="col-md-4">
                                 <div class="row" style="margin-bottom: 30px;">
                                     <div class="col-md-3 text-center">
-                                        <img src="/images/logo.png" width="90" height="90" style="margin-top: 10px;" />
+                                        <img src="/images/logo_white.png" width="90" height="90" style="margin-top: 10px;" />
                                     </div>
                                     <div class="col-md-9" style="padding-left: 40px;">
                                         <h3 class="font-sub white">MONGOLIAN BLACK FISH</h3>

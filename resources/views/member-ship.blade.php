@@ -11,12 +11,14 @@
         <div class="container" style="padding-bottom: 80px;">
     		<form>
     			</br>
-    			<h1>Member Ship</h1>
+    			<h1>Why should you join us?</h1>
 				</br>
     			<div class="row">
     				<div class="col-md-4">
     					<img 
     						src="/images/taimen_donate.png"
+                            height="300"
+                            width="300"
     					/>
     				</div>
     				<div class="col-md-8">
@@ -35,19 +37,56 @@ Sincerely,
     			</div>
     			</br>
     			</br>
+                </br>
+                </br>
     			<div class="row">
-    				<div class="col-md-8">
+    				<div class="col-md-7">
     					<h1 style="color: #FECA08">2. 10% off tour</h1>
     					</br>
     					<h4 class="white" style="line-height: 1.5em;">Taimen are an extremely sensitive species and not easy to protect. Taimen once inhabited regions from Hokkaido to the Danube. Wild populations are now reduced to a few isolated pockets in remote places like Mongolia. Without aggressive conservation action supported by the international angling community, these remaining pockets of wild taimen will be lost.</h4>
     				</div>
-    				<div class="col-md-4">
+    				<div class="col-md-5 text-center">
     					<img 
-    						src="/images/taimen_donate.png"
+                            height="300"
+                            width="300"
+    						src="/images/mbf_logo.png"
     					/>
     				</div>
     			</div>
+                </br></br></br></br>
+                <div class="row">
+                    <div class="col-md-5 text-center">
+                        <div style="width: 300px; height: 300px;">
+                            <img
+                                style="width: 100%; height: 100%; object-fit: contain;" 
+                                src="/images/taimen_coupon.jpg"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-md-7">
+                        <h1 style="color: #FECA08">3. Make sure one of your friend 10% off tour too</h1>
+                        </br>
+                        <h4 class="white" style="line-height: 1.5em;">We gave you coupon for 10% off any tour same season. Taimen are an extremely sensitive species and not easy to protect. Taimen once inhabited regions from Hokkaido to the Danube. Wild populations are now reduced to a few isolated pockets in remote places like Mongolia. Without aggressive conservation action supported by the international angling community, these remaining pockets of wild taimen will be lost.</h4>
+                    </div>
+                </div>
+                </br></br>
 			</form>
+
+            <div class="container row margin-auto">
+                    <div class="text-center">
+                        <h2>Do you want to join now?</h2>
+                        <button class="btn btn-primary outline" style="width: 200px">
+                            SUBSCRIBE
+                        </button>
+                    </div>
+                    <br />
+                    <div class="text-center">
+                        <h3 class="white">Allready a member?</h3>
+                        <button class="btn btn-primary outline" style="width: 200px">
+                            LOG IN
+                        </button>
+                    </div>
+            </div>
     	</div>
     </div>
 @stop

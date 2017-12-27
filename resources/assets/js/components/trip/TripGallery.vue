@@ -1,11 +1,11 @@
 <template>
     <div class="carousel">
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t4.jpg" alt="orange tree" />
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t3.jpg" alt="submerged" />
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t2.jpg" alt="look-out" />
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t1.jpg" alt="One World Trade" />
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t5.jpg" alt="drizzle" />
-      <img class="carousel-img" src="http://localhost:8000/images/trip/t6.jpg" alt="cat nose" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t4.jpg" alt="orange tree" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t3.jpg" alt="submerged" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t2.jpg" alt="look-out" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t1.jpg" alt="One World Trade" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t5.jpg" alt="drizzle" />
+      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t6.jpg" alt="cat nose" />
     </div>
 </template>
 

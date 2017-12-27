@@ -5,7 +5,7 @@
                 <a href="/tour/1">
                     <div 
                         class="trip-cover" 
-                        style="background-image:url('http://localhost:8000/images/trip/canyon.jpg')"
+                        style="background-image:url('http://www.mongolianblackfish.com/images/trip/canyon.jpg')"
                     >
                     </div>
                 </a>
@@ -50,7 +50,7 @@
             <div class="col-md-5">
                 <div 
                     class="trip-cover" 
-                    style="background-image:url('http://localhost:8000/images/trip/fishing.jpg')"
+                    style="background-image:url('http://www.mongolianblackfish.com/images/trip/fishing.jpg')"
                 >
                 </div>
             </div>

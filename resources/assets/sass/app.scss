@@ -47,10 +47,6 @@ a {
   text-decoration: none !important;
 }
 
-p {
-  color: #fff
-}
-
 ::placeholder {
     color: #fff;
     opacity: 1; /* Firefox */
@@ -251,8 +247,8 @@ footer {
 }
 
 .partner-circle {
-   height: 180px;
-   width: 180px;
+   height: 100px;
+   width: 100px;
    //border-radius: 90px;
    background: #fff;
    
@@ -553,6 +549,26 @@ footer {
   padding: 8px 20px;
   -webkit-transition: all .1s ease-out;
           transition: all .1s ease-out;  
+}
+
+.btn-primary.outline {
+  border: 2px solid $brand-primary;
+  color: $brand-primary;
+}
+
+.btn.outline {
+  background: none;
+  padding: 12px 22px;
+}
+
+.btn-primary.outline:hover, .btn-primary.outline:focus, .btn-primary.outline:active, .btn-primary.outline.active, .open > .dropdown-toggle.btn-primary {
+  color: darken($brand-primary, 10%);
+  border-color: darken($brand-primary, 10%);
+}
+.btn-primary.outline:active, .btn-primary.outline.active {
+  border-color: darken($brand-primary, 10%);
+  color: darken($brand-primary, 10%);
+  box-shadow: none;
 }
 
 .buttons:active, 

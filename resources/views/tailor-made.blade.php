@@ -39,8 +39,8 @@ We love coming up with new ideas or twists on old favourites to ensure that your
 					  <div class="form-group">
 					  	<label for="exampleInputPassword1">Choose the lake which one you interested</label></br>
 					  	<div class="btn-group" role="group" aria-label="Basic example">
-	  						<button type="button" class="btn btn-secondary btn-primary">Orkhon</button>
-	  						<button type="button" class="btn btn-secondary">Sheshged</button>
+	  						<button type="button" class="btn btn-secondary">Orkhon</button>
+	  						<button type="button" class="btn btn-secondary btn-primary">Sheshged</button>
 	  						<button type="button" class="btn btn-secondary">Eg uur</button>
 					  	</div>
 					  </div>

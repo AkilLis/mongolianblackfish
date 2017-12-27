@@ -1717,19 +1717,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         return {
             partners: [{
                 _id: 1,
-                cover_url: "http://localhost:8000/images/partner/gmobile.png",
+                cover_url: "http://www.mongolianblackfish.com/images/partner/gmobile.png",
                 link: "https://www.g-mobile.mn/"
             }, {
                 _id: 2,
-                cover_url: "http://localhost:8000/images/partner/corporate.png",
+                cover_url: "http://www.mongolianblackfish.com/images/partner/corporate.png",
                 link: "https://www.facebook.com/The-Corporate-Hotel-Ulaanbaatar-214709581894385/"
             }, {
                 _id: 3,
-                cover_url: "http://localhost:8000/images/partner/miat.jpg",
+                cover_url: "http://www.mongolianblackfish.com/images/partner/miat.jpg",
                 link: "http://www.miat.com/index.php?lang=en"
             }, {
                 _id: 4,
-                cover_url: "http://localhost:8000/images/partner/mautlin.png",
+                cover_url: "http://www.mongolianblackfish.com/images/partner/mautlin.png",
                 link: "https://www.killasheehotel.com/?gclid=Cj0KCQiA9_LRBRDZARIsAAcLXjcpe6bI8tJs1iT3u0r1jUupn18XGFl2eMGHJRwbWuAcwG8tHEeieeEaAgH0EALw_wcB"
             }]
         };
@@ -36985,7 +36985,7 @@ var staticRenderFns = [
                 staticClass: "trip-cover",
                 staticStyle: {
                   "background-image":
-                    "url('http://localhost:8000/images/trip/canyon.jpg')"
+                    "url('http://www.mongolianblackfish.com/images/trip/canyon.jpg')"
                 }
               })
             ])
@@ -37152,7 +37152,7 @@ var staticRenderFns = [
               staticClass: "trip-cover",
               staticStyle: {
                 "background-image":
-                  "url('http://localhost:8000/images/trip/fishing.jpg')"
+                  "url('http://www.mongolianblackfish.com/images/trip/fishing.jpg')"
               }
             })
           ]),
@@ -37431,7 +37431,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t4.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t4.jpg",
           alt: "orange tree"
         }
       }),
@@ -37439,7 +37439,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t3.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t3.jpg",
           alt: "submerged"
         }
       }),
@@ -37447,7 +37447,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t2.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t2.jpg",
           alt: "look-out"
         }
       }),
@@ -37455,7 +37455,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t1.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t1.jpg",
           alt: "One World Trade"
         }
       }),
@@ -37463,7 +37463,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t5.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t5.jpg",
           alt: "drizzle"
         }
       }),
@@ -37471,7 +37471,7 @@ var staticRenderFns = [
       _c("img", {
         staticClass: "carousel-img",
         attrs: {
-          src: "http://localhost:8000/images/trip/t6.jpg",
+          src: "http://www.mongolianblackfish.com/images/trip/t6.jpg",
           alt: "cat nose"
         }
       })
@@ -49993,17 +49993,17 @@ var getRivers = function getRivers(_ref) {
     var rivers = [{
         id: 1,
         name: 'Orkhon',
-        url: "http://localhost:8000/images/river/orkhon.jpg",
+        url: "http://www.mongolianblackfish.com/images/river/orkhon.jpg",
         is_selected: false
     }, {
         id: 2,
         name: "Sheshged",
-        url: "http://localhost:8000/images/river/shegshid.jpg",
+        url: "http://www.mongolianblackfish.com/images/river/shegshid.jpg",
         is_selected: true
     }, {
         id: 3,
         name: "Eg uur",
-        url: "http://localhost:8000/images/river/eg_uur.jpg",
+        url: "http://www.mongolianblackfish.com/images/river/eg_uur.jpg",
         is_selected: false
     }];
     commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["b" /* GET_RIVERS_FULFILLED */], { rivers: rivers });
