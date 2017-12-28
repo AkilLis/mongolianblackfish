@@ -51,7 +51,7 @@ class AuthController extends Controller
         if (\Hash::check($password, $user->password))
         {
         	\Auth::login($user);
-        	return redirect('admin/country');
+        	return redirect('admin/tour');
         }
         else
         {
