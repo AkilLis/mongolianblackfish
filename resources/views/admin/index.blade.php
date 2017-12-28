@@ -9,7 +9,7 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.min.css')}}">
+        <link rel="stylesheet" type="text/css" href="{{asset('css/app.css')}}">
     </head>
     <body>
         <style>
@@ -31,7 +31,8 @@
             .form input {
               font-family: "Roboto", sans-serif;
               outline: 0;
-              background: #f2f2f2;
+              background: #0d0d0d;
+              color: #fff;
               width: 100%;
               border: 0;
               margin: 0 0 15px;

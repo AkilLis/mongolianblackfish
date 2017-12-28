@@ -23,6 +23,9 @@ Vue.component('trip-gallery', require('./components/trip/TripGallery.vue'));
 Vue.component('trip-schedule', require('./components/trip/TripSchedule.vue'));
 Vue.component('custom-map', require('./components/CustomMap.vue'));
 
+//admin
+Vue.component('tour-view', require('./admin/TourView.vue'));
+
 const app = new Vue({
     el: '#app',
     store,
@@ -31,6 +34,6 @@ const app = new Vue({
     	// var scene = document.getElementById('scene');
     	// var parallaxInstance = new Parallax(scene, {
     	// 	relativeInput: true
-    	// })
+    	// }),
     }
 });

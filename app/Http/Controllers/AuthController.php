@@ -32,7 +32,7 @@ class AuthController extends Controller
     public function logout(Request $request)
     {
     	\Auth::logOut();
-    	return redirect('login');
+    	return redirect('admin');
     }
 
     public function adminLogin(Request $request)

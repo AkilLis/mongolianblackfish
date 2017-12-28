@@ -24,6 +24,7 @@ Route::get('/member-ship', function() {
 });
 
 Route::post('/admin', 'AuthController@adminLogin');
+Route::get('/logout', 'AuthController@logout');
 
 Route::get('/admin', function () {
 	if(\Auth::check()) {
@@ -32,4 +33,27 @@ Route::get('/admin', function () {
 	return view('admin.index');
 });
 
-Route::resource('tour', 'TourController');
+//Route::resource('tour', 'TourController');
+
+Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
+	// Route::get('/country/all', 'CountryController@all');
+	// Route::get('/country/check', 'CountryController@check');
+	// Route::get('/country/select', 'CountryController@counties');
+	// Route::post('/country/{country}', 'CountryController@update');
+	Route::resource('/river', 'RiverController');
+	// Route::post('/upload', 'AdminController@upload');
+	// Route::delete('/delete', 'AdminController@delete');
+	// Route::get('/school/all', 'SchoolController@all');
+	// Route::get('/school/check', 'SchoolController@check');
+	// Route::post('/school/{school}', 'SchoolController@update');
+	Route::resource('/tour', 'TourController');
+	// Route::get('/news/all', 'NewsController@all');
+	// Route::post('/news/{news}', 'NewsController@update');
+	// Route::resource('/news', 'NewsController');
+	// Route::get('/album/all', 'AlbumController@all');
+	// Route::get('/album/check', 'AlbumController@check');
+	// Route::post('/album/photo', 'AlbumController@uploadPhotos');
+	// Route::post('/album/{album}', 'AlbumController@update');
+	// Route::resource('/album', 'AlbumController');
+	// Route::delete('/album/photo/{photo}', 'AlbumController@deletePhoto');
+});

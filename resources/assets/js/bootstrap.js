@@ -7,19 +7,35 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
-try {
-    window.$ = window.jQuery = require('jquery');
 
-    require('bootstrap-sass');
-} catch (e) {}
+window.$ = window.jQuery = require('jquery');
 
+require('bootstrap-sass');
+
+window.MediumEditor = require('medium-editor')
+
+require('../../../node_modules/handlebars/dist/handlebars.runtime.min')
+require('../../../node_modules/jquery-sortable/source/js/jquery-sortable-min')
+require('../../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget')
+require('../../../node_modules/blueimp-file-upload/js/jquery.iframe-transport')
+require('../../../node_modules/blueimp-file-upload/js/jquery.fileupload')
+
+import CustomEditor from './components/CustomEditor.vue'
+// import CoreNotify from './components/CoreNotify.vue'
+// import Paginate from './mixins/Paginate.vue'
+// import AlbumPhotos from './components/AlbumPhotos.vue'
+
+Vue.component('CustomEditor', CustomEditor)
+// Vue.component('CoreNotify', CoreNotify)
+// Vue.component('Paginate', Paginate)
+// Vue.component('AlbumPhotos', AlbumPhotos)
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
+window.axios = require('axios/dist/axios.js');
 
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
