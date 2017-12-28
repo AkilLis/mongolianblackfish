@@ -23,4 +23,13 @@ Route::get('/member-ship', function() {
 	return view('member-ship');
 });
 
+Route::post('/admin', 'AuthController@adminLogin');
+
+Route::get('/admin', function () {
+	if(\Auth::check()) {
+		return redirect('admin/country');
+	}	
+	return view('admin.index');
+});
+
 Route::resource('tour', 'TourController');
