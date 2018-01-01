@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script>
-	require('medium-editor-insert-plugin')(window.$)
+	//require('medium-editor-insert-plugin')(window.$)
 
 	export default {
 		props : {
@@ -21,7 +21,7 @@
 			},
 
 			titleHolder : {
-				default : 'Чи юу бодож байна?'
+				default : 'type text ...'
 			},
 
 			titleable : {
@@ -42,10 +42,10 @@
 			this.setId()
 		},
 
-		ready : function () {
+		mounted : function () {
 			this.editorInstance = new MediumEditor($('#' + this.id), {
                 toolbar: {
-                    buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'orderedlist', 'unorderedlist', 'pre', 'removeFormat', 'outdent', 'indent', 'h2', 'h3', 'h4', 'h5'],
+                    buttons: ['bold', 'italic', 'underline', 'strikethrough', 'quote', 'anchor', 'justifyLeft', 'justifyCenter', 'justifyRight', 'justifyFull', 'orderedlist', 'unorderedlist', 'pre', 'removeFormat', 'outdent', 'indent', 'h2', 'h3'],
                 },
                 placeholder: {
 			        text: this.titleHolder,
@@ -59,32 +59,6 @@
 			        'colorPicker': pickerExtension
 			    }*/
             });
-
-			$('#' + this.id).mediumInsert({
-		        editor: this.editorInstance,
-		        addons : {
-		        	images : {
-		        		label: '<span class="fa fa-camera"></span>',
-		        		uploadScript: null,
-		        		preview: true,
-		        		deleteScript: 'delete',
-            			deleteMethod: 'DELETE',	
-		        		fileUploadOptions: { 
-			                url: 'upload',
-			                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i
-			            },
-			            messages: {
-			                acceptFileTypesError: 'Зурган файл оруулна уу!',
-			                maxFileSizeError: 'Файлын хэмжээ их байна'
-			            },
-		        	},
-		        	embeds: { 
-		        		label: '<span class="fa fa-youtube-play"></span>',
-		            	placeholder: 'YouTube, Vimeo, Facebook, Twitter эсвэл Instagram холбоос хуулах',
-		            	oembedProxy : null,
-		        	}
-		        },
-		    })
 
 		    $('#' + this.id).html(this.html)
 		},
@@ -110,8 +84,7 @@
 	.editable {
 		background-color : #fff;
 		border-radius : 5px;
-		padding-left: 10px;
-		padding-right: 10px;
+		padding: 10px;
 		border: 1px solid #E3E3E3;
 		&:focus {
 			border-color: #AAAAAA;

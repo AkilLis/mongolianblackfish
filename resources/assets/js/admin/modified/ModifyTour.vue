@@ -1,92 +1,132 @@
 <template>
-	<div class="row" id="country-panel" >
-		<div class="col-md-9">
+	<div class="row" id="country-panel">
+		<div class="col-md-12">
 			<div class="card">
-				<div class="header">
-					<h4 class="title"> Улс нэмэх
-					<a @click="cancel()" class="btn btn-info btn-fill btn-warning pull-right">Буцах</a>
-					<a @click="save()" style="margin-right: 10px;" class="btn btn-info btn-fill btn-warning pull-right">Хадгалах</a>
+				<div class="header" style="padding-left: 20px;">
+					<h4 class="title">Add New Tour
+					<a @click="save()" class="btn btn-fill btn-success pull-right">Save</a>
+					<a @click="cancel()" style="margin-right: 10px;" class="btn btn-info btn-fill btn-warning pull-right">Back</a>
 					</h4>
 				</div>
 				<div class="content">
 					<form enctype="multipart/form-data">
 						<div id="country-name" class="row">
-							<div class="col-md-6">
+							<div class="col-md-9">
 								<div class="form-group">
-									<label>Улсын нэр</label>
-									<input class="form-control" v-model="country.name" type="text" placeholder="Улсын нэр">
+									<label>Tour title</label>
+									<input class="form-control" v-model="tour.name" 
+									id="tour_title" type="text" placeholder="Tour title">
 								</div>
+							</div>
+							<div class="col-md-3">
+								<label for="sel1">Choose river</label>
+							    <select class="form-control" id="sel1">
+							        <option>Shegshed</option>
+							        <option>Orkhon</option>
+							        <option>Eg uur</option>
+							    </select>
 							</div>
 						</div>
 						<div class="row">
-							<div class="col-md-6">
+							<div class="col-md-3">
 								<div class="form-group">
-									<label for="flagId" class="btn btn-info btn-fill btn-warning">Далбаа сонгох</label>
-									<br/>
-									<input id="flagId" name="flag" type="file"/>	
-									<img id="flagImage" class="flag--temp" src="/images/site/logo_default.png" alt="Далбаа" />	
+									<label>Tour type</label>
+									<input id="tour_type" class="form-control" v-model="tour.type" type="text" placeholder="Tour type">
 								</div>
 							</div>
-							<div class="col-md-6">
+							<div class="col-md-3">
+								<label for="sel1">Group Size</label>
+							    <input class="form-control" v-model="tour.group_size" type="number" placeholder="Tour group size">
+							</div>
+							<div class="col-md-3">
+								<label for="sel1">Price</label>
+								<input class="form-control" v-model="tour.price" type="number" placeholder="Tour price">
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
 								<div class="form-group">
-									<label for="backId" class="btn btn-info btn-fill btn-warning">Арын зураг солих</label>
+									<label>Departure Date</label>
+									<div class='input-group date' id='departure_date'>
+					                    <datepicker 
+					                    	v-model="tour.departure_date" 
+					                    	input-class="form-control"
+					                    	name="departure_date">
+					                    </datepicker>
+					                </div>
+								</div>
+							</div>
+							<div class="col-md-3">
+								<label for="sel1">Start Date</label>
+							    <div class='input-group date' id='departure_date'>
+				                    <datepicker 
+				                    	v-model="tour.start_date" 
+				                    	input-class="form-control"
+				                    	name="start_date">
+				                    </datepicker>
+				                </div>
+							</div>
+							<div class="col-md-3">
+								<label for="sel1">End Date</label>
+							    <div class='input-group date' id='departure_date'>
+				                    <datepicker 
+				                    	v-model="tour.end_date" 
+				                    	input-class="form-control"
+				                    	name="end_date">
+				                    </datepicker>
+				                </div>
+							</div>
+						</div>
+						<div id="country-name" class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Tour Map Url</label>
+									<input id="tour_map" class="form-control" v-model="tour.map_url" type="text" placeholder="Tour map url">
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label for="backId" class="btn btn-info btn-fill btn-warning">Choose cover photo</label>
 									<input id="backId" name="cover" type="file"/>
-									<img id="backImage" class="back--temp" src="/images/site/country_default.png" alt="Далбаа" />
+									<img id="backImage" 
+										 class="back--temp" 
+										 src="http://localhost:8000/images/trip/placeholder.jpg" 
+										 alt="Cover"
+									/>
+								</div>
+							</div>
+						</div>
+						<div id="country-name" class="row">
+							<div class="col-md-12">
+								<div class="form-group">
+									<label>Description</label>
+									<input class="form-control" v-model="tour.description" 
+									id="tour_description" type="text" placeholder="Tour description">
 								</div>
 							</div>
 						</div>
 						<div id="country-info" class="row">
 							<div class="col-md-12">
 								<div class="form-group">
-									<label>Улсын мэдээлэл</label>
-									<custom-editor v-ref:info 
+									<label>More information</label>
+									<custom-editor ref="info" 
 									              :titleable="false" 
 									              :html="getEditorContent('info')">
 									</custom-editor>
 								</div>
 							</div>
 						</div>
-						<div id="country-education" class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label>Боловсролын систем</label>
-									<custom-editor v-ref:education 
-												   :titleable="false"
-												   :html="getEditorContent('education')">
-									</custom-editor>
-								</div>
-							</div>
-						</div>
-						<div id="country-visa" class="row">
-							<div class="col-md-12">
-								<div class="form-group">
-									<label>Визний мэдээлэл</label>
-									<custom-editor v-ref:visa 
-									               :titleable="false"
-									               :html="getEditorContent('visa')">
-									</custom-editor>
-								</div>
-							</div>
-						</div>
-
-						
-						
-						<div class="clearfix"></div>
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="col-md-3 scrollspy">
-			<ul class="nav nav-pills nav-stacked" id="affix-nav">
-				<li :class="getMenu('country-name')"><a @click="toggleClass('country-name')" href="#country-name"> Улсын нэр</a></li>
-				<li :class="getMenu('country-info')"><a @click="toggleClass('country-info')" href="#country-info">Улсы мэдээлэл</a></li>
-				<li :class="getMenu('country-education')"><a @click="toggleClass('country-education')" href="#country-education">Боловсролын систем</a></li>
-				<li :class="getMenu('country-visa')"><a @click="toggleClass('country-visa')" href="#country-visa">Визний мэдээлэл</a></li>
-			</ul>
-		</div>
 	</div>
 </template>
 <script>
+	//require('bootstrap-datetimepicker')
 	export default {
 		props : {
 			editable : {}
@@ -94,104 +134,65 @@
 
 		data () {
 			return {
-				country : {
+				tour : {
 					name : '',
+					group_size: 0,
+					price: 0,
+					type: "",
+					departure_date:  new Date(),
+					start_date:  new Date(),
+					end_date:  new Date(),
+					map_url: "",
+					//departure_date
 				},
-				y_pos : {},
-				x_pos: {},
-				menu : 'country-name'
+				//y_pos : {},
+				//x_pos: {},
+				//menu : 'country-name'
 			}
 		},
 
-		ready : function () {
+		mounted : function () {
 			var vm = this
-
-			$.ajaxSetup({
-		        headers: {
-		        	'X-CSRF-TOKEN': $('#_token').attr('value') 
-		        }
-	        })
-
-	        $("#flagId").change(function(){
-		        vm.flagImageChanged(this)
-		    })
-
 		    $("#backId").change(function(){
 		        vm.backImageChanged(this)
 		    })
 
-		    var $navbar = $("#affix-nav")
-
-		    this.y_pos = $navbar.offset().top
-		    this.x_pos = $navbar.offset().left
-
-		    $(".main-panel").scroll(this.scrolled)
-
 		    if(this.editable) {
 				this.setData()
 			}
+
+			$('#tour_title').focus()
 		},
 
 		methods : {
 			setData : function () {
-				this.country.name = this.editable.name
+				this.tour.name = this.editable.name
 				$('#flagImage').attr("src", this.editable.flag_url)
 				$('#backImage').attr("src", this.editable.cover_url)
 
 			},
 
 			getEditorContent : function (type) {
-				if(!this.editable) {
-					return
-				}
+				// if(!this.editable) {
+				// 	return
+				// }
 
-				switch(type) {
-					case "info" : 
-						return this.editable.country_information[0].content
-						break
-					case "education" : 
-						return this.editable.country_education[0].content
-						break
-					case "visa" : 
-						return this.editable.country_visa[0].content
-						break
-				}
-			},
-
-			getMenu : function (menu) {
-				return this.menu == menu ? 'active' : ''
-			},
-
-			toggleClass : function (menu) {
-				this.menu = menu
-			},
-			scrolled : function () {
-		        var scrollTop = $('.main-panel').scrollTop();
-
-		        if (scrollTop > this.y_pos) {
-		            $("#affix-nav").addClass("navbarr-fixed").animate({
-		                top: 0,
-		                left: this.x_pos
-		            });
-		        } else if (scrollTop <= this.y_pos) {
-		            $("#affix-nav").removeClass("navbarr-fixed").clearQueue().animate({
-		                top: "-48px"
-		            }, 0);
-		        }
-			},
-			flagImageChanged : function (input) {
-				var reader = new FileReader();
-            
-	            reader.onload = function (e) {
-	                $('#flagImage').attr('src', e.target.result);
-	            }
-	            
-	            reader.readAsDataURL(input.files[0]);
+				// switch(type) {
+				// 	case "info" : 
+				// 		return this.editable.country_information[0].content
+				// 		break
+				// 	case "education" : 
+				// 		return this.editable.country_education[0].content
+				// 		break
+				// 	case "visa" : 
+				// 		return this.editable.country_visa[0].content
+				// 		break
+				// }
 			},
 
 			backImageChanged : function (input) {
 				var reader = new FileReader();
-            
+            	
 	            reader.onload = function (e) {
 	                $('#backImage').attr('src', e.target.result);
 	            }
@@ -203,61 +204,75 @@
 				this.$emit('cancel')
 			},
 			save : function () {
-				if(!this.country.name.trim()) {
-					this.$root.$refs.notify.notify('Улсын нэр оруулна уу!', {
-						closeable : false
-					})
+				if(!this.tour.name.trim()) {
+					this.$notify({
+					  group: 'foo',
+					  title: 'Warning',
+					  type: 'warn',
+					  text: 'Please fill title.'
+					});
+					$('#tour_title').focus()
 		            return
 				}
 
-				if(!$('#flagId')[0].files[0] && !this.editable) {
-					this.$root.$refs.notify.notify('Улсын далбаа сонгоно уу!', {
-						closeable : false
-					})
+				if(!this.tour.type.trim()) {
+					this.$notify({
+					  group: 'foo',
+					  title: 'Warning',
+					  type: 'warn',
+					  text: 'Please fill tour type.'
+					});
+					$('#tour_type').focus()
+		            return
+				}
+
+				if(!this.tour.map_url.trim()) {
+					this.$notify({
+					  group: 'foo',
+					  title: 'Warning',
+					  type: 'warn',
+					  text: 'Please fill map url.'
+					});
+					$('#tour_map').focus()
 		            return
 				}
 
 				if(!$('#backId')[0].files[0] && !this.editable) {
-					this.$root.$refs.notify.notify('Улсын арын зураг сонгоно уу!', {
-						closeable : false
-					})
+					this.$notify({
+					  group: 'foo',
+					  title: 'Warning',
+					  type: 'warn',
+					  text: 'Choose cover picture !'
+					});
 		            return
 				}
 
-				this.$http.get(this.$env.get('APP_URI') + 'admin/country/check?name=' + this.country.name).then(res => {
-				  	if(res.data.code == 0 || (this.editable && this.editable.name == this.country.name)) {
-				  		var fd = new FormData()
+		  		var fd = new FormData()
 
-				  		if($('#flagId')[0].files[0])
-							fd.append('flag', $('#flagId')[0].files[0])
+				if($('#backId')[0].files[0])
+					fd.append('cover', $('#backId')[0].files[0])
 
-						if($('#backId')[0].files[0])
-							fd.append('cover', $('#backId')[0].files[0])
+				fd.append('name', this.tour.name)
+				fd.append('price', this.tour.price)
+				fd.append('group_size', this.tour.group_size)
+				fd.append('type', this.tour.type)
+				fd.append('departure_date', this.tour.departure_date)
+				fd.append('start_date', this.tour.start_date)
+				fd.append('end_date', this.tour.end_date)
+				fd.append('map_url', this.tour.map_url)
+				fd.append('description', this.tour.description)
+				fd.append('tour_info', this.$refs.info.getContent())
 
-						fd.append('country_name', this.country.name)
-						fd.append('country_info', this.$refs.info.getContent())
-						fd.append('country_education', this.$refs.education.getContent())
-						fd.append('country_visa', this.$refs.visa.getContent())
-
-						var data = {
-							country : this.country,
-							formData : fd,
-						};
+				var data = {
+					tour : this.tour,
+					formData : fd,
+				};
 
 
-						if(this.editable)
-							this.$emit('update', data)
-						else
-							this.$emit('save', data)  		
-						return
-				  	}
-
-				  	this.$root.$refs.notify.notify('Улсын нэр давхцаж байна!', {
-						closeable : false
-					})
-				}).catch(err => {
-				  
-				});
+				if(this.editable)
+					this.$emit('update', data)
+				else
+					this.$emit('save', data)
 			}
 		}
 	}
@@ -268,7 +283,11 @@
 		height: 100px;
 	}
 	.back--temp {
+		height: 360px;
+		object-fit: cover;
 		width: 100%;
+		margin-top: 20px;
+		border-radius: 15px;
 	}
 	#backId {
 		display: none;

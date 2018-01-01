@@ -46,6 +46,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
 	// Route::get('/school/all', 'SchoolController@all');
 	// Route::get('/school/check', 'SchoolController@check');
 	// Route::post('/school/{school}', 'SchoolController@update');
+	Route::get('/tour/all', 'TourController@all');
 	Route::resource('/tour', 'TourController');
 	// Route::get('/news/all', 'NewsController@all');
 	// Route::post('/news/{news}', 'NewsController@update');

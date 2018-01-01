@@ -36,21 +36,7 @@ class TourController extends Controller
 
     public function all(Request $request)
     {
-        if(isset($request->type)) {
-            if($request->type < 5)
-                $query = Tour::where('type', $request->type)->latest();
-            else {
-                $query = Tour::where('is_pinned', 'Y')->orderBy('updated_at', 'ASC');
-            }
-        } 
-        else $query = Tour::query();
-
-
-        if(isset($request->search)) {
-            $searchValue = trim($request->search);
-            $query = $query->where('title', 'like', '%'. $request->search . '%');
-        }
-
+        $query = Tour::query();
         $query = $query->paginate(10);
         
         return Response::json([
@@ -117,22 +103,27 @@ class TourController extends Controller
     public function store(Request $request)
     {
         $tour = new Tour;
-        $tour->title = $request->title;
+        $tour->name = $request->name;
         $tour->type = $request->type;
-        $tour->country_id = $request->country;
+        $tour->price = $request->price;
+        $tour->group_size = $request->group_size;
+        $tour->departure_date = $request->departure_date;
+        $tour->start_date = $request->start_date;
+        $tour->end_date = $request->end_date;
+        $tour->map_url = $request->map_url;
         $tour->visit_count = 0;
         $cover = $request->cover;
 
-        $tour->cover_url = PhotoController::savePhoto($cover, 'tour');
+        $tour->url = PhotoController::savePhoto($cover, 'tour');
 
         $tour->save();
 
-        $this->createContent($tour, $request->tour_info, $request->tour_description);
+        $this->createContent($tour, $request->tour_info, $request->description);
 
         return Response::json([
             'code' => 0,
-            'result' => $tour,
-            'message' => 'Амжилттай хадгаллаа.',
+            'tour' => $tour,
+            'message' => 'Succesfully saved.',
         ]);
     }
 
@@ -225,7 +216,7 @@ class TourController extends Controller
 
         return Response::json([
             'code' => 0,
-            'message' => 'Амжилттай устгалаа.'
+            'message' => 'Succesfully deleted.'
         ]);
     }
 }

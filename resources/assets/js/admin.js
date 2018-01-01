@@ -25,8 +25,7 @@ Vue.component('custom-map', require('./components/CustomMap.vue'));
 
 const app = new Vue({
     el: '#app',
-    store,
-    mounted() {
+    store,    mounted() {
     	//alert("123")
     	// var scene = document.getElementById('scene');
     	// var parallaxInstance = new Parallax(scene, {

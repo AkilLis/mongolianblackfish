@@ -7,12 +7,19 @@ window._ = require('lodash');
  * code may be modified to fit the specific needs of your application.
  */
 
+window.Vue = require('vue');
 
-window.$ = window.jQuery = require('jquery');
 
-require('bootstrap-sass');
+try {
+    window.$ = window.jQuery = require('jquery');
 
+    require('bootstrap-sass');
+} catch (e) {}
+
+//window.$ = window.jQuery = require('jquery');
 window.MediumEditor = require('medium-editor')
+
+require('moment')
 
 require('../../../node_modules/handlebars/dist/handlebars.runtime.min')
 require('../../../node_modules/jquery-sortable/source/js/jquery-sortable-min')
@@ -20,12 +27,21 @@ require('../../../node_modules/blueimp-file-upload/js/vendor/jquery.ui.widget')
 require('../../../node_modules/blueimp-file-upload/js/jquery.iframe-transport')
 require('../../../node_modules/blueimp-file-upload/js/jquery.fileupload')
 
+
 import CustomEditor from './components/CustomEditor.vue'
 // import CoreNotify from './components/CoreNotify.vue'
 // import Paginate from './mixins/Paginate.vue'
 // import AlbumPhotos from './components/AlbumPhotos.vue'
 
+import Datepicker from 'vuejs-datepicker'
+
 Vue.component('CustomEditor', CustomEditor)
+Vue.component('Datepicker', Datepicker)
+Vue.component('vue-datetime-picker', require('vue-datetime-picker'))
+
+import Notifications from 'vue-notification'
+
+Vue.use(Notifications)
 // Vue.component('CoreNotify', CoreNotify)
 // Vue.component('Paginate', Paginate)
 // Vue.component('AlbumPhotos', AlbumPhotos)
@@ -52,6 +68,7 @@ if (token) {
 } else {
     console.error('CSRF token not found: https://laravel.com/docs/csrf#csrf-x-csrf-token');
 }
+
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
