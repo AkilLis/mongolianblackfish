@@ -20,10 +20,13 @@
 							</div>
 							<div class="col-md-3">
 								<label for="sel1">Choose river</label>
-							    <select class="form-control" id="sel1">
-							        <option>Shegshed</option>
-							        <option>Orkhon</option>
-							        <option>Eg uur</option>
+							    <select class="form-control" id="sel1" v-model="tour.river_id">
+							    	<option 
+							    		v-for="(river, index) in rivers"
+							    		v-bind:value="river.id"
+							    	>
+							    		{{river.name}}
+							    	</option>
 							    </select>
 							</div>
 						</div>
@@ -136,7 +139,18 @@
 
 		data () {
 			return {
+				rivers: [{
+					id: 1,
+					name: "Sheshged",
+				}, {
+					id: 2,
+					name: "Orkhon"
+				}, {
+					id: 3,
+					name: "Eg uur",
+				}],
 				tour : {
+					river_id: 1,
 					name : '',
 					group_size: 0,
 					price: 0,
@@ -169,6 +183,7 @@
 		methods : {
 			setData : function () {
 				this.tour.name = this.editable.name
+				this.tour.river_id = this.editable.river_id
 				this.tour.price = this.editable.price
 				this.tour.group_size = this.editable.group_size
 				this.tour.type = this.editable.type
@@ -266,6 +281,7 @@
 					fd.append('cover', $('#backId')[0].files[0])
 
 				fd.append('name', this.tour.name)
+				fd.append('river_id', this.tour.river_id)
 				fd.append('price', this.tour.price)
 				fd.append('group_size', this.tour.group_size)
 				fd.append('type', this.tour.type)

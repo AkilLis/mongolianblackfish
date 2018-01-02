@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contentable;
 use App\Http\Controllers\PhotoController;
 use App\Tour;
+use App\River;
 use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -12,7 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Response;
 
-class TourController extends Controller
+class RiverController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,13 +28,19 @@ class TourController extends Controller
         return view('admin.tour.index');
     }
 
+    public function relatedTours(River $river) 
+    {
+        return Response::json([
+            'code' => 0,
+            'tours' => $river->tours()->with('info')->get(),
+        ]); 
+    }
+
     public function currentNews(Tour $tour)
     {
         $tour->visit_count = $tour->visit_count + 1;
         $tour->save();
-        $tour->river;
         $tour->info;
-
         return view('tour.index')->with(compact('tour'));
     }
 
@@ -107,7 +114,6 @@ class TourController extends Controller
     {
         $tour = new Tour;
         $tour->name = $request->name;
-        $tour->river_id = $request->river_id;
         $tour->type = $request->type;
         $tour->price = $request->price;
         $tour->group_size = $request->group_size;
@@ -184,7 +190,6 @@ class TourController extends Controller
     public function update(Request $request, $id)
     {
         $tour = Tour::find($id);
-        $tour->river_id = $request->river_id;
         $tour->name = $request->name;
         $tour->type = $request->type;
         $tour->price = $request->price;

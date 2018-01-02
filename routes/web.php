@@ -28,11 +28,12 @@ Route::get('/logout', 'AuthController@logout');
 
 Route::get('/admin', function () {
 	if(\Auth::check()) {
-		return redirect('admin/country');
+		return redirect('admin/tour');
 	}	
 	return view('admin.index');
 });
 
+Route::get('/river/{river}/tours', 'RiverController@relatedTours');
 Route::get('/tour/{tour}', 'TourController@currentNews');
 
 //Route::resource('tour', 'TourController');

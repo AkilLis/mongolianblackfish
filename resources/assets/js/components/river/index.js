@@ -6,12 +6,19 @@ const state = {
   	fetching: false,
   	data: []
   },
-  selectedRiver: {}
+  selectedRiver: {},
+  tours: {
+  	fetching: false,
+  	data: []
+  }
 }
 
 const getters = {
   allRivers: state => {
   	return state.rivers
+  },
+  tours: state => {
+  	return state.tours
   },
   selectedRiver: state => { 
   	return state.selectedRiver
@@ -28,6 +35,15 @@ const mutations = {
 		state.rivers.data = rivers
 		if(rivers.length > 1)
 			state.selectedRiver = rivers[1]
+	},
+
+	[types.GET_RIVER_TOURS] (state) {
+		state.tours.fetching = true
+	},
+
+	[types.GET_RIVER_TOURS_FULFILLED] (state, { tours }) {
+		state.tours.fetching = false
+		state.tours.data = tours
 	},
 
 	[types.SET_RIVER] (state, { river }) {

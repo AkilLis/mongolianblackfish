@@ -21,7 +21,7 @@
 
 		methods : {
 			getTours : function () {
-				axios.get('http://localhost:8000/admin/tour/all').then(res => {
+				axios.get('http://www.mongolianblackfish.com/admin/tour/all').then(res => {
 				  	this.tours = res.data.result.data
 				}).catch(err => {
 				});
@@ -33,7 +33,7 @@
 
 			editTour : function (data) {
 				//$('#loader').modal('show')
-				axios.post('http://localhost:8000/admin/tour/' 
+				axios.post('http://www.mongolianblackfish.com/admin/tour/' 
 					+ this.selectedTour.id + '?data=' + data.param, 
 					data.formData
 				).then(res => {
@@ -63,7 +63,7 @@
 			saveTour : function (data) {
 				//$('#loader').modal('show')
 
-				axios.post('http://localhost:8000/admin/tour?data=' + data.param, 
+				axios.post('http://www.mongolianblackfish.com/admin/tour?data=' + data.param, 
 					data.formData
 				).then(res => {
 					if(res.data.code == 0) {
@@ -100,7 +100,7 @@
 
 			updateTour : function (tour) {
 				this.tourInstance = tour
-				axios.get('http://localhost:8000/admin/tour/' + tour.id + '/edit').then(res => {
+				axios.get('http://www.mongolianblackfish.com/admin/tour/' + tour.id + '/edit').then(res => {
 				  	this.selectedTour = res.data.result
 				  	this.showTourModify = true
 				}).catch(err => {
@@ -109,7 +109,7 @@
 			},
 
 			deleteTour : function () {
-				axios.delete('http://localhost:8000/admin/tour/' + this.selectedTour.id).then(res => {
+				axios.delete('http://www.mongolianblackfish.com/admin/tour/' + this.selectedTour.id).then(res => {
 					if(res.data.code == 0) {
 						this.tours.splice(this.tours.indexOf(this.selectedTour), 1)
 						this.$notify({

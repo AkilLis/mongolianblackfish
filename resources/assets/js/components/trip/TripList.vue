@@ -1,11 +1,15 @@
 <template>
     <div class="container row trip-container main-carousel" style="padding-top: 580px; ">
-        <div class="carousel-cell">
+
+        <div 
+            class="carousel-cell"
+            v-for="(tour, index) in tours.data"
+        >
             <div class="col-md-4 col-sm-12">
-                <a href="/tour/1">
+                <a :href="'/tour/' + tour.id">
                     <div 
                         class="trip-cover" 
-                        style="background-image:url('http://www.mongolianblackfish.com/images/trip/canyon.jpg')"
+                        :style="'background-image:url(' + tour.url +')'"
                     >
                     </div>
                 </a>
@@ -13,83 +17,34 @@
 
             <div class="col-md-8" style="">
                 <a href="/tour/1">
-                    <h1>Classic Canyon Tour</h1>
+                    <h1>{{tour.name}}</h1>
                 </a>
 
                 <div class="row trip-detail">
                     <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">JULY, 17</h4>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateFormat(tour.departure_date) }}</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">4 MEMBER</h4>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.group_size}} MEMBER</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">12 DAYS</h4>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateBetween(tour.start_date, tour.end_date) }}</h4>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">FLY FISH</h4>
+                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.type}}</h4>
                     </div>
                 </div>
 
                 <p class="hidden-xs white">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+                    {{tour.info[0].description}}
                 </p>
                 <div class="row" style="margin-left: 15px; margin-top: 30px;">
                     <div class="col-md-3 row purchase-btn">
                             <h4 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="carousel-cell">
-            <div class="col-md-5">
-                <div 
-                    class="trip-cover" 
-                    style="background-image:url('http://www.mongolianblackfish.com/images/trip/fishing.jpg')"
-                >
-                </div>
-            </div>
-
-            <div class="col-md-7" style="">
-                <h1>Fly Fishing Tour</h1>
-
-                <div class="row trip-detail">
-                    <div class="col-md-3 col-sm-6 text-center trip-row" style="background: #9BD2E6">
-                        <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">SEP, 17</h4>
-                    </div>
-                    <div class="col-md-3 col-sm-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">6 MEMBER</h4>
-                    </div>
-                    <div class="col-md-3 col-sm-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">6 DAYS</h4>
-                    </div>
-                    <div class="col-md-3 col-sm-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                        <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">FLY FISH</h4>
-                    </div>
-                </div>
-
-                <p class="hidden-xs">
-                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                </p>
-                <div class="row" style="margin-left: 15px; margin-top: 30px;">
-                    <div class="col-md-6 row purchase-btn">
-                        <div class="col-md-6 text-left" style="padding-left: 0px; padding-right: 0px;">
-                            <h2 style="color: #fff; margin-top: 0px; margin-bottom: 0px;">
-                                $2.750
-                            </h2>
-                        </div>
-                        <div class="col-md-6" style="border-left: 1px dashed #fff;">
-                            <h5 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h5>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -100,12 +55,18 @@
 <script>
     import _ from 'lodash'
     import Flickity from 'flickity'
-    //import { mapGetters, mapActions } from 'vuex'
+    import { mapGetters, mapActions } from 'vuex'
+    import moment from 'moment'
 
     export default {
-        // created () {
-        //     this.$store.dispatch('getRivers')
-        // }, 
+        created () {
+            this.$store.dispatch('getRiverTours', this.selectedRiver)
+        }, 
+
+        computed: mapGetters({
+            tours: 'tours',
+            selectedRiver: 'selectedRiver',
+        }),
 
         mounted() {
             var flkty = new Flickity('.main-carousel', {
@@ -113,6 +74,22 @@
               cellAlign: 'left',
               contain: true
             });
+        },
+
+        methods: {
+            dateFormat: (date) => {
+                return moment(date).format("MMM, DD")
+            },
+
+            dateBetween: (start, end) => {
+                return moment(end).diff(start, 'days') + ' DAYS '
+            }
+        },
+
+        watch: {
+            selectedRiver: function(river) {
+                this.$store.dispatch('getRiverTours', river)
+            }
         }
 
         // computed: mapGetters({
@@ -188,7 +165,6 @@
         align-items: center;
         justify-content: center;
         height: 60px;
-        padding-right: 0px;
     }
     .purchase-btn:hover {
         cursor: pointer;

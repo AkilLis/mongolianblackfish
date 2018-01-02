@@ -25,6 +25,10 @@ Vue.component('custom-map', require('./components/CustomMap.vue'));
 //admin
 Vue.component('tour-view', require('./admin/TourView.vue'));
 
+//web
+import TourPage from './web/TourPage.vue'
+import IndexPage from './web/IndexPage.vue'
+
 const app = new Vue({
     el: '#app',
     store,
@@ -34,5 +38,9 @@ const app = new Vue({
     	// var parallaxInstance = new Parallax(scene, {
     	// 	relativeInput: true
     	// }),
+    },
+    components: {
+    	TourPage,
+        IndexPage
     }
 });

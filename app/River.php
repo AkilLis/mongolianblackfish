@@ -11,4 +11,9 @@ class River extends Model
 	protected $fillable = [
         'url', 'name', 'description'
     ];
+
+    public function tours()
+    {
+    	return $this->hasMany('App\Tour');
+    }
 }

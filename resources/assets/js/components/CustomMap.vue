@@ -1,7 +1,7 @@
 <template>
     <div class="container" style="padding-left: 0px; padding-right: 0px;">
         <h1 style="color: #fff; margin-bottom: 40px;">
-            Travel map to Sheshged
+            Travel map to 
         </h1>
         <div id="map">
             <iframe src="https://www.google.com/maps/d/u/0/embed?mid=17qxnH3FB8lytoFNycOSkyUKXeTGUlvqg" width="1090" height="600"></iframe>
@@ -20,6 +20,7 @@
         // }, 
 
         mounted() {
+            alert(this.riverName)
             // var map = new google.maps.Map(document.getElementById('map'), {
             //   zoom: 6,
             //   center: {

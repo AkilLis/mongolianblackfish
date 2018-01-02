@@ -6,7 +6,7 @@ class Tour extends Model
     //
     protected $table = 'tours';
 	protected $fillable = [
-        'name', 'url', 'visit_count', 'map_url', 'group_size', 'available_size', 'price', 'type','departure_date', 'start_date', 'end_date'
+        'name', 'river_id', 'url', 'visit_count', 'map_url', 'group_size', 'available_size', 'price', 'type','departure_date', 'start_date', 'end_date'
     ];
     public function info()
     {

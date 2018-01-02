@@ -16,7 +16,11 @@
         
         <div class="flex-center position-ref full-height" id="app">
             
-            @yield('content')
+            <component is="{{$currentView}}" 
+                       inline-template
+            >
+                @yield('content')
+            </component>
             
             <footer>
                 <div class="ready-for-tour">
