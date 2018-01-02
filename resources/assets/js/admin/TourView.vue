@@ -9,6 +9,7 @@
 		data () {
 			return {
 				tours : [],
+				savingTour: false,
 				showTourModify : false,
 				selectedTour : {},
 				tourInstance : {}
@@ -33,6 +34,7 @@
 
 			editTour : function (data) {
 				//$('#loader').modal('show')
+				this.saving = true
 				axios.post('http://www.mongolianblackfish.com/admin/tour/' 
 					+ this.selectedTour.id + '?data=' + data.param, 
 					data.formData
@@ -51,6 +53,7 @@
 					}
 				}).catch(err => {
 					//$('#loader').modal('hide')
+					this.savingTour = false
 					this.$notify({
 						  group: 'foo',
 						  title: 'Success',
@@ -62,7 +65,7 @@
 
 			saveTour : function (data) {
 				//$('#loader').modal('show')
-
+				this.saving = true
 				axios.post('http://www.mongolianblackfish.com/admin/tour?data=' + data.param, 
 					data.formData
 				).then(res => {
@@ -80,6 +83,7 @@
 					}
 				}).catch(err => {
 					//$('#loader').modal('hide')
+					this.savingTour = false
 					this.$notify({
 						  group: 'foo',
 						  title: 'Success',
@@ -92,6 +96,7 @@
 			newTour: function () {
 				this.showTourModify = true
 				this.selectedTour = null
+				this.savingTour = false
 			},
 
 			setTour : function (tour) {

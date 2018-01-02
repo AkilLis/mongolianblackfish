@@ -23,19 +23,19 @@
                 <div class="row trip-detail">
                     <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateFormat(tour.departure_date) }}</h4>
+                        <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateFormat(tour.departure_date) }}</h5>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.group_size}} MEMBER</h4>
+                        <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.group_size}} MEMBER</h5>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateBetween(tour.start_date, tour.end_date) }}</h4>
+                        <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateBetween(tour.start_date, tour.end_date) }}</h5>
                     </div>
                     <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
                         <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                        <h4 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.type}}</h4>
+                        <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.type}}</h5>
                     </div>
                 </div>
 

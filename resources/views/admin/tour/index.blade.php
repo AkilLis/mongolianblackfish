@@ -2,7 +2,8 @@
 @section('content')	
 	<div>
 	<modify-tour v-if="showTourModify" 
-					:editable.sync="selectedTour" 
+					:editable.sync="selectedTour"
+					:saving.sync="savingTour"
 					@save="saveTour"
 					@update="editTour"
 					@cancel="cancelTour">

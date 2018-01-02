@@ -3225,6 +3225,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	data: function data() {
 		return {
 			tours: [],
+			savingTour: false,
 			showTourModify: false,
 			selectedTour: {},
 			tourInstance: {}
@@ -3253,6 +3254,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this2 = this;
 
 			//$('#loader').modal('show')
+			this.saving = true;
 			axios.post('http://www.mongolianblackfish.com/admin/tour/' + this.selectedTour.id + '?data=' + data.param, data.formData).then(function (res) {
 				if (res.data.code == 0) {
 					//$/('#loader').modal('hide')
@@ -3268,6 +3270,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}
 			}).catch(function (err) {
 				//$('#loader').modal('hide')
+				_this2.savingTour = false;
 				_this2.$notify({
 					group: 'foo',
 					title: 'Success',
@@ -3281,7 +3284,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this3 = this;
 
 			//$('#loader').modal('show')
-
+			this.saving = true;
 			axios.post('http://www.mongolianblackfish.com/admin/tour?data=' + data.param, data.formData).then(function (res) {
 				if (res.data.code == 0) {
 
@@ -3297,6 +3300,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				}
 			}).catch(function (err) {
 				//$('#loader').modal('hide')
+				_this3.savingTour = false;
 				_this3.$notify({
 					group: 'foo',
 					title: 'Success',
@@ -3309,6 +3313,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		newTour: function newTour() {
 			this.showTourModify = true;
 			this.selectedTour = null;
+			this.savingTour = false;
 		},
 
 		setTour: function setTour(tour) {
@@ -3492,13 +3497,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 //require('bootstrap-datetimepicker')
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
-		editable: {}
+		editable: {},
+		saving: false
 	},
 
 	data: function data() {
@@ -3639,6 +3652,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				});
 				return;
 			}
+
+			this.saving = true;
 
 			var fd = new FormData();
 
@@ -66791,19 +66806,37 @@ var render = function() {
           { staticClass: "header", staticStyle: { "padding-left": "20px" } },
           [
             _c("h4", { staticClass: "title" }, [
-              _vm._v("Add New Tour\n\t\t\t\t"),
-              _c(
-                "a",
-                {
-                  staticClass: "btn btn-fill btn-success pull-right",
-                  on: {
-                    click: function($event) {
-                      _vm.save()
-                    }
-                  }
-                },
-                [_vm._v("Save")]
-              ),
+              _vm._v("Add New Tour\n\t\t\t\t\t\n\t\t\t\t"),
+              _vm.saving
+                ? _c(
+                    "a",
+                    { staticClass: "btn btn-fill btn-success pull-right" },
+                    [
+                      _c("i", { staticClass: "fa fa-spinner fa-spin" }),
+                      _vm._v("\n\t\t\t\t\tProcessing\n\t\t\t\t")
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.saving
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-fill btn-success pull-right",
+                      attrs: {
+                        id: "load",
+                        "data-loading-text":
+                          "<i class='fa fa-circle-o-notch fa-spin'></i> Processing"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.save()
+                        }
+                      }
+                    },
+                    [_vm._v("Save")]
+                  )
+                : _vm._e(),
               _vm._v(" "),
               _c(
                 "a",
@@ -67312,7 +67345,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "h4",
+                  "h5",
                   {
                     staticClass: "font-sub",
                     staticStyle: { "font-weight": "bold", "margin-top": "15px" }
@@ -67339,7 +67372,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "h4",
+                  "h5",
                   {
                     staticClass: "font-sub",
                     staticStyle: { "font-weight": "bold", "margin-top": "15px" }
@@ -67366,7 +67399,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "h4",
+                  "h5",
                   {
                     staticClass: "font-sub",
                     staticStyle: { "font-weight": "bold", "margin-top": "15px" }
@@ -67397,7 +67430,7 @@ var render = function() {
                 ),
                 _vm._v(" "),
                 _c(
-                  "h4",
+                  "h5",
                   {
                     staticClass: "font-sub",
                     staticStyle: { "font-weight": "bold", "margin-top": "15px" }

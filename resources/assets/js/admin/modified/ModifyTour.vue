@@ -4,7 +4,14 @@
 			<div class="card">
 				<div class="header" style="padding-left: 20px;">
 					<h4 class="title">Add New Tour
-					<a @click="save()" class="btn btn-fill btn-success pull-right">Save</a>
+						
+					<a v-if="saving" class="btn btn-fill btn-success pull-right">
+						<i class="fa fa-spinner fa-spin"></i>
+						Processing
+					</a>
+
+					<a v-if="!saving" @click="save()" class="btn btn-fill btn-success pull-right" id="load" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing">Save</a>
+
 					<a @click="cancel()" style="margin-right: 10px;" class="btn btn-info btn-fill btn-warning pull-right">Back</a>
 					</h4>
 				</div>
@@ -134,7 +141,8 @@
 
 	export default {
 		props : {
-			editable : {}
+			editable : {},
+			saving: false,
 		},
 
 		data () {
@@ -274,6 +282,8 @@
 					});
 		            return
 				}
+
+				this.saving = true
 
 		  		var fd = new FormData()
 
