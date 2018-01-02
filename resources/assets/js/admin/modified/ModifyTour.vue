@@ -103,7 +103,7 @@
 									<input id="backId" name="cover" type="file"/>
 									<img id="backImage" 
 										 class="back--temp" 
-										 src="http://localhost:8000/images/trip/placeholder.jpg" 
+										 src="http://www.mongolianblackfish.com/images/trip/placeholder.jpg" 
 										 alt="Cover"
 									/>
 								</div>

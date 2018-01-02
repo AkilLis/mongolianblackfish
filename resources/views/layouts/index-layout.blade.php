@@ -41,11 +41,18 @@
                                         <h3 class="font-sub white">MONGOLIAN BLACK FISH</h3>
                                     </div>
                                 </div>
-                                <span class="font-sub white">PO BOX 2339</span>
-                                <span class="font-sub white">24 department Ulaanbaatar, Mongolia</span>
+                                <span class="font-sub white">Khan-uul District, 11 Khoroo,
+                                 Zaisan street, 
+                                "Gerelt Khotkhon" House 1</span>
+                                <span class="font-sub white">Ulaanbaatar,
+                                 Mongolia</span>
                                 <br />
                                 <br />
-                                <span class="font-sub white">+97699042312</span>
+                                 <span class="font-sub white">Zip Code 17023</span>
+                                <br />
+                                <br />
+                                <span class="font-sub white">+97699100982, </span>
+                                <span class="font-sub white">+97691998427</span>
                             </div>
                             <div class="col-md-8 row" style="margin-top: 20px;">
                                 <div class="col-md-4" style="border-left: 1px solid #fff; height: 200px;">

@@ -67234,7 +67234,8 @@ var staticRenderFns = [
             staticClass: "back--temp",
             attrs: {
               id: "backImage",
-              src: "http://localhost:8000/images/trip/placeholder.jpg",
+              src:
+                "http://www.mongolianblackfish.com/images/trip/placeholder.jpg",
               alt: "Cover"
             }
           })
