@@ -127,6 +127,8 @@
 </template>
 <script>
 	//require('bootstrap-datetimepicker')
+	import moment from 'moment'
+
 	export default {
 		props : {
 			editable : {}
@@ -167,12 +169,23 @@
 		methods : {
 			setData : function () {
 				this.tour.name = this.editable.name
-				$('#flagImage').attr("src", this.editable.flag_url)
-				$('#backImage').attr("src", this.editable.cover_url)
-
+				this.tour.price = this.editable.price
+				this.tour.group_size = this.editable.group_size
+				this.tour.type = this.editable.type
+				this.tour.departure_date = this.editable.departure_date
+				this.tour.start_date = this.editable.start_date
+				this.tour.end_date = this.editable.end_date
+				this.tour.map_url = this.editable.map_url
+				this.tour.description = this.editable.info[0].description
+				$('#backImage').attr("src", this.editable.url)
 			},
 
-			getEditorContent : function (type) {
+			getEditorContent : function () {
+				if(!this.editable || this.editable.info === null) {
+					return
+				}
+				
+				return this.editable.info[0].content
 				// if(!this.editable) {
 				// 	return
 				// }
@@ -256,23 +269,28 @@
 				fd.append('price', this.tour.price)
 				fd.append('group_size', this.tour.group_size)
 				fd.append('type', this.tour.type)
-				fd.append('departure_date', this.tour.departure_date)
-				fd.append('start_date', this.tour.start_date)
-				fd.append('end_date', this.tour.end_date)
+				fd.append('departure_date', moment(this.tour.departure_date).format("YYYY-MM-DD"))
+				fd.append('start_date', moment(this.tour.start_date).format("YYYY-MM-DD"))
+				fd.append('end_date', moment(this.tour.end_date).format("YYYY-MM-DD"))
 				fd.append('map_url', this.tour.map_url)
 				fd.append('description', this.tour.description)
 				fd.append('tour_info', this.$refs.info.getContent())
+
+				if(this.editable) {
+					fd.append('_method', 'PATCH');
+				}	
 
 				var data = {
 					tour : this.tour,
 					formData : fd,
 				};
 
-
-				if(this.editable)
+				if(this.editable) {
 					this.$emit('update', data)
-				else
-					this.$emit('save', data)
+					return
+				}
+				
+				this.$emit('save', data)
 			}
 		}
 	}

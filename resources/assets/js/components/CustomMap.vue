@@ -1,6 +1,6 @@
 <template>
     <div class="container" style="padding-left: 0px; padding-right: 0px;">
-        <h1 style="color: #464861; margin-bottom: 40px;">
+        <h1 style="color: #fff; margin-bottom: 40px;">
             Travel map to Sheshged
         </h1>
         <div id="map">

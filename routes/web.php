@@ -33,6 +33,8 @@ Route::get('/admin', function () {
 	return view('admin.index');
 });
 
+Route::get('/tour/{tour}', 'TourController@currentNews');
+
 //Route::resource('tour', 'TourController');
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {

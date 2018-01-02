@@ -32,26 +32,31 @@
 			},
 
 			editTour : function (data) {
-				$('#loader').modal('show')
-
-				this.$http.post(this.$env.get('APP_URI') + 'admin/country/' 
-					+ this.selectedCountry.id + '?data=' + data.param, 
+				//$('#loader').modal('show')
+				axios.post('http://localhost:8000/admin/tour/' 
+					+ this.selectedTour.id + '?data=' + data.param, 
 					data.formData
 				).then(res => {
 					if(res.data.code == 0) {
-						$('#loader').modal('hide')
-						this.countryInstance.name = res.data.country.name
-						this.countryInstance.flag_url = res.data.country.flag_url
-						this.showCountryModify = false		
-						this.$root.$refs.notify.notify(res.data.message,{
-							closeable : false
-						})
+						//$/('#loader').modal('hide')
+						this.tourInstance.name = res.data.tour.name
+						this.tourInstance.url = res.data.tour.url
+						this.showTourModify = false		
+						this.$notify({
+						  group: 'foo',
+						  title: 'Success',
+						  type: 'success',
+						  text: res.data.message
+						});
 					}
 				}).catch(err => {
-					$('#loader').modal('hide')
-					this.$root.$refs.notify.notify('Хадгалах явцад алдаа.',{
-						closeable : false
-					})
+					//$('#loader').modal('hide')
+					this.$notify({
+						  group: 'foo',
+						  title: 'Success',
+						  type: 'success',
+						  text: "Хадгалах явцад алдаа гарлаа"
+					});
 				});
 			},
 
@@ -95,9 +100,9 @@
 
 			updateTour : function (tour) {
 				this.tourInstance = tour
-				this.$http.get(this.$env.get('APP_URI') + 'admin/country/' + country.id + '/edit').then(res => {
-				  	this.selectedCountry = res.data.result
-				  	this.showCountryModify = true
+				axios.get('http://localhost:8000/admin/tour/' + tour.id + '/edit').then(res => {
+				  	this.selectedTour = res.data.result
+				  	this.showTourModify = true
 				}).catch(err => {
 
 				});

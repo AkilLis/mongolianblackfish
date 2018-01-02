@@ -11,33 +11,33 @@
         <div class="container" style="padding-bottom: 80px;">
     		<form>
     			</br>
-    			<h1>Tailormade Tours</h1>
+    			<h1 class="white">Tailormade Tours</h1>
 				</br>
     			<h4 class="white" style="line-height: 1.5em;">
     				Our bespoke itinerary design service provides unique tailormade Mongolia tours to suit your own particular requirements.
 We love coming up with new ideas or twists on old favourites to ensure that your Mongolia experience is truly personalised and unique. Whether you have a blank canvas or ideas set in stone about what you would like to do, our team of Mongolia travel experts can make it happen. We have extensive experience in providing bespoke Mongolia tours for a range of traveller categories – here are a few who often benefit from tailor-made Mongolia travel solutions, and a few ideas of how we might tailor a trip to suit specific needs.
     			</h4>
 	    		</br>
-	    		<h1>
+	    		<h1 class="white">
 	    			 Do you want tailermade tour?
 	    		</h1>
 	    		</br>
 	    		<div class="col-md-6 col-sm-12 padding-less">
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">First name</label>
+					    <label for="exampleInputPassword1" class="white">First name</label>
 					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First name">
 					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputPassword1">Last name</label>
+					    <label for="exampleInputPassword1" class="white">Last name</label>
 					    <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="Last name">
 					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputEmail1">Email address</label>
+					    <label for="exampleInputEmail1" class="white">Email address</label>
 					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
 					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					  </div>
 					  <div class="form-group">
-					  	<label for="exampleInputPassword1">Choose the lake which one you interested</label></br>
+					  	<label for="exampleInputPassword1" class="white">Choose the lake which one you interested</label></br>
 					  	<div class="btn-group" role="group" aria-label="Basic example">
 	  						<button type="button" class="btn btn-secondary">Orkhon</button>
 	  						<button type="button" class="btn btn-secondary btn-primary">Sheshged</button>
@@ -45,7 +45,7 @@ We love coming up with new ideas or twists on old favourites to ensure that your
 					  	</div>
 					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputEmail1">Number of pax travelling</label>
+					    <label for="exampleInputEmail1" class="white">Number of pax travelling</label>
 					    <input type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Number">
 					    
 					  </div>

@@ -11,7 +11,7 @@
         <div class="container" style="padding-bottom: 80px;">
     		<form>
     			</br>
-    			<h1>Why should you join us?</h1>
+    			<h1 class="white">Why should you join us?</h1>
 				</br>
     			<div class="row">
     				<div class="col-md-4">
@@ -74,7 +74,7 @@ Sincerely,
 
             <div class="container row margin-auto">
                     <div class="text-center">
-                        <h2>Do you want to join now?</h2>
+                        <h2 class="white">Do you want to join now?</h2>
                         <button class="btn btn-primary outline" style="width: 200px">
                             SUBSCRIBE
                         </button>

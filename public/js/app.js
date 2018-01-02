@@ -1702,22 +1702,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		editTour: function editTour(data) {
 			var _this2 = this;
 
-			$('#loader').modal('show');
-
-			this.$http.post(this.$env.get('APP_URI') + 'admin/country/' + this.selectedCountry.id + '?data=' + data.param, data.formData).then(function (res) {
+			//$('#loader').modal('show')
+			axios.post('http://localhost:8000/admin/tour/' + this.selectedTour.id + '?data=' + data.param, data.formData).then(function (res) {
 				if (res.data.code == 0) {
-					$('#loader').modal('hide');
-					_this2.countryInstance.name = res.data.country.name;
-					_this2.countryInstance.flag_url = res.data.country.flag_url;
-					_this2.showCountryModify = false;
-					_this2.$root.$refs.notify.notify(res.data.message, {
-						closeable: false
+					//$/('#loader').modal('hide')
+					_this2.tourInstance.name = res.data.tour.name;
+					_this2.tourInstance.url = res.data.tour.url;
+					_this2.showTourModify = false;
+					_this2.$notify({
+						group: 'foo',
+						title: 'Success',
+						type: 'success',
+						text: res.data.message
 					});
 				}
 			}).catch(function (err) {
-				$('#loader').modal('hide');
-				_this2.$root.$refs.notify.notify('Хадгалах явцад алдаа.', {
-					closeable: false
+				//$('#loader').modal('hide')
+				_this2.$notify({
+					group: 'foo',
+					title: 'Success',
+					type: 'success',
+					text: "Хадгалах явцад алдаа гарлаа"
 				});
 			});
 		},
@@ -1764,9 +1769,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this4 = this;
 
 			this.tourInstance = tour;
-			this.$http.get(this.$env.get('APP_URI') + 'admin/country/' + country.id + '/edit').then(function (res) {
-				_this4.selectedCountry = res.data.result;
-				_this4.showCountryModify = true;
+			axios.get('http://localhost:8000/admin/tour/' + tour.id + '/edit').then(function (res) {
+				_this4.selectedTour = res.data.result;
+				_this4.showTourModify = true;
 			}).catch(function (err) {});
 		},
 
@@ -1805,6 +1810,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__("./node_modules/moment/moment.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
 //
 //
 //
@@ -1934,6 +1941,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 //require('bootstrap-datetimepicker')
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		editable: {}
@@ -1975,11 +1984,23 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	methods: {
 		setData: function setData() {
 			this.tour.name = this.editable.name;
-			$('#flagImage').attr("src", this.editable.flag_url);
-			$('#backImage').attr("src", this.editable.cover_url);
+			this.tour.price = this.editable.price;
+			this.tour.group_size = this.editable.group_size;
+			this.tour.type = this.editable.type;
+			this.tour.departure_date = this.editable.departure_date;
+			this.tour.start_date = this.editable.start_date;
+			this.tour.end_date = this.editable.end_date;
+			this.tour.map_url = this.editable.map_url;
+			this.tour.description = this.editable.info[0].description;
+			$('#backImage').attr("src", this.editable.url);
 		},
 
-		getEditorContent: function getEditorContent(type) {
+		getEditorContent: function getEditorContent() {
+			if (!this.editable || this.editable.info === null) {
+				return;
+			}
+
+			return this.editable.info[0].content;
 			// if(!this.editable) {
 			// 	return
 			// }
@@ -2062,19 +2083,28 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			fd.append('price', this.tour.price);
 			fd.append('group_size', this.tour.group_size);
 			fd.append('type', this.tour.type);
-			fd.append('departure_date', this.tour.departure_date);
-			fd.append('start_date', this.tour.start_date);
-			fd.append('end_date', this.tour.end_date);
+			fd.append('departure_date', __WEBPACK_IMPORTED_MODULE_0_moment___default()(this.tour.departure_date).format("YYYY-MM-DD"));
+			fd.append('start_date', __WEBPACK_IMPORTED_MODULE_0_moment___default()(this.tour.start_date).format("YYYY-MM-DD"));
+			fd.append('end_date', __WEBPACK_IMPORTED_MODULE_0_moment___default()(this.tour.end_date).format("YYYY-MM-DD"));
 			fd.append('map_url', this.tour.map_url);
 			fd.append('description', this.tour.description);
 			fd.append('tour_info', this.$refs.info.getContent());
+
+			if (this.editable) {
+				fd.append('_method', 'PATCH');
+			}
 
 			var data = {
 				tour: this.tour,
 				formData: fd
 			};
 
-			if (this.editable) this.$emit('update', data);else this.$emit('save', data);
+			if (this.editable) {
+				this.$emit('update', data);
+				return;
+			}
+
+			this.$emit('save', data);
 		}
 	}
 });
@@ -65988,11 +66018,9 @@ var staticRenderFns = [
         staticStyle: { "padding-left": "0px", "padding-right": "0px" }
       },
       [
-        _c(
-          "h1",
-          { staticStyle: { color: "#464861", "margin-bottom": "40px" } },
-          [_vm._v("\n        Travel map to Sheshged\n    ")]
-        ),
+        _c("h1", { staticStyle: { color: "#fff", "margin-bottom": "40px" } }, [
+          _vm._v("\n        Travel map to Sheshged\n    ")
+        ]),
         _vm._v(" "),
         _c("div", { attrs: { id: "map" } }, [
           _c("iframe", {

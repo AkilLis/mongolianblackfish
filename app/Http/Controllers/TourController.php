@@ -9,6 +9,7 @@ use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 use Response;
 
 class TourController extends Controller
@@ -31,7 +32,7 @@ class TourController extends Controller
         $tour->visit_count = $tour->visit_count + 1;
         $tour->save();
         $tour->info;
-        return view('tour')->with(compact('tour'));
+        return view('tour.index')->with(compact('tour'));
     }
 
     public function all(Request $request)
@@ -107,15 +108,17 @@ class TourController extends Controller
         $tour->type = $request->type;
         $tour->price = $request->price;
         $tour->group_size = $request->group_size;
-        $tour->departure_date = $request->departure_date;
-        $tour->start_date = $request->start_date;
-        $tour->end_date = $request->end_date;
+        $tour->start_date = Carbon::createFromFormat('Y-m-d', $request->start_date);
+        $tour->end_date = Carbon::createFromFormat('Y-m-d', $request->end_date);
+        $tour->departure_date = Carbon::createFromFormat('Y-m-d', $request->departure_date);
         $tour->map_url = $request->map_url;
         $tour->visit_count = 0;
         $cover = $request->cover;
 
         $tour->url = PhotoController::savePhoto($cover, 'tour');
 
+
+        //dd("test = ".$request->departure_date);
         $tour->save();
 
         $this->createContent($tour, $request->tour_info, $request->description);
@@ -160,7 +163,7 @@ class TourController extends Controller
     public function edit(Tour $tour)
     {
         $tour->info;
-        $tour->country;
+        //$tour->country;
 
         return Response::json([
             'code' => 0,
@@ -177,28 +180,31 @@ class TourController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $tour = Tour::find($id);
-        $tour->title = $request->title;
+        $tour->name = $request->name;
         $tour->type = $request->type;
-        $tour->country_id = $request->country;
-
+        $tour->price = $request->price;
+        $tour->group_size = $request->group_size;
+        $tour->start_date = Carbon::createFromFormat('Y-m-d', $request->start_date);
+        $tour->end_date = Carbon::createFromFormat('Y-m-d', $request->end_date);
+        $tour->departure_date = Carbon::createFromFormat('Y-m-d', $request->departure_date);
+        $tour->map_url = $request->map_url;
+        $tour->visit_count = 0;
         $cover = $request->cover;
 
         if($cover) {
-            $tour->cover_url = PhotoController::savePhoto($cover, 'tour');
+            $tour->url = PhotoController::savePhoto($cover, 'tour');
         }
 
+        //dd("test = ".$request->departure_date);
         $tour->save();
 
-        DB::table('contentable')->where('contentable_id', $tour->id)->where('contentable_type', 'App\\Tour')->delete();
-
-        $this->createContent($tour, $request->tour_info, $request->tour_description);
+        $this->createContent($tour, $request->tour_info, $request->description);
 
         return Response::json([
             'code' => 0,
-            'result' => $tour,
-            'message' => 'Амжилттай засварлалаа.',
+            'tour' => $tour,
+            'message' => 'Succesfully edited.',
         ]);
     }
 
