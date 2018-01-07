@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="col-md-1 text-center padding-less">
-                    <a href="/trip">
+                    <a href="/about-us">
                         <h5 class="header-text font-sub">ABOUT US</h5>
                     </a>
                 </div>

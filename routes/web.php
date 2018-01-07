@@ -25,6 +25,10 @@ Route::get('/member-ship', function() {
 
 Route::get('/booking/{tour}', 'BookingController@bookTour');
 
+Route::get('/about-us', function() {
+	return view('about-us');
+});
+
 Route::post('/admin', 'AuthController@adminLogin');
 Route::get('/logout', 'AuthController@logout');
 
