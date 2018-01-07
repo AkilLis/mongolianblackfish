@@ -23,6 +23,10 @@ Route::get('/member-ship', function() {
 	return view('member-ship');
 });
 
+Route::get('/about-us', function() {
+	return view('about-us');
+});
+
 Route::post('/admin', 'AuthController@adminLogin');
 Route::get('/logout', 'AuthController@logout');
 
