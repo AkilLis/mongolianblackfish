@@ -24,6 +24,7 @@ Vue.component('custom-map', require('./components/CustomMap.vue'));
 
 //admin
 Vue.component('tour-view', require('./admin/TourView.vue'));
+Vue.component('river-view', require('./admin/RiverView.vue'));
 
 //web
 import TourPage from './web/TourPage.vue'

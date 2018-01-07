@@ -41,11 +41,9 @@
                                         <h3 class="font-sub white">MONGOLIAN BLACK FISH</h3>
                                     </div>
                                 </div>
-                                <span class="font-sub white">Khan-uul District, 11 Khoroo,
-                                 Zaisan street, 
-                                "Gerelt Khotkhon" House 1</span>
-                                <span class="font-sub white">Ulaanbaatar,
-                                 Mongolia</span>
+                                <span class="font-sub white">House-1, gerelt town, 11th micro district , Zaisan street, Khan-Uul district, 
+                                </span>
+                                <span class="font-sub white">Ulaanbaatar city, Mongolia</span>
                                 <br />
                                 <br />
                                  <span class="font-sub white">Zip Code 17023</span>

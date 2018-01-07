@@ -1,4 +1,4 @@
-@extends('layouts.index-layout', ['currentView' => 'index-view'])
+@extends('layouts.index-layout', ['currentView' => 'index-page'])
 @section('content') 
     <div id="scene" style="position: relative;">
         <div class="cover-text">

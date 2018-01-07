@@ -3207,6 +3207,162 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/RiverView.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modified_ModifyRiver_vue__ = __webpack_require__("./resources/assets/js/admin/modified/ModifyRiver.vue");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modified_ModifyRiver_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__modified_ModifyRiver_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env__ = __webpack_require__("./resources/assets/js/env.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__env__);
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		title: {}
+	},
+
+	data: function data() {
+		return {
+			items: [],
+			saving: false,
+			showModify: false,
+			selected: {},
+			instance: {}
+		};
+	},
+
+
+	created: function created() {
+		this.getItems();
+	},
+
+	methods: {
+		getItems: function getItems() {
+			var _this = this;
+
+			axios.get(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/river/all').then(function (res) {
+				_this.items = res.data.result;
+			}).catch(function (err) {});
+		},
+
+		onCancel: function onCancel() {
+			this.showModify = false;
+		},
+
+		onEdit: function onEdit(data) {
+			var _this2 = this;
+
+			//$('#loader').modal('show')
+			this.saving = true;
+			axios.post(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/river/' + this.selected.id + '?data=' + data.param, data.formData).then(function (res) {
+				if (res.data.code == 0) {
+					_this2.instance.name = res.data.river.name;
+					_this2.instance.url = res.data.river.url;
+					_this2.showModify = false;
+					_this2.saving = false;
+					_this2.$notify({
+						group: 'foo',
+						title: 'Success',
+						type: 'success',
+						text: res.data.message
+					});
+				}
+			}).catch(function (err) {
+				_this2.saving = false;
+				_this2.$notify({
+					group: 'foo',
+					title: 'Success',
+					type: 'success',
+					text: "Хадгалах явцад алдаа гарлаа"
+				});
+			});
+		},
+
+		onSave: function onSave(data) {
+			var _this3 = this;
+
+			//$('#loader').modal('show')
+			this.saving = true;
+			axios.post(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/river?data=' + data.param, data.formData).then(function (res) {
+				if (res.data.code == 0) {
+
+					var river = Object.assign({ tours_count: 0 }, res.data.river);
+
+					_this3.items.push(river);
+					_this3.showModify = false;
+					_this3.saving = false;
+					_this3.$notify({
+						group: 'foo',
+						title: 'Success',
+						type: 'success',
+						text: res.data.message
+					});
+				}
+			}).catch(function (err) {
+				_this3.saving = false;
+				_this3.$notify({
+					group: 'foo',
+					title: 'Success',
+					type: 'success',
+					text: "Хадгалах явцад алдаа гарлаа"
+				});
+			});
+		},
+
+		newItem: function newItem() {
+			this.showModify = true;
+			this.selected = null;
+			this.saving = false;
+		},
+
+		setItem: function setItem(item) {
+			this.selected = item;
+		},
+
+		updateItem: function updateItem(item) {
+			var _this4 = this;
+
+			this.instance = item;
+			axios.get(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/river/' + item.id + '/edit').then(function (res) {
+				_this4.selected = res.data.result;
+				_this4.showModify = true;
+			}).catch(function (err) {});
+		},
+
+		deleteItem: function deleteItem() {
+			var _this5 = this;
+
+			axios.delete(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/river/' + this.selected.id).then(function (res) {
+				if (res.data.code == 0) {
+					_this5.items.splice(_this5.items.indexOf(_this5.selected), 1);
+					_this5.$notify({
+						group: 'foo',
+						title: 'Success',
+						type: 'success',
+						text: res.data.message
+					});
+				}
+			}).catch(function (err) {
+				_this5.$notify({
+					group: 'foo',
+					title: 'Success',
+					type: 'success',
+					text: "Хадгалах явцад алдаа гарлаа"
+				});
+			});
+		}
+	},
+	components: {
+		ModifyRiver: __WEBPACK_IMPORTED_MODULE_0__modified_ModifyRiver_vue___default.a
+	}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/TourView.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3214,6 +3370,9 @@ module.exports = {
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modified_ModifyTour_vue__ = __webpack_require__("./resources/assets/js/admin/modified/ModifyTour.vue");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__modified_ModifyTour_vue___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__modified_ModifyTour_vue__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env__ = __webpack_require__("./resources/assets/js/env.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__env__);
+
 
 
 
@@ -3241,7 +3400,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		getTours: function getTours() {
 			var _this = this;
 
-			axios.get('http://www.mongolianblackfish.com/admin/tour/all').then(function (res) {
+			axios.get(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/tour/all').then(function (res) {
 				_this.tours = res.data.result.data;
 			}).catch(function (err) {});
 		},
@@ -3255,12 +3414,15 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			//$('#loader').modal('show')
 			this.saving = true;
-			axios.post('http://www.mongolianblackfish.com/admin/tour/' + this.selectedTour.id + '?data=' + data.param, data.formData).then(function (res) {
+			axios.post(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/tour/' + this.selectedTour.id + '?data=' + data.param, data.formData).then(function (res) {
 				if (res.data.code == 0) {
 					//$/('#loader').modal('hide')
 					_this2.tourInstance.name = res.data.tour.name;
 					_this2.tourInstance.url = res.data.tour.url;
+					_this2.tourInstance.river.id = data.tour.river.id;
+					_this2.tourInstance.river.name = data.tour.river.name;
 					_this2.showTourModify = false;
+					_this2.savingTour = false;
 					_this2.$notify({
 						group: 'foo',
 						title: 'Success',
@@ -3285,11 +3447,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 			//$('#loader').modal('show')
 			this.saving = true;
-			axios.post('http://www.mongolianblackfish.com/admin/tour?data=' + data.param, data.formData).then(function (res) {
+			axios.post(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/tour?data=' + data.param, data.formData).then(function (res) {
 				if (res.data.code == 0) {
+					var tour = Object.assign({ river: data.tour.river }, res.data.tour);
 
-					//$('#loader').modal('hide')
-					_this3.tours.push(res.data.tour);
+					_this3.tours.push(tour);
 					_this3.showTourModify = false;
 					_this3.$notify({
 						group: 'foo',
@@ -3324,7 +3486,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			var _this4 = this;
 
 			this.tourInstance = tour;
-			axios.get('http://www.mongolianblackfish.com/admin/tour/' + tour.id + '/edit').then(function (res) {
+			axios.get(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/tour/' + tour.id + '/edit').then(function (res) {
 				_this4.selectedTour = res.data.result;
 				_this4.showTourModify = true;
 			}).catch(function (err) {});
@@ -3333,7 +3495,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 		deleteTour: function deleteTour() {
 			var _this5 = this;
 
-			axios.delete('http://www.mongolianblackfish.com/admin/tour/' + this.selectedTour.id).then(function (res) {
+			axios.delete(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'admin/tour/' + this.selectedTour.id).then(function (res) {
 				if (res.data.code == 0) {
 					_this5.tours.splice(_this5.tours.indexOf(_this5.selectedTour), 1);
 					_this5.$notify({
@@ -3360,6 +3522,161 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__("./node_modules/moment/moment.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+//require('bootstrap-datetimepicker')
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+	props: {
+		editable: {},
+		saving: false
+	},
+
+	data: function data() {
+		return {
+			river: {
+				name: ''
+			}
+		};
+	},
+
+
+	mounted: function mounted() {
+		var vm = this;
+		$("#backId").change(function () {
+			vm.backImageChanged(this);
+		});
+		if (this.editable) {
+			this.setData();
+		}
+
+		$('#river_title').focus();
+	},
+
+	methods: {
+		setData: function setData() {
+			this.river.name = this.editable.name;
+			$('#backImage').attr("src", this.editable.url);
+		},
+
+		backImageChanged: function backImageChanged(input) {
+			var reader = new FileReader();
+
+			reader.onload = function (e) {
+				$('#backImage').attr('src', e.target.result);
+			};
+
+			reader.readAsDataURL(input.files[0]);
+		},
+
+		cancel: function cancel() {
+			this.$emit('cancel');
+		},
+		save: function save() {
+			if (!this.river.name.trim()) {
+				this.$notify({
+					group: 'foo',
+					title: 'Warning',
+					type: 'warn',
+					text: 'Please fill name.'
+				});
+				$('#river_title').focus();
+				return;
+			}
+
+			if (!$('#backId')[0].files[0] && !this.editable) {
+				this.$notify({
+					group: 'foo',
+					title: 'Warning',
+					type: 'warn',
+					text: 'Choose cover picture !'
+				});
+				return;
+			}
+
+			this.saving = true;
+
+			var fd = new FormData();
+
+			if ($('#backId')[0].files[0]) fd.append('cover', $('#backId')[0].files[0]);
+
+			fd.append('name', this.river.name);
+
+			if (this.editable) {
+				fd.append('_method', 'PATCH');
+			}
+
+			var data = {
+				river: this.river,
+				formData: fd
+			};
+
+			if (this.editable) {
+				this.$emit('update', data);
+				return;
+			}
+
+			this.$emit('save', data);
+		}
+	}
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/modified/ModifyTour.vue":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -3367,6 +3684,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment__ = __webpack_require__("./node_modules/moment/moment.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_moment___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_moment__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env__ = __webpack_require__("./resources/assets/js/env.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__env___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1__env__);
 //
 //
 //
@@ -3508,24 +3827,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //require('bootstrap-datetimepicker')
 
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
 	props: {
 		editable: {},
 		saving: false
 	},
 
+	created: function created() {
+		this.getRivers();
+	},
+
 	data: function data() {
 		return {
-			rivers: [{
-				id: 1,
-				name: "Sheshged"
-			}, {
-				id: 2,
-				name: "Orkhon"
-			}, {
-				id: 3,
-				name: "Eg uur"
-			}],
 			tour: {
 				river_id: 1,
 				name: '',
@@ -3537,7 +3851,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				end_date: new Date(),
 				map_url: ""
 				//departure_date
-			}
+			},
+			rivers: []
 			//y_pos : {},
 			//x_pos: {},
 			//menu : 'country-name'
@@ -3559,6 +3874,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 	},
 
 	methods: {
+		getRivers: function getRivers() {
+			var _this = this;
+
+			axios.get(__WEBPACK_IMPORTED_MODULE_1__env___default.a.API_KEY + 'river/get').then(function (res) {
+				_this.rivers = res.data.rivers;
+			}).catch(function (err) {});
+		},
+
 		setData: function setData() {
 			this.tour.name = this.editable.name;
 			this.tour.river_id = this.editable.river_id;
@@ -3610,6 +3933,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.$emit('cancel');
 		},
 		save: function save() {
+			var _this2 = this;
+
 			if (!this.tour.name.trim()) {
 				this.$notify({
 					group: 'foo',
@@ -3670,6 +3995,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			fd.append('map_url', this.tour.map_url);
 			fd.append('description', this.tour.description);
 			fd.append('tour_info', this.$refs.info.getContent());
+
+			this.tour.river = this.rivers.find(function (river) {
+				return river.id == _this2.tour.river_id;
+			});
 
 			if (this.editable) {
 				fd.append('_method', 'PATCH');
@@ -4122,6 +4451,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -4130,7 +4461,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     created: function created() {
-        this.$store.dispatch('getRiverTours', this.selectedRiver);
+        //this.$store.dispatch('getRiverTours', this.selectedRiver)
     },
 
 
@@ -4140,11 +4471,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }),
 
     mounted: function mounted() {
-        var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.main-carousel', {
+        this.flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.main-carousel', {
             // options
             cellAlign: 'left',
             contain: true
         });
+    },
+    data: function data() {
+        return {
+            flkty: {}
+        };
     },
 
 
@@ -4155,12 +4491,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         dateBetween: function dateBetween(start, end) {
             return __WEBPACK_IMPORTED_MODULE_3_moment___default()(end).diff(start, 'days') + ' DAYS ';
+        },
+
+        flickity: function flickity() {
+            var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.main-carousel', {
+                // options
+                cellAlign: 'left',
+                contain: true
+            });
         }
     },
 
     watch: {
         selectedRiver: function selectedRiver(river) {
             this.$store.dispatch('getRiverTours', river);
+            this.$nextTick(function () {
+                debugger;
+                alert(this.tours.data.length);
+            });
         }
 
         // computed: mapGetters({
@@ -9102,6 +9450,21 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 // module
 exports.push([module.i, "\n#map {\n  height: 600px;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.flag--temp {\n  width: 150px;\n  height: 100px;\n}\n.back--temp {\n  height: 360px;\n  -o-object-fit: cover;\n     object-fit: cover;\n  width: 100%;\n  margin-top: 20px;\n  border-radius: 15px;\n}\n#backId {\n  display: none;\n}\n#flagId {\n  display: none;\n}\n.navbarr-fixed {\n  position: fixed;\n}\n", ""]);
 
 // exports
 
@@ -67324,7 +67687,7 @@ var render = function() {
         ]),
         _vm._v(" "),
         _c("div", { staticClass: "col-md-8" }, [
-          _c("a", { attrs: { href: "/tour/1" } }, [
+          _c("a", { attrs: { href: "/tour/" + tour.id } }, [
             _c("h1", [_vm._v(_vm._s(tour.name))])
           ]),
           _vm._v(" "),
@@ -67450,38 +67813,33 @@ var render = function() {
             )
           ]),
           _vm._v(" "),
-          _vm._m(0, true, false)
+          _c(
+            "div",
+            {
+              staticClass: "row",
+              staticStyle: { "margin-left": "15px", "margin-top": "30px" }
+            },
+            [
+              _c("div", { staticClass: "col-md-3 row purchase-btn" }, [
+                _c("a", { attrs: { href: "/booking/" + tour.id } }, [
+                  _c(
+                    "h4",
+                    {
+                      staticClass: "font-sub",
+                      staticStyle: { color: "#fff", "text-align": "center" }
+                    },
+                    [_vm._v("BOOK TRIP")]
+                  )
+                ])
+              ])
+            ]
+          )
         ])
       ])
     })
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "row",
-        staticStyle: { "margin-left": "15px", "margin-top": "30px" }
-      },
-      [
-        _c("div", { staticClass: "col-md-3 row purchase-btn" }, [
-          _c(
-            "h4",
-            {
-              staticClass: "font-sub",
-              staticStyle: { color: "#fff", "text-align": "center" }
-            },
-            [_vm._v("BOOK TRIP")]
-          )
-        ])
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
@@ -67538,6 +67896,157 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-90d45af8", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-9b5ab904\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", { staticClass: "row", attrs: { id: "country-panel" } }, [
+    _c("div", { staticClass: "col-md-12" }, [
+      _c("div", { staticClass: "card" }, [
+        _c(
+          "div",
+          { staticClass: "header", staticStyle: { "padding-left": "20px" } },
+          [
+            _c("h4", { staticClass: "title" }, [
+              _vm._v("Add New River\n\t\t\t\t\t\n\t\t\t\t"),
+              _vm.saving
+                ? _c(
+                    "a",
+                    { staticClass: "btn btn-fill btn-success pull-right" },
+                    [
+                      _c("i", { staticClass: "fa fa-spinner fa-spin" }),
+                      _vm._v("\n\t\t\t\t\tProcessing\n\t\t\t\t")
+                    ]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              !_vm.saving
+                ? _c(
+                    "a",
+                    {
+                      staticClass: "btn btn-fill btn-success pull-right",
+                      attrs: {
+                        id: "load",
+                        "data-loading-text":
+                          "<i class='fa fa-circle-o-notch fa-spin'></i> Processing"
+                      },
+                      on: {
+                        click: function($event) {
+                          _vm.save()
+                        }
+                      }
+                    },
+                    [_vm._v("Save")]
+                  )
+                : _vm._e(),
+              _vm._v(" "),
+              _c(
+                "a",
+                {
+                  staticClass: "btn btn-info btn-fill btn-warning pull-right",
+                  staticStyle: { "margin-right": "10px" },
+                  on: {
+                    click: function($event) {
+                      _vm.cancel()
+                    }
+                  }
+                },
+                [_vm._v("Back")]
+              )
+            ])
+          ]
+        ),
+        _vm._v(" "),
+        _c("div", { staticClass: "content" }, [
+          _c("form", { attrs: { enctype: "multipart/form-data" } }, [
+            _c("div", { staticClass: "row", attrs: { id: "country-name" } }, [
+              _c("div", { staticClass: "col-md-12" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", [_vm._v("River name")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.river.name,
+                        expression: "river.name"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: {
+                      id: "river_title",
+                      type: "text",
+                      placeholder: "River title"
+                    },
+                    domProps: { value: _vm.river.name },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.$set(_vm.river, "name", $event.target.value)
+                      }
+                    }
+                  })
+                ])
+              ])
+            ]),
+            _vm._v(" "),
+            _vm._m(0, false, false)
+          ])
+        ])
+      ])
+    ])
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "form-group" }, [
+          _c(
+            "label",
+            {
+              staticClass: "btn btn-info btn-fill btn-warning",
+              attrs: { for: "backId" }
+            },
+            [_vm._v("Choose cover photo")]
+          ),
+          _vm._v(" "),
+          _c("input", { attrs: { id: "backId", name: "cover", type: "file" } }),
+          _vm._v(" "),
+          _c("img", {
+            staticClass: "back--temp",
+            attrs: {
+              id: "backImage",
+              src:
+                "http://www.mongolianblackfish.com/images/trip/placeholder.jpg",
+              alt: "Cover"
+            }
+          })
+        ])
+      ])
+    ])
+  }
+]
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-9b5ab904", module.exports)
   }
 }
 
@@ -68990,6 +69499,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CustomMap.vue", function() {
      var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-90d45af8\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./CustomMap.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("20677d69", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ModifyRiver.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./ModifyRiver.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -81048,6 +81584,55 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/assets/js/admin/RiverView.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/RiverView.vue")
+/* template */
+var __vue_template__ = null
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/admin/RiverView.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-6b980da2", Component.options)
+  } else {
+    hotAPI.reload("data-v-6b980da2", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
 /***/ "./resources/assets/js/admin/TourView.vue":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -81086,6 +81671,59 @@ if (false) {(function () {
     hotAPI.createRecord("data-v-2cd4142f", Component.options)
   } else {
     hotAPI.reload("data-v-2cd4142f", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
+/***/ "./resources/assets/js/admin/modified/ModifyRiver.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-9b5ab904\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-9b5ab904\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/admin/modified/ModifyRiver.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/admin/modified/ModifyRiver.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-9b5ab904", Component.options)
+  } else {
+    hotAPI.reload("data-v-9b5ab904", Component.options)
 ' + '  }
   module.hot.dispose(function (data) {
     disposed = true
@@ -81186,6 +81824,7 @@ Vue.component('custom-map', __webpack_require__("./resources/assets/js/component
 
 //admin
 Vue.component('tour-view', __webpack_require__("./resources/assets/js/admin/TourView.vue"));
+Vue.component('river-view', __webpack_require__("./resources/assets/js/admin/RiverView.vue"));
 
 //web
 
@@ -81575,47 +82214,38 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__RiverConstant__ = __webpack_require__("./resources/assets/js/components/river/RiverConstant.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios__ = __webpack_require__("./node_modules/axios/index.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__env__ = __webpack_require__("./resources/assets/js/env.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__env___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__env__);
+
+
 
 
 
 var getRiverTours = function getRiverTours(_ref, river) {
-    var commit = _ref.commit;
+     var commit = _ref.commit;
 
-    commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["c" /* GET_RIVER_TOURS */]);
+     commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["c" /* GET_RIVER_TOURS */]);
 
-    __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get('http://www.mongolianblackfish.com/river/' + river.id + '/tours').then(function (res) {
-        commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["d" /* GET_RIVER_TOURS_FULFILLED */], { tours: res.data.tours });
-    });
+     __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(__WEBPACK_IMPORTED_MODULE_2__env___default.a.API_KEY + 'river/' + river.id + '/tours').then(function (res) {
+          commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["d" /* GET_RIVER_TOURS_FULFILLED */], { tours: res.data.tours });
+     });
 };
 
 var getRivers = function getRivers(_ref2) {
-    var commit = _ref2.commit;
+     var commit = _ref2.commit;
 
 
-    commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["a" /* GET_RIVERS */]);
-    var rivers = [{
-        id: 2,
-        name: 'Orkhon',
-        url: "http://www.mongolianblackfish.com/images/river/orkhon.jpg",
-        is_selected: false
-    }, {
-        id: 1,
-        name: "Sheshged",
-        url: "http://www.mongolianblackfish.com/images/river/shegshid.jpg",
-        is_selected: true
-    }, {
-        id: 3,
-        name: "Eg uur",
-        url: "http://www.mongolianblackfish.com/images/river/eg_uur.jpg",
-        is_selected: false
-    }];
-    commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["b" /* GET_RIVERS_FULFILLED */], { rivers: rivers });
+     commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["a" /* GET_RIVERS */]);
+
+     __WEBPACK_IMPORTED_MODULE_1_axios___default.a.get(__WEBPACK_IMPORTED_MODULE_2__env___default.a.API_KEY + 'river/get').then(function (res) {
+          commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["b" /* GET_RIVERS_FULFILLED */], { rivers: res.data.rivers });
+     });
 };
 
 var setRiver = function setRiver(_ref3, data) {
-    var commit = _ref3.commit;
+     var commit = _ref3.commit;
 
-    commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["e" /* SET_RIVER */], data);
+     commit(__WEBPACK_IMPORTED_MODULE_0__RiverConstant__["e" /* SET_RIVER */], data);
 };
 
 /***/ }),
@@ -81861,6 +82491,16 @@ if (false) {(function () {
 
 module.exports = Component.exports
 
+
+/***/ }),
+
+/***/ "./resources/assets/js/env.js":
+/***/ (function(module, exports) {
+
+module.exports = {
+	API_KEY: "http://localhost:8000/",
+	DEBUG: true
+};
 
 /***/ }),
 

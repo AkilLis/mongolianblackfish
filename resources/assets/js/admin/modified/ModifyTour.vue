@@ -138,6 +138,7 @@
 <script>
 	//require('bootstrap-datetimepicker')
 	import moment from 'moment'
+	import config from '../../env'
 
 	export default {
 		props : {
@@ -145,18 +146,12 @@
 			saving: false,
 		},
 
+		created: function() {
+			this.getRivers()
+		},
+
 		data () {
 			return {
-				rivers: [{
-					id: 1,
-					name: "Sheshged",
-				}, {
-					id: 2,
-					name: "Orkhon"
-				}, {
-					id: 3,
-					name: "Eg uur",
-				}],
 				tour : {
 					river_id: 1,
 					name : '',
@@ -169,6 +164,7 @@
 					map_url: "",
 					//departure_date
 				},
+				rivers: [],
 				//y_pos : {},
 				//x_pos: {},
 				//menu : 'country-name'
@@ -189,6 +185,13 @@
 		},
 
 		methods : {
+			getRivers: function() {
+				axios.get(config.API_KEY + 'river/get').then(res => {
+				  	this.rivers = res.data.rivers
+				}).catch(err => {
+				});
+			},
+
 			setData : function () {
 				this.tour.name = this.editable.name
 				this.tour.river_id = this.editable.river_id
@@ -301,6 +304,10 @@
 				fd.append('map_url', this.tour.map_url)
 				fd.append('description', this.tour.description)
 				fd.append('tour_info', this.$refs.info.getContent())
+
+				this.tour.river = this.rivers.find((river) => {
+					return river.id == this.tour.river_id
+				})
 
 				if(this.editable) {
 					fd.append('_method', 'PATCH');

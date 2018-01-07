@@ -23,6 +23,8 @@ Route::get('/member-ship', function() {
 	return view('member-ship');
 });
 
+Route::get('/booking/{tour}', 'BookingController@bookTour');
+
 Route::post('/admin', 'AuthController@adminLogin');
 Route::get('/logout', 'AuthController@logout');
 
@@ -33,9 +35,10 @@ Route::get('/admin', function () {
 	return view('admin.index');
 });
 
+Route::get('/river/get', 'RiverController@getRivers');
 Route::get('/river/{river}/tours', 'RiverController@relatedTours');
 Route::get('/tour/{tour}', 'TourController@currentNews');
-
+Route::get('/river/{river}', 'RiverController@currentRiver');
 //Route::resource('tour', 'TourController');
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
@@ -43,6 +46,7 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
 	// Route::get('/country/check', 'CountryController@check');
 	// Route::get('/country/select', 'CountryController@counties');
 	// Route::post('/country/{country}', 'CountryController@update');
+	Route::get('/river/all', 'RiverController@all');
 	Route::resource('/river', 'RiverController');
 	// Route::post('/upload', 'AdminController@upload');
 	// Route::delete('/delete', 'AdminController@delete');

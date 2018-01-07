@@ -73,16 +73,19 @@
         
         <li>
           <a href="/admin/tour">
-            <i class="fa fa-th"></i> <span>Tour</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
-            </span>
+            <i class="fa fa-picture-o"></i> <span>Tour</span>
           </a>
         </li>
 
         <li>
           <a href="/admin/river">
             <i class="fa fa-th"></i> <span>River</span>
+          </a>
+        </li>
+
+        <li>
+          <a href="pages/widgets.html">
+            <i class="fa fa-address-book-o"></i> <span>Member Ship</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
@@ -91,18 +94,9 @@
 
         <li>
           <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Member Ship</span>
+            <i class="fa fa-users"></i> <span>About Us</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">Coming Soon</small>
-            </span>
-          </a>
-        </li>
-
-        <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>About Us</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">Coming Soon</small>
+              <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>

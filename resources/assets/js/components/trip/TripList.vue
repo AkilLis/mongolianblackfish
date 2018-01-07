@@ -16,7 +16,7 @@
             </div>
 
             <div class="col-md-8" style="">
-                <a href="/tour/1">
+                <a :href="'/tour/' + tour.id">
                     <h1>{{tour.name}}</h1>
                 </a>
 
@@ -44,7 +44,9 @@
                 </p>
                 <div class="row" style="margin-left: 15px; margin-top: 30px;">
                     <div class="col-md-3 row purchase-btn">
+                        <a :href="'/booking/' + tour.id">
                             <h4 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h4>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -60,7 +62,7 @@
 
     export default {
         created () {
-            this.$store.dispatch('getRiverTours', this.selectedRiver)
+            //this.$store.dispatch('getRiverTours', this.selectedRiver)
         }, 
 
         computed: mapGetters({
@@ -69,11 +71,17 @@
         }),
 
         mounted() {
-            var flkty = new Flickity('.main-carousel', {
-              // options
+            this.flkty = new Flickity('.main-carousel', {
+                  // options
               cellAlign: 'left',
               contain: true
             });
+        },
+
+        data() {
+            return {
+                flkty: {}
+            }
         },
 
         methods: {
@@ -83,12 +91,24 @@
 
             dateBetween: (start, end) => {
                 return moment(end).diff(start, 'days') + ' DAYS '
-            }
+            },
+
+            flickity: () => {
+                var flkty = new Flickity('.main-carousel', {
+                  // options
+                  cellAlign: 'left',
+                  contain: true
+                });
+            },
         },
 
         watch: {
             selectedRiver: function(river) {
                 this.$store.dispatch('getRiverTours', river)
+                this.$nextTick(function () {
+                    debugger
+                    alert(this.tours.data.length)
+                })
             }
         }
 

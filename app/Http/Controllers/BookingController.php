@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Response;
 
-class TourController extends Controller
+class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,6 +25,11 @@ class TourController extends Controller
     {
         //
         return view('admin.tour.index');
+    }
+
+    public function bookTour(Tour $tour) 
+    {
+        return view('booking.index')->with(compact('tour'));
     }
 
     public function currentNews(Tour $tour)

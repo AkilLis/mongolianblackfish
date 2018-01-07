@@ -17,9 +17,7 @@
 	            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 	            <h4 class="modal-title" id="myModalLabel"></h4>
 	          </div>
-	          <div class="modal-body">
-	          	
-	          	<!-- <strong>"@{{selectedtour.name}}"</strong> -->
+	          <div class="modal-body">	          	
 	            <span>Do you want to delete that tour?</span>
 	          </div>
 	          <div class="modal-footer">
@@ -41,7 +39,6 @@
 							</a>
 			            </h4>
 			        </div>
-
 			        <div class="content table-responsive table-full-width">
 			            <table class="table table-hover table-striped">
 			                <thead>
@@ -56,7 +53,7 @@
 			                <tbody>
 								<tr v-for="tour in tours">
 			                    	<td>@{{tour.name}}</td>
-			                    	<td>Sheshged</td>
+			                    	<td>@{{tour.river.name}}</td>
 			                    	<td>@{{tour.group_size}}</td>
 			                    	<td>@{{tour.departure_date}}</td>
 			                    	<td>@{{tour.visit_count}}</td>

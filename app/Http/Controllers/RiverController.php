@@ -25,7 +25,7 @@ class RiverController extends Controller
     public function index()
     {
         //
-        return view('admin.tour.index');
+        return view('admin.river.index');
     }
 
     public function relatedTours(River $river) 
@@ -36,7 +36,7 @@ class RiverController extends Controller
         ]); 
     }
 
-    public function currentNews(Tour $tour)
+    public function currentRiver(Tour $tour)
     {
         $tour->visit_count = $tour->visit_count + 1;
         $tour->save();
@@ -44,10 +44,19 @@ class RiverController extends Controller
         return view('tour.index')->with(compact('tour'));
     }
 
+    public function getRivers(Request $request) 
+    {
+        $query = River::all();
+        
+        return Response::json([
+            'code' => 0,
+            'rivers' => $query,
+        ]);
+    }
+
     public function all(Request $request)
     {
-        $query = Tour::query();
-        $query = $query->paginate(10);
+        $query = River::withCount('tours')->get();
         
         return Response::json([
             'code' => 0,
@@ -72,38 +81,6 @@ class RiverController extends Controller
         ]);
     }
 
-    public function news(Request $request)
-    {
-        if(isset($request->type)) {
-            $type = $request->type;
-
-            if($type == 'pinned') {
-                $news = Tour::where('is_pinned', 'Y')
-                    ->with('info')
-                    ->orderBy('updated_at', 'ASC')
-                    ->get();
-            }
-
-        } else {
-            $news = Tour::with('info')->latest()->limit(4)->get();
-        }
-
-        return Response::json([
-            'code' => 0,
-            'result' => $news,
-        ]);
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -112,45 +89,20 @@ class RiverController extends Controller
      */
     public function store(Request $request)
     {
-        $tour = new Tour;
-        $tour->name = $request->name;
-        $tour->type = $request->type;
-        $tour->price = $request->price;
-        $tour->group_size = $request->group_size;
-        $tour->start_date = Carbon::createFromFormat('Y-m-d', $request->start_date);
-        $tour->end_date = Carbon::createFromFormat('Y-m-d', $request->end_date);
-        $tour->departure_date = Carbon::createFromFormat('Y-m-d', $request->departure_date);
-        $tour->map_url = $request->map_url;
-        $tour->visit_count = 0;
+        $river = new River;
+        $river->name = $request->name;
         $cover = $request->cover;
 
-        $tour->url = PhotoController::savePhoto($cover, 'tour');
-
-
-        //dd("test = ".$request->departure_date);
-        $tour->save();
-
-        $this->createContent($tour, $request->tour_info, $request->description);
+        $river->url = PhotoController::savePhoto($cover, 'river');
+        $river->save();
 
         return Response::json([
             'code' => 0,
-            'tour' => $tour,
+            'river' => $river,
             'message' => 'Succesfully saved.',
         ]);
     }
 
-    public function createContent($tour, $data, $description)
-    {
-        $content = new Contentable;
-        $content->contentable_id = $tour->id;
-        $content->description = $description;
-        $content->contentable_type = get_class($tour);
-        $content->content = stripslashes($data); 
-
-        $content->save();
-
-        return $content;        
-    }
 
     /**
      * Display the specified resource.
@@ -169,14 +121,13 @@ class RiverController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Tour $tour)
+    public function edit(River $river)
     {
-        $tour->info;
         //$tour->country;
 
         return Response::json([
             'code' => 0,
-            'result' => $tour
+            'result' => $river
         ]);
     }
 
@@ -189,30 +140,20 @@ class RiverController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $tour = Tour::find($id);
-        $tour->name = $request->name;
-        $tour->type = $request->type;
-        $tour->price = $request->price;
-        $tour->group_size = $request->group_size;
-        $tour->start_date = Carbon::createFromFormat('Y-m-d', $request->start_date);
-        $tour->end_date = Carbon::createFromFormat('Y-m-d', $request->end_date);
-        $tour->departure_date = Carbon::createFromFormat('Y-m-d', $request->departure_date);
-        $tour->map_url = $request->map_url;
-        $tour->visit_count = 0;
+        $river = River::find($id);
+        $river->name = $request->name;
         $cover = $request->cover;
 
         if($cover) {
-            $tour->url = PhotoController::savePhoto($cover, 'tour');
+            $river->url = PhotoController::savePhoto($cover, 'river');
         }
 
         //dd("test = ".$request->departure_date);
-        $tour->save();
-
-        $this->createContent($tour, $request->tour_info, $request->description);
+        $river->save();
 
         return Response::json([
             'code' => 0,
-            'tour' => $tour,
+            'river' => $river,
             'message' => 'Succesfully edited.',
         ]);
     }
@@ -226,8 +167,8 @@ class RiverController extends Controller
     public function destroy($id)
     {
         //
-        DB::table('contentable')->where('contentable_id', $id)->where('contentable_type', 'App\\Tour')->delete();
-        Tour::destroy($id);
+        DB::table('tours')->where('river_id', $id)->delete();
+        River::destroy($id);
 
         return Response::json([
             'code' => 0,
