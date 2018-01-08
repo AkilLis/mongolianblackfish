@@ -106,8 +106,6 @@
             selectedRiver: function(river) {
                 this.$store.dispatch('getRiverTours', river)
                 this.$nextTick(function () {
-                    debugger
-                    alert(this.tours.data.length)
                 })
             }
         }
