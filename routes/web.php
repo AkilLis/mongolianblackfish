@@ -46,6 +46,9 @@ Route::get('/river/{river}', 'RiverController@currentRiver');
 //Route::resource('tour', 'TourController');
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
+	Route::get('/about/all', 'AboutController@all');
+	Route::get('/about/members', 'AboutController@members');
+	Route::resource('/about', 'AboutController');
 	// Route::get('/country/all', 'CountryController@all');
 	// Route::get('/country/check', 'CountryController@check');
 	// Route::get('/country/select', 'CountryController@counties');

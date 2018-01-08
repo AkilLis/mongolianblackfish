@@ -84,8 +84,8 @@
         </li>
 
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-address-book-o"></i> <span>Member Ship</span>
+          <a href="/admin/about">
+            <i class="fa fa-users"></i> <span>About Us</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
@@ -93,13 +93,15 @@
         </li>
 
         <li>
-          <a href="pages/widgets.html">
-            <i class="fa fa-users"></i> <span>About Us</span>
+          <a href="/admin/about">
+            <i class="fa fa-address-book-o"></i> <span>Member Ship</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">new</small>
             </span>
           </a>
         </li>
+
+        
 
         
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>

@@ -22,30 +22,67 @@ We love coming up with new ideas or twists on old favourites to ensure that your
 	    			 Do you want tailermade tour?
 	    		</h1>
 	    		</br>
-	    		<div class="col-md-6 col-sm-12 padding-less">
-					  <div class="form-group">
+	    		<div class="col-sm-12 padding-less">
+					  <div class="form-group col-md-6">
 					    <label for="exampleInputPassword1" class="white">First name</label>
 					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First name">
 					  </div>
-					  <div class="form-group">
+					  <div class="form-group col-md-6">
 					    <label for="exampleInputPassword1" class="white">Last name</label>
 					    <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="Last name">
 					  </div>
-					  <div class="form-group">
+
+					  <div class="form-group col-md-6">
 					    <label for="exampleInputEmail1" class="white">Email address</label>
 					    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-					    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
 					  </div>
-					  <div class="form-group">
-					  	<label for="exampleInputPassword1" class="white">Choose the lake which one you interested</label></br>
+					  <div class="form-group col-md-6">
+					  	<label for="exampleInputPassword1" class="white">Gender</label></br>
 					  	<div class="btn-group" role="group" aria-label="Basic example">
-	  						<button type="button" class="btn btn-secondary">Orkhon</button>
-	  						<button type="button" class="btn btn-secondary btn-primary">Sheshged</button>
-	  						<button type="button" class="btn btn-secondary">Eg uur</button>
+	  						<button type="button" class="btn btn-secondary">Male</button>
+	  						<button type="button" class="btn btn-secondary btn-primary">Female</button>
 					  	</div>
 					  </div>
+
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">Country</label>
+					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First name">
+					  </div>
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">City</label>
+					    <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="Last name">
+					  </div>
+
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">Address</label>
+					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First name">
+					  </div>
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">Phone</label>
+					    <input type="Text" class="form-control" id="exampleInputPassword1" placeholder="Last name">
+					  </div>
+
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">Any Alergy</label>
+					    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="First name">
+					  </div>
+					  <div class="form-group col-md-6">
+					    <label for="exampleInputPassword1" class="white">Alergy description</label>
+					    <textarea type="Text" class="form-control" id="exampleInputPassword1" placeholder="Last name">
+					    </textarea>
+					  </div>
+
+					  <div class="form-group col-md-6">
+					  	<label for="exampleInputPassword1" class="white">Which places would you like to visit?</label></br>
+					  	<select class="btn-group" role="group" aria-label="Basic example">
+	  						<option>Tengis & shishged river, Khuvsgul province</option>
+	  						<option>Orkhon, Uvurkhangai province</option>
+	  						<option>Khalkh gol, Dornod province</option>
+					  	</select>
+
+					  </div>
 					  <div class="form-group">
-					    <label for="exampleInputEmail1" class="white">Number of pax travelling</label>
+					    <label for="exampleInputEmail1" class="white">How many of you are Travelling</label>
 					    <input type="Number" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Number">
 					    
 					  </div>

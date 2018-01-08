@@ -24,20 +24,23 @@
 	    				<h4 class="white font-sub">Tugsbilguun Terguun</h4>
 	    				<h4 class="white">Founder and CEO</h4>
 	    				</br>
-	    				<div class="margin-auto row" style="width: 140px; height: 40px; ">
-	    					<div style="height: 40px; width: 40px; background-color: #fff">
-		    					<a>
-									<i class="fa fa-facebook-official" style="color: #fff" aria-hidden="true"></i>
+	    				<div class="text-center margin-auto" style="width: 140px; height: 40px; ">
+	    					<div class="margin-auto" style="height: 40px; width: 40px;">
+		    					<a href="https://www.facebook.com/tbilguun.tn">
+									<img 
+										src="/images/facebook.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
+							<div class="margin-auto" style="height: 40px; width: 40px; background-color: #fff">
 		    					<a>
-									<i class="fa fa-twitter-square" aria-hidden="true"></i>
-								</a>
-							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
-		    					<a>
-									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<img 
+										src="/images/twitter.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
 						</div>
@@ -51,20 +54,23 @@
 	    				<h4 class="white font-sub">Bold Baatarkhuu</h4>
 	    				<h4 class="white">Manager</h4>
 	    				</br>
-	    				<div class="margin-auto row" style="width: 140px; height: 40px; ">
-	    					<div style="height: 40px; width: 40px; background-color: #fff">
+	    				<div class="text-center margin-auto" style="width: 140px; height: 40px; ">
+	    					<div class="margin-auto" style="height: 40px; width: 40px;">
 		    					<a>
-									<i class="fa fa-facebook-official" style="color: #fff" aria-hidden="true"></i>
+									<img 
+										src="/images/facebook.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
+							<div class="margin-auto" style="height: 40px; width: 40px; background-color: #fff">
 		    					<a>
-									<i class="fa fa-twitter-square" aria-hidden="true"></i>
-								</a>
-							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
-		    					<a>
-									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<img 
+										src="/images/twitter.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
 						</div>
@@ -78,26 +84,32 @@
 	    				<h4 class="white font-sub">Chimeg Batbaatar</h4>
 	    				<h4 class="white">Reception</h4>
 	    				</br>
-	    				<div class="margin-auto row" style="width: 140px; height: 40px; ">
-	    					<div style="height: 40px; width: 40px; background-color: #fff">
+	    				<div class="text-center margin-auto" style="width: 140px; height: 40px; ">
+	    					<div class="margin-auto" style="height: 40px; width: 40px;">
 		    					<a>
-									<i class="fa fa-facebook-official" style="color: #fff" aria-hidden="true"></i>
+									<img 
+										src="/images/facebook.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
+							<div class="margin-auto" style="height: 40px; width: 40px; background-color: #fff">
 		    					<a>
-									<i class="fa fa-twitter-square" aria-hidden="true"></i>
-								</a>
-							</div>
-							<div style="height: 40px; width: 40px; background-color: #fff">
-		    					<a>
-									<i class="fa fa-instagram" aria-hidden="true"></i>
+									<img 
+										src="/images/twitter.png"
+										height="40"
+										width="40"
+									/>
 								</a>
 							</div>
 						</div>
 	    			</div>
 	    		</div>
 			</form>
+			</br>
+			</br>
+			</br>
     	</div>
     </div>
 @stop
