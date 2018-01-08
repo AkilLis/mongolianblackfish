@@ -21,7 +21,7 @@
                     </div>
                     
                     <div class="row text-center" >
-                        <h3 class="font-sub">LAKE</h3>
+                        <h3 class="font-sub">RIVER</h3>
                         <h2 class="font-sub" :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h2>
                     </div>
                     
