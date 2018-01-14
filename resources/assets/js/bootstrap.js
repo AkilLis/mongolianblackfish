@@ -20,6 +20,7 @@ try {
 window.MediumEditor = require('medium-editor')
 
 require('moment')
+require('./hammer.min')
 
 require('../../../node_modules/handlebars/dist/handlebars.runtime.min')
 require('../../../node_modules/jquery-sortable/source/js/jquery-sortable-min')

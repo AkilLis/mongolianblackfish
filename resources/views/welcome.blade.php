@@ -12,6 +12,7 @@
         </div>
         <trip-list>
         </trip-list>
+
         <div class="taimen-cover-image" style="background-image:url('/images/taimen.jpeg')">
             <div class="container" style="margin-left: auto; margin-right: auto;">
                 <div class="col-md-4" style="padding-left: 80px; padding-top: 80px; ">

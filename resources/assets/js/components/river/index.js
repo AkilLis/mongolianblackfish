@@ -46,6 +46,9 @@ const mutations = {
 
 	[types.GET_RIVER_TOURS_FULFILLED] (state, { tours }) {
 		state.tours.fetching = false
+		tours.forEach((tour) => {
+			tour.context = 'trip-slide'
+		})
 		state.tours.data = tours
 	},
 

@@ -61,7 +61,7 @@
                 <h5 class="font-sub white">Are you ready for booking?</h5>
             </div>
             <div class="buttons">
-                <a tooltip="Book Now" href="#">
+                <a tooltip="Book Now" href="/booking/{{$tour->id}}">
                   <h4 class="white font-sub">Book Now</h4>
                 </a>
             </div>

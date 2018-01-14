@@ -1,55 +1,15 @@
 <template>
+
     <div class="container row trip-container main-carousel" style="padding-top: 580px; ">
-            <div 
-                class="carousel-cell"
-                v-for="(tour, index) in tours.data"
-            >
-                <div class="col-md-4 col-sm-12">
-                    <a :href="'/tour/' + tour.id">
-                        <div 
-                            class="trip-cover" 
-                            :style="'background-image:url(' + tour.url +')'"
-                        >
-                        </div>
-                    </a>
-                </div>
-
-                <div class="col-md-8" style="">
-                    <a :href="'/tour/' + tour.id">
-                        <h1>{{tour.name}}</h1>
-                    </a>
-
-                    <div class="row trip-detail">
-                        <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
-                            <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                            <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateFormat(tour.departure_date) }}</h5>
-                        </div>
-                        <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                            <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                            <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.group_size}} MEMBER</h5>
-                        </div>
-                        <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                            <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
-                            <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{ dateBetween(tour.start_date, tour.end_date) }}</h5>
-                        </div>
-                        <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
-                            <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                            <h5 class="font-sub" style="font-weight: bold; margin-top: 15px;">{{tour.type}}</h5>
-                        </div>
-                    </div>
-
-                    <p class="hidden-xs white">
-                        {{tour.info[0].description}}
-                    </p>
-                    <div class="row" style="margin-left: 15px; margin-top: 30px;">
-                        <div class="col-md-3 row purchase-btn">
-                            <a :href="'/booking/' + tour.id">
-                                <h4 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h4>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+        <horizontal-slide 
+            :slide-width="100" 
+            width-type="%" 
+            :step="1" 
+            :items="tours.data" 
+            :slide-height="475"
+            arrow-class="white-arrow">
+        </horizontal-slide>
     </div>
 </template>
 
@@ -58,11 +18,16 @@
     import Flickity from 'flickity'
     import { mapGetters, mapActions } from 'vuex'
     import moment from 'moment'
+    import HorizontalSlide from '../HorizontalSlide.vue'
 
     export default {
         created () {
             //this.$store.dispatch('getRiverTours', this.selectedRiver)
         }, 
+
+        mounted() {
+            //this.flickity()
+        },
 
         computed: mapGetters({
             tours: 'tours',
@@ -72,7 +37,7 @@
 
         data() {
             return {
-                flkty: {}
+                flkty: null
             }
         },
 
@@ -98,13 +63,10 @@
             selectedRiver: function(river) {
                 this.$store.dispatch('getRiverTours', river)
             },
-            tours_fetching: function(fetching) {
-                if(!fetching) {
-                    setTimeout(() => {
-                        this.flickity()
-                    }, 400)    
-                }
-            }
+        },
+
+        components: {
+            HorizontalSlide
         }
 
         // computed: mapGetters({

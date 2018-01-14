@@ -159,12 +159,13 @@ class TourController extends Controller
         $cover = $request->cover;
 
         $tour->url = PhotoController::savePhoto($cover, 'tour');
-
+        \Log::info($tour);
 
         //dd("test = ".$request->departure_date);
         $tour->save();
 
         $this->createContent($tour, $request->tour_info, $request->description);
+
 
         return Response::json([
             'code' => 0,
