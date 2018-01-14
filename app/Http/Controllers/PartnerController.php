@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Contentable;
 use App\Http\Controllers\PhotoController;
 use App\Tour;
+use App\Partner;
 use App\Member;
 use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
@@ -13,7 +14,7 @@ use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Response;
 
-class AboutController extends Controller
+class PartnerController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,23 +26,16 @@ class AboutController extends Controller
     public function index()
     {
         //
-        return view('admin.about.index');
-    }
-
-    public function members(Request $request) 
-    {
-        $query = Member::get();
-        return Response::json([
-            'code' => 0,
-            'result' => $query
-        ]);
+        return view('admin.partner.index');
     }
 
     public function all(Request $request)
     {
+        $query = Partner::get();
+        
         return Response::json([
             'code' => 0,
-            'result' => Member::get(),
+            'result' => $query,
         ]);
     }
 
@@ -53,21 +47,17 @@ class AboutController extends Controller
      */
     public function store(Request $request)
     {
-        $member = new Member;
-        $member->first_name = $request->first_name;
-        $member->last_name = $request->last_name;
-        $member->major = $request->major;
-        $member->role = $request->role;
-        $member->facebook_link = $request->facebook_link;
-        $member->twitter_link = $request->twitter_link;
+        $partner = new Partner;
+        $partner->name = $request->name;
+        $partner->link = $request->link;
+        $cover = $request->cover;
+        $partner->url = PhotoController::savePhoto($cover, 'partner');
 
-        $member->url = PhotoController::savePhoto($request->cover, 'member');
-
-        $member->save();
+        $partner->save();
 
         return Response::json([
             'code' => 0,
-            'member' => $member,
+            'partner' => $partner,
             'message' => 'Succesfully saved.',
         ]);
     }
@@ -78,16 +68,14 @@ class AboutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Partner $partner)
     {
         //$tour->info;
         //$tour->country;
 
-        $member = Member::find($id);
-
         return Response::json([
             'code' => 0,
-            'result' => $member
+            'result' => $partner
         ]);
     }
 
@@ -100,24 +88,20 @@ class AboutController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $member = Member::find($id);
-        $member->first_name = $request->first_name;
-        $member->last_name = $request->last_name;
-        $member->major = $request->major;
-        $member->role = $request->role;
-        $member->facebook_link = $request->facebook_link;
-        $member->twitter_link = $request->twitter_link;
+        $partner = Partner::find($id);
+        $partner->name = $request->name;
+        $partner->link = $request->link;
 
         if($request->cover) {
-            $member->cover = PhotoController::savePhoto($request->cover, 'tour');
+            $partner->url = PhotoController::savePhoto($request->cover, 'partner');
         }
-        //$member->url = PhotoController::savePhoto($cover, 'member');
+        //$partner->url = PhotoController::savePhoto($cover, 'partner');
 
-        $member->save();
+        $partner->save();
 
         return Response::json([
             'code' => 0,
-            'member' => $member,
+            'partner' => $partner,
             'message' => 'Succesfully edited.',
         ]);
     }
@@ -130,7 +114,7 @@ class AboutController extends Controller
      */
     public function destroy($id)
     {
-        Member::destroy($id);
+        Partner::destroy($id);
 
         return Response::json([
             'code' => 0,

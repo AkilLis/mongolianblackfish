@@ -4,47 +4,54 @@
             class="partner-circle"
             v-for="(partner, i) in partners"
         >
-            <img 
-               :src="partner.cover_url"
-            />
+            <a :href="partner.link">
+                <img 
+                   :src="partner.url"
+                />
+            </a>
         </div>
     </div>
 </template>
 
 <script>
     import Flickity from 'flickity'
+    import config from '../env'
 
     export default {
         data() {
             return {
-                partners: [{
-                    _id: 1,
-                    cover_url: "http://www.mongolianblackfish.com/images/partner/gmobile.png",
-                    link: "https://www.g-mobile.mn/"
-                }, {
-                    _id: 2,
-                    cover_url: "http://www.mongolianblackfish.com/images/partner/corporate.png",
-                    link: "https://www.facebook.com/The-Corporate-Hotel-Ulaanbaatar-214709581894385/"
-                }, {
-                    _id: 3,
-                    cover_url: "http://www.mongolianblackfish.com/images/partner/miat.jpg",
-                    link: "http://www.miat.com/index.php?lang=en"
-                }, {
-                    _id: 4,
-                    cover_url: "http://www.mongolianblackfish.com/images/partner/mautlin.png",
-                    link: "https://www.killasheehotel.com/?gclid=Cj0KCQiA9_LRBRDZARIsAAcLXjcpe6bI8tJs1iT3u0r1jUupn18XGFl2eMGHJRwbWuAcwG8tHEeieeEaAgH0EALw_wcB"
-                }]
+                partners: []
             }
         },
 
-        mounted() {
-            var flkty = new Flickity('.carousel', {
+        created () {
+            this.getItems()
+        },
+
+        methods: {
+            flickity: function() {
+                var flkty = new Flickity('.carousel', {
               // options
-              cellAlign: 'left',
-              contain: true,
-              prevNextButtons: false,
-              pageDots: false
-            });
+                  cellAlign: 'left',
+                  contain: true,
+                  prevNextButtons: false,
+                  pageDots: false
+                });
+            },
+            getItems: function () {
+                axios.get(config.API_KEY + 'partner/all').then(res => {
+                    this.partners = res.data.result
+                }).catch(err => {
+                });
+            },
+        },
+
+        watch: {
+            partners: function() {
+                setTimeout(() => {
+                    this.flickity()
+                }, 300)
+            }
         }
     }
 </script>

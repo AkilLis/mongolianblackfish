@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 			<div class="card">
 				<div class="header" style="padding-left: 20px;">
-					<h4 class="title">Add New Member
+					<h4 class="title">Add Partner
 						
 					<a v-if="saving" class="btn btn-fill btn-success pull-right">
 						<i class="fa fa-spinner fa-spin"></i>
@@ -17,45 +17,20 @@
 				</div>
 				<div class="content">
 					<form enctype="multipart/form-data">
-						<div id="country-name" class="row">
-							<div class="col-md-6">
+						<div id="partner-name" class="row">
+							<div class="col-md-12">
 								<div class="form-group">
-									<label>First name</label>
-									<input class="form-control" v-model="item.first_name" 
-									id="first_title" type="text" placeholder="First name">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Last name</label>
-									<input class="form-control" v-model="item.last_name" 
-									id="last_title" type="text" placeholder="Last name">
+									<label>Partner name</label>
+									<input class="form-control" v-model="partner.name" 
+									id="partner_name" type="text" placeholder="Partner name">
 								</div>
 							</div>
 						</div>
-
-						<div id="country-name" class="row">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Position</label>
-									<input class="form-control" v-model="item.role" 
-									id="role" type="text" placeholder="role">
-								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label>Major</label>
-									<input class="form-control" v-model="item.major" 
-									id="major" type="text" placeholder="major">
-								</div>
-							</div>
-						</div>
-
 						<div class="row">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="backId" class="btn btn-info btn-fill btn-warning">Choose cover photo</label>
-									</br>	
+									</br>
 									<input id="backId" name="cover" type="file"/>
 									<img id="backImage" 
 										 class="back--temp" 
@@ -65,19 +40,10 @@
 								</div>
 							</div>
 							<div class="col-md-6">
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Facebook link</label>
-										<input class="form-control" v-model="item.facebook_link" 
-										id="facebook" type="text" placeholder="facebook">
-									</div>
-								</div>
-								<div class="col-md-12">
-									<div class="form-group">
-										<label>Twitter link</label>
-										<input class="form-control" v-model="item.twitter_link" 
-										id="twitter" type="text" placeholder="twitter">
-									</div>
+								<div class="form-group">
+									<label>Partner link</label>
+									<input class="form-control" v-model="partner.link" 
+									id="partner_link" type="text" placeholder="Partner link">
 								</div>
 							</div>
 						</div>
@@ -99,13 +65,9 @@
 
 		data () {
 			return {
-				item : {
-					first_name : '',
-					last_name : '',
-					role : '',
-					major: "",
-					facebook_link: "",
-					twitter_link: "",
+				partner : {
+					name : '',
+					link: '',
 				},
 			}
 		},
@@ -119,17 +81,13 @@
 				this.setData()
 			}
 
-			$('#river_title').focus()
+			$('#partner_name').focus()
 		},
 
 		methods : {
 			setData : function () {
-				this.item.first_name = this.editable.first_name
-				this.item.last_name = this.editable.last_name
-				this.item.role = this.editable.role
-				this.item.major = this.editable.major
-				this.item.facebook_link = this.editable.facebook_link
-				this.item.twitter_link = this.editable.twitter_link
+				this.partner.name = this.editable.name
+				this.partner.link = this.editable.link
 				$('#backImage').attr("src", this.editable.url)
 			},
 
@@ -147,47 +105,25 @@
 				this.$emit('cancel')
 			},
 			save : function () {
-				if(!this.item.first_name.trim()) {
+				if(!this.partner.name.trim()) {
 					this.$notify({
 					  group: 'foo',
 					  title: 'Warning',
 					  type: 'warn',
-					  text: 'Please fill first name.'
+					  text: 'Please fill name.'
 					});
-					$('#first_title').focus()
+					$('#partner_name').focus()
 		            return
 				}
 
-				if(!this.item.last_name.trim()) {
+				if(!this.partner.link.trim()) {
 					this.$notify({
 					  group: 'foo',
 					  title: 'Warning',
 					  type: 'warn',
-					  text: 'Please fill last name.'
+					  text: 'Please fill link.'
 					});
-					$('#last_title').focus()
-		            return
-				}
-
-				if(!this.item.role.trim()) {
-					this.$notify({
-					  group: 'foo',
-					  title: 'Warning',
-					  type: 'warn',
-					  text: 'Please fill role.'
-					});
-					$('#role').focus()
-		            return
-				}
-
-				if(!this.item.major.trim()) {
-					this.$notify({
-					  group: 'foo',
-					  title: 'Warning',
-					  type: 'warn',
-					  text: 'Please fill major.'
-					});
-					$('#major').focus()
+					$('#partner_link').focus()
 		            return
 				}
 
@@ -208,20 +144,15 @@
 				if($('#backId')[0].files[0])
 					fd.append('cover', $('#backId')[0].files[0])
 
-				fd.append('first_name', this.item.first_name)
-				fd.append('last_name', this.item.last_name)
-				fd.append('major', this.item.major)
-				fd.append('role', this.item.role)
-				//fd.append('cover', this.item.url)
-				fd.append('facebook_link', this.item.facebook_link)
-				fd.append('twitter_link', this.item.twitter_link)
+				fd.append('name', this.partner.name)
+				fd.append('link', this.partner.link)
 
 				if(this.editable) {
 					fd.append('_method', 'PATCH');
 				}	
 
 				var data = {
-					item : this.item,
+					partner : this.partner,
 					formData : fd,
 				};
 
@@ -241,11 +172,11 @@
 		height: 100px;
 	}
 	.back--temp {
-		height: 300px;
+		height: 360px;
 		object-fit: cover;
-		width: 300px;
+		width: 360px;
 		margin-top: 20px;
-		border-radius: 150px;
+		border-radius: 180px;
 	}
 	#backId {
 		display: none;

@@ -1,15 +1,14 @@
 @extends('layouts.admin-layout', ['currentView' => 'tour-view'])
 @section('content')	
 	<div>
-	<modify-tour v-if="showTourModify" 
-					:editable.sync="selectedTour"
-					:saving.sync="savingTour"
-					@save="saveTour"
-					@update="editTour"
-					@cancel="cancelTour">
-		
+	<modify-tour 
+		v-if="showTourModify" 
+		:editable.sync="selectedTour"
+		:saving.sync="savingTour"
+		@save="saveTour"
+		@update="editTour"
+		@cancel="cancelTour">
 	</modify-tour>
-
 	    <div id="myModal1" class="modal" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 	      <div class="modal-dialog">
 	        <div class="modal-content">
@@ -39,38 +38,56 @@
 							</a>
 			            </h4>
 			        </div>
-			        <div class="content table-responsive table-full-width">
-			            <table class="table table-hover table-striped">
-			                <thead>
-			                    <tr><th>Title</th>
-			                	<th style="width: 120px;">River</th>
-			                	<th style="width: 80px;">Group Size</th>
-			                	<th style="width: 80px;">Departure Date</th>
-			                	<th style="width: 80px;">Total Seen</th>
-			                	<th style="width: 80px;">Edit</th>
-			                	<th style="width: 80px;">Delete</th>
-			                </tr></thead>
-			                <tbody>
-								<tr v-for="tour in tours">
-			                    	<td>@{{tour.name}}</td>
-			                    	<td>@{{tour.river.name}}</td>
-			                    	<td>@{{tour.group_size}}</td>
-			                    	<td>@{{tour.departure_date}}</td>
-			                    	<td>@{{tour.visit_count}}</td>
-			                    	<td>
-			                    		<a class="orange-link" @click="updateTour(tour)">
-			                    			<i class="fa fa-edit"></i>
-			                    		</a>
-			                    	</td>
-			                    	<td>
-			                    		<a class="orange-link" @click="setTour(tour)" href="#myModal1" data-target="#myModal1" data-toggle="modal">
-			                    			<i class="fa fa-trash"></i>
-			                    		</a>
-			                    	</td>
-			                    </tr>   	
-			                </tbody>
-			            </table>
-			        </div>
+			    	</br>
+			    	</br>
+			        <div class="row">
+		        		<div class="col-md-6" v-for="tour in tours">
+		        			<div class="tour-box card">
+		        				<img 
+		        					:src="tour.url"
+		        					style="object-fit: cover; width:100%; border-top-right-radius: 5px; border-top-left-radius: 5px;"
+		        					height="300"
+		        				>
+
+		        				<div style="padding: 30px;">
+				        			<div class="row">
+				        				<div class="col-md-9">
+						        			<h2 style="word-wrap: break-word; margin-top: 0px;">@{{tour.name}}</h2>
+						        		</div>
+					        			<div class="col-md-3 row" style="padding-right: 0px;">
+					        				<div class="col-md-6" style="padding-right: 0px; text-align: right;">
+						        				<a class="orange-link" @click="updateTour(tour)">
+					                    			<i class="fa fa-edit" style="font-size: 25px; "></i>
+					                    		</a>
+					                    	</div>
+					                    	<div class="col-md-6" style="padding-right: 0px; text-align: right;">
+							                    <a class="orange-link" @click="setTour(tour)" href="#myModal1" data-target="#myModal1" data-toggle="modal">
+					                    			<i class="fa fa-trash" style="font-size: 25px; "></i>
+					                    		</a>
+					                    	</div>
+					        			</div>
+					        		</div>
+				        			<h4>@{{tour.river.name}}</h4>
+				        			<h4>Deparute Date: @{{tour.departure_date}}</h4>
+
+				        			</br>	
+				        			<div class="row">
+				        				<div class="col-md-4">
+						        			<i class="fa fa-eye"></i> @{{tour.visit_count}}  
+						        		</div>
+						        		<div class="col-md-4">
+						        			<i class="fa fa-users"></i> @{{tour.group_size}}  
+						        		</div>
+						        		<div class="col-md-4">
+						        			<a :href="'tour/'+ tour.id + '/gallery'" class="btn btn-info btn-fill btn-warning pull-right">
+							        			<i class="fa fa-picture-o"></i> @{{tour.photos_count}}  
+							        		</a>
+						        		</div>
+					        		</div>
+					        	</div>
+			        		</div>
+		        		</div>
+		        	</div>
 			    </div>
 			</div>
 		</div>

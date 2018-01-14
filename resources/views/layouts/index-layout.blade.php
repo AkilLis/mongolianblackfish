@@ -82,11 +82,13 @@
                                         />
                                     </div>
                                     <div>
-                                        <img 
-                                            src="/images/twitter.png"
-                                            height="50"
-                                            width="50"
-                                        />
+                                        <a href="https://twitter.com/MongolianFish">
+                                            <img 
+                                                src="/images/twitter.png"
+                                                height="50"
+                                                width="50"
+                                            />
+                                        </a>
                                         <a href="https://www.instagram.com/mongolian_black_fish/">
                                             <img 
                                                 src="/images/instagram.png"

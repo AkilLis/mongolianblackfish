@@ -19,6 +19,7 @@ class CreateMembersTable extends Migration
             $table->string('first_name');
             $table->string('last_name');
             $table->string('role');
+            $table->string('major');
             $table->string('facebook_link');
             $table->string('twitter_link');
             $table->string('instagram_link');

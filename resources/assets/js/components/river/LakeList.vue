@@ -52,10 +52,10 @@
         methods: {
             colorFilter: (index) => {
                 switch(index) {
-                    case 0:  return "#DCA852"
-                    case 1:  return "#5CAAC6"
-                    case 2:  return "#C58093"
-                    default: return "#DCA852"
+                    case 0:  return "#FECA08"
+                    case 1:  return "#0075F2"
+                    case 2:  return "#F13030"
+                    default: return "#FECA08"
                 }
             },
 

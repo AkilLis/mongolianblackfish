@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Contentable;
 use App\Http\Controllers\PhotoController;
+use App\Photo;
 use App\Tour;
 use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
@@ -27,19 +28,58 @@ class TourController extends Controller
         return view('admin.tour.index');
     }
 
+    public function gallery(Tour $tour) {
+        //$tour->photos;
+        return view('admin.tour.gallery')->with(compact('tour'));
+    }
+
+    //Gallery
+    public function allGalleryPhotos(Tour $tour) 
+    {
+        return Response::json([
+            'code' => 0,
+            'result' => $tour->photos,
+        ]);
+    }
+
+    public function galleryStore(Tour $tour, Request $request) {
+        $photo = new Photo;
+        $photo->url = PhotoController::savePhoto($request->cover, 'tour');
+        $photo->save();
+
+        $tour->photos()->attach($photo->id, ['caption' => $request->caption]);
+
+        $tour->save();
+        return Response::json([
+            'code' => 0,
+            'photo' => $photo,
+        ]);
+    }
+
+    public function galleryDelete(Tour $tour, $photo_id) {
+        $tour->photos()->detach($photo_id);
+        return Response::json([
+            'code' => 0,
+            'message' => 'Succesfully',
+        ]);
+    }
+
+    //emd
+
     public function currentNews(Tour $tour)
     {
         $tour->visit_count = $tour->visit_count + 1;
         $tour->save();
         $tour->river;
         $tour->info;
+        $tour->photos;
 
         return view('tour.index')->with(compact('tour'));
     }
 
     public function all(Request $request)
     {
-        $query = Tour::query()->with('river');
+        $query = Tour::query()->with('river')->withCount('photos');
         $query = $query->paginate(10);
         
         return Response::json([

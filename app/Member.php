@@ -9,7 +9,7 @@ class Member extends Model
     //
     protected $table = 'members';
 	protected $fillable = [
-        'url', 'name', 'description'
+        'url', 'name', 'description', 'major', 'role'
     ];
 
     public function tours()

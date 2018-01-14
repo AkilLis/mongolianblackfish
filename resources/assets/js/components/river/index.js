@@ -20,6 +20,9 @@ const getters = {
   tours: state => {
   	return state.tours
   },
+  tours_fetching: state => {
+  	return state.tours.fetching
+  },
   selectedRiver: state => { 
   	return state.selectedRiver
   }

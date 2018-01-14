@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTourPhotosTable extends Migration
+class CreatePartnersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateTourPhotosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tour_photos', function (Blueprint $table) {
-            $table->integer('tour_id')->unsigned()->index();
-            $table->integer('photo_id')->unsigned()->index();
-            $table->string('caption');
+        Schema::create('partners', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name');
+            $table->string('url');
+            $table->string('link');
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateTourPhotosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tour_photos');
+        Schema::dropIfExists('partners');
     }
 }

@@ -6410,6 +6410,12 @@ vm-browserify@0.0.4:
   dependencies:
     indexof "0.0.1"
 
+vue-agile@^0.3.6:
+  version "0.3.6"
+  resolved "https://registry.yarnpkg.com/vue-agile/-/vue-agile-0.3.6.tgz#6631565241072dc316cce163ced0981142c95288"
+  dependencies:
+    vue "2.*.*"
+
 vue-datetime-picker@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vue-datetime-picker/-/vue-datetime-picker-0.2.1.tgz#7b724dde3b72d531645a27d6597589d6d882ad3b"
@@ -6459,6 +6465,10 @@ vue-template-compiler@^2.0.0:
 vue-template-es2015-compiler@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/vue-template-es2015-compiler/-/vue-template-es2015-compiler-1.6.0.tgz#dc42697133302ce3017524356a6c61b7b69b4a18"
+
+vue@2.*.*:
+  version "2.5.13"
+  resolved "https://registry.yarnpkg.com/vue/-/vue-2.5.13.tgz#95bd31e20efcf7a7f39239c9aa6787ce8cf578e1"
 
 vue@^2.1.10:
   version "2.5.8"

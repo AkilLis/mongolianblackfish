@@ -41,8 +41,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <div class="container row text-center" style="margin: auto; padding-top: 50px;">
                 <div class="col-md-1 text-center padding-less">
-                    <a href="/trip">
-                        <h5 class="header-text font-sub">TOUR</h5>
+                    <a href="/">
+                        <h5 class="header-text font-sub">DONATION</h5>
                     </a>
                 </div>
                 <div class="col-md-2 text-center">

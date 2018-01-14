@@ -1,5 +1,5 @@
 <script>
-	import ModifyMember from './modified/ModifyMember.vue'
+	import ModifyPartner from './modified/ModifyPartner.vue'
 	import config from '../env'
 
 	export default {
@@ -23,7 +23,7 @@
 
 		methods : {
 			getItems : function () {
-				axios.get(config.API_KEY + 'admin/about/members').then(res => {
+				axios.get(config.API_KEY + 'admin/partner/all').then(res => {
 				  	this.items = res.data.result
 				}).catch(err => {
 				});
@@ -36,16 +36,14 @@
 			onEdit : function (data) {
 				//$('#loader').modal('show')
 				this.saving = true
-				axios.post(config.API_KEY + 'admin/about/' 
+				axios.post(config.API_KEY + 'admin/partner/' 
 					+ this.selected.id + '?data=' + data.param, 
 					data.formData
 				).then(res => {
 					if(res.data.code == 0) {
-						this.instance.first_name = res.data.member.first_name
-						this.instance.last_name = res.data.member.last_name
-						this.instance.major = res.data.member.major
-						this.instance.role = res.data.member.role
-						this.instance.url = res.data.member.url
+						this.instance.name = res.data.partner.name
+						this.instance.link = res.data.partner.link
+						this.instance.url = res.data.partner.url
 						this.showModify = false	
 						this.saving = false	
 						this.$notify({
@@ -69,14 +67,14 @@
 			onSave: function (data) {
 				//$('#loader').modal('show')
 				this.saving = true
-				axios.post(config.API_KEY + 'admin/about?data=' + data.param, 
+				axios.post(config.API_KEY + 'admin/partner?data=' + data.param, 
 					data.formData
 				).then(res => {
 					if(res.data.code == 0) {
-
+						debugger
 						//var river = Object.assign({ tours_count: 0, }, res.data.river)
 
-						this.items.push(res.data.member)
+						this.items.push(res.data.partner)
 						this.showModify = false	
 						this.saving = false	
 						this.$notify({
@@ -109,7 +107,7 @@
 
 			updateItem : function (item) {
 				this.instance = item
-				axios.get(config.API_KEY + 'admin/about/' + item.id + '/edit').then(res => {
+				axios.get(config.API_KEY + 'admin/partner/' + item.id + '/edit').then(res => {
 				  	this.selected = res.data.result
 				  	this.showModify = true
 				}).catch(err => {
@@ -118,7 +116,7 @@
 			},
 
 			deleteItem : function () {
-				axios.delete(config.API_KEY + 'admin/about/' + this.selected.id).then(res => {
+				axios.delete(config.API_KEY + 'admin/partner/' + this.selected.id).then(res => {
 					if(res.data.code == 0) {
 						this.items.splice(this.items.indexOf(this.selected), 1)
 						this.$notify({
@@ -139,7 +137,7 @@
 			},
 		},
 		components : {
-			ModifyMember
+			ModifyPartner
 		}
 	}
 </script>

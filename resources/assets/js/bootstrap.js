@@ -42,6 +42,10 @@ Vue.component('vue-datetime-picker', require('vue-datetime-picker'))
 import Notifications from 'vue-notification'
 
 Vue.use(Notifications)
+
+import VueAgile from 'vue-agile'
+
+Vue.use(VueAgile)
 // Vue.component('CoreNotify', CoreNotify)
 // Vue.component('Paginate', Paginate)
 // Vue.component('AlbumPhotos', AlbumPhotos)

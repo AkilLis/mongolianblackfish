@@ -33,7 +33,9 @@
         </div>
 
         <div class="row portfolio-container">
-            <trip-gallery>
+            <trip-gallery
+                :photos="{{ json_encode($tour->photos) }}"
+            >
             </trip-gallery>
         </div>
 

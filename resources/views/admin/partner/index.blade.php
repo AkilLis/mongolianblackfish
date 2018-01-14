@@ -1,7 +1,7 @@
-@extends('layouts.admin-layout', ['currentView' => 'about-view'])
+@extends('layouts.admin-layout', ['currentView' => 'partner-view'])
 @section('content')	
 	<div>
-	<modify-member 
+	<modify-partner 
 		v-if="showModify" 
 		:editable.sync="selected"
 		:saving.sync="saving"
@@ -10,7 +10,7 @@
 		@cancel="onCancel"
 	>
 		
-	</modify-member>
+	</modify-partner>
 
 	    <div id="myModal1" class="modal" data-easein="fadeIn" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false">
 	      <div v-if="selected" class="modal-dialog">
@@ -21,7 +21,11 @@
 	          </div>
 	          <div class="modal-body">
 	          	<div class="text-center">
-		            <span>Do you want to delete that member?</span>
+		          	<span v-if="selected.tours_count > 0">
+		          		This ride belongs to @{{selected.tours_count}} tours 
+		          	</span>
+		          	</br>
+		            <span>Do you want to delete that river?</span>
 		        </div>
 	          </div>
 	          <div class="modal-footer">
@@ -37,9 +41,9 @@
 				<div class="card">
 			        <div class="header">
 			            <h4 class="title">
-			            	Member list
+			            	Partners list
 							<a @click="newItem()" class="btn btn-info btn-fill btn-warning pull-right">
-								Add New Member
+								Add Partner
 							</a>
 			            </h4>
 			        </div>
@@ -49,16 +53,16 @@
 			                <thead>
 			                    <tr>
 				                    <th>Name</th>
+				                	<th style="width: 120px;">Link</th>
 				                	<th style="width: 120px;">Photo</th>
-				                	<th style="width: 120px;">Position</th>
-				                	<th style="width: 120px;">Major</th>
 				                	<th style="width: 80px;">Edit</th>
 				                	<th style="width: 80px;">Delete</th>
 			                	</tr>
 			            	</thead>
 			                <tbody>
 								<tr v-for="item in items">
-			                    	<td>@{{item.first_name}} @{{item.last_name}}</td>
+			                    	<td>@{{item.name}}</td>
+			                    	<td>@{{item.link}}</td>
 			                    	<td>
 			                    		<img 
 			                    			:src="item.url"
@@ -66,12 +70,6 @@
 			                    			width="40" 
 			                    			style="object-fit: cover;"
 			                    		/>
-			                    	</td>
-			                    	<td>
-			                    		@{{item.role}}
-			                    	</td>
-			                    	<td>
-			                    		@{{item.major}}
 			                    	</td>
 			                    	<td>
 			                    		<a class="orange-link" @click="updateItem(item)">

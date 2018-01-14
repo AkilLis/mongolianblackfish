@@ -44,6 +44,8 @@ Route::get('/river/{river}/tours', 'RiverController@relatedTours');
 Route::get('/tour/{tour}', 'TourController@currentNews');
 Route::get('/river/{river}', 'RiverController@currentRiver');
 //Route::resource('tour', 'TourController');
+Route::get('/partner/all', 'PartnerController@all');
+Route::get('/members/all', 'AboutController@all');
 
 Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
 	Route::get('/about/all', 'AboutController@all');
@@ -55,12 +57,20 @@ Route::group(['prefix' => '/admin', 'middleware' => 'auth'], function () {
 	// Route::post('/country/{country}', 'CountryController@update');
 	Route::get('/river/all', 'RiverController@all');
 	Route::resource('/river', 'RiverController');
+
+	Route::get('/partner/all', 'PartnerController@all');
+	//Route::get('/partner/api', 'PartnerController@all');
+	Route::resource('/partner', 'PartnerController');
 	// Route::post('/upload', 'AdminController@upload');
 	// Route::delete('/delete', 'AdminController@delete');
 	// Route::get('/school/all', 'SchoolController@all');
 	// Route::get('/school/check', 'SchoolController@check');
 	// Route::post('/school/{school}', 'SchoolController@update');
 	Route::get('/tour/all', 'TourController@all');
+	Route::get('/tour/{tour}/gallery/all', 'TourController@allGalleryPhotos');
+	Route::get('/tour/{tour}/gallery', 'TourController@gallery');
+	Route::post('/tour/{tour}/gallery/store', 'TourController@galleryStore');
+	Route::delete('/tour/{tour}/gallery/delete/{photo}', 'TourController@galleryDelete');
 	Route::resource('/tour', 'TourController');
 	// Route::get('/news/all', 'NewsController@all');
 	// Route::post('/news/{news}', 'NewsController@update');

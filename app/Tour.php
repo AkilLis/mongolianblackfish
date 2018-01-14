@@ -12,8 +12,14 @@ class Tour extends Model
     {
     	return $this->morphMany('App\Contentable', 'contentable');
     }
+
     public function river()
     {
     	return $this->belongsTo('App\River');
+    }
+
+    public function photos()
+    {
+        return $this->belongsToMany('App\Photo', 'tour_photos', 'tour_id', 'photo_id')->withPivot('caption')->withTimeStamps();
     }
 }

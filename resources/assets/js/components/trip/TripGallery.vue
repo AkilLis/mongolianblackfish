@@ -1,11 +1,14 @@
 <template>
     <div class="carousel">
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t4.jpg" alt="orange tree" />
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t3.jpg" alt="submerged" />
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t2.jpg" alt="look-out" />
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t1.jpg" alt="One World Trade" />
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t5.jpg" alt="drizzle" />
-      <img class="carousel-img" src="http://www.mongolianblackfish.com/images/trip/t6.jpg" alt="cat nose" />
+      <div class="carousel-img" v-for="photo in photos" >
+        <img 
+            class="carousel-img" 
+            :src="photo.url" 
+        />
+        <div class="caption">
+            <h5 class="white">{{photo.pivot.caption}}</h5>
+        </div>
+      </div>
     </div>
 </template>
 
@@ -15,6 +18,9 @@
     //import { mapGetters, mapActions } from 'vuex'
 
     export default {
+        props: {
+            photos: [],
+        },
         // created () {
         //     this.$store.dispatch('getRivers')
         // }, 
@@ -57,16 +63,21 @@
         object-fit: cover;
         border-radius: 5px;
         margin-right: 40px;
+    }
 
-        &:before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 480px;
-          background-image: linear-gradient(rgba(0,0,0,0.6), rgba(255, 255, 255, 0));
-      //opacity: .7; 
-        }
+    .carousel-img:hover .caption {
+      opacity: 1;
+    }
+
+    .caption {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        background-color: rgba(0,0,0,0.6);
+        padding: 20px;
+        opacity: 0;
+        transition: .2s ease;
     }
 </style>

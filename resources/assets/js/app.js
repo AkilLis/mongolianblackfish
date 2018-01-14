@@ -18,14 +18,17 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('partner-list', require('./components/PartnerList.vue'));
 Vue.component('lake-list', require('./components/river/LakeList.vue'));
 Vue.component('trip-list', require('./components/trip/TripList.vue'));
+Vue.component('member-list', require('./components/MemberList.vue'));
 Vue.component('trip-gallery', require('./components/trip/TripGallery.vue'));
 Vue.component('trip-schedule', require('./components/trip/TripSchedule.vue'));
 Vue.component('custom-map', require('./components/CustomMap.vue'));
 
 //admin
+Vue.component('partner-view', require('./admin/PartnerView.vue'));
 Vue.component('tour-view', require('./admin/TourView.vue'));
 Vue.component('river-view', require('./admin/RiverView.vue'));
 Vue.component('about-view', require('./admin/AboutView.vue'));
+Vue.component('tour-gallery-view', require('./admin/TourGalleryView.vue'));
 
 //web
 import TourPage from './web/TourPage.vue'
