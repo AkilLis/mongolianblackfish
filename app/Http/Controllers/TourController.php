@@ -244,6 +244,7 @@ class TourController extends Controller
         //dd("test = ".$request->departure_date);
         $tour->save();
 
+        DB::table('contentable')->where('contentable_id', $id)->where('contentable_type', 'App\\Tour')->delete();
         $this->createContent($tour, $request->tour_info, $request->description);
 
         return Response::json([

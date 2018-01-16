@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-        <div class="col-md-4 text-center" v-for="member in members">
+        <div class="col-md-4 text-center" style="margin-bottom: 150px;" v-for="member in members">
             <div class="avatar-about margin-auto">  
                 <img 
                     :src="member.url"

@@ -8600,6 +8600,22 @@ footer {
   filter: none;
 }
 
+.about-link {
+  border: 5px solid #fff;
+  height: 100px;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.about-link:hover {
+  border: 5px solid #FECA08;
+  cursor: pointer;
+}
+
+.about-link:hover .white {
+  color: #FECA08 !important;
+}
+
 .ready-for-tour {
   height: 500px;
   position: relative;

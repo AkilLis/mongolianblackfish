@@ -68475,74 +68475,81 @@ var render = function() {
     "div",
     { staticClass: "row" },
     _vm._l(_vm.members, function(member) {
-      return _c("div", { staticClass: "col-md-4 text-center" }, [
-        _c("div", { staticClass: "avatar-about margin-auto" }, [
-          _c("img", { attrs: { src: member.url } })
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c("h4", { staticClass: "white font-sub" }, [
-          _vm._v(_vm._s(member.first_name) + " " + _vm._s(member.last_name))
-        ]),
-        _vm._v(" "),
-        _c("h4", { staticClass: "white" }, [
-          _vm._v(_vm._s(member.role) + ", " + _vm._s(member.major))
-        ]),
-        _vm._v(" "),
-        _c("br"),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "text-center margin-auto",
-            staticStyle: { width: "140px", height: "40px" }
-          },
-          [
-            _c(
-              "div",
-              {
-                staticClass: "margin-auto",
-                staticStyle: { height: "40px", width: "40px" }
-              },
-              [
-                _c("a", { attrs: { href: member.facebook_link } }, [
-                  _c("img", {
-                    attrs: {
-                      src: "/images/facebook.png",
-                      height: "40",
-                      width: "40"
-                    }
-                  })
-                ])
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass: "margin-auto",
-                staticStyle: {
-                  height: "40px",
-                  width: "40px",
-                  "background-color": "#fff"
-                }
-              },
-              [
-                _c("a", { attrs: { href: member.twitter_link } }, [
-                  _c("img", {
-                    attrs: {
-                      src: "/images/twitter.png",
-                      height: "40",
-                      width: "40"
-                    }
-                  })
-                ])
-              ]
-            )
-          ]
-        )
-      ])
+      return _c(
+        "div",
+        {
+          staticClass: "col-md-4 text-center",
+          staticStyle: { "margin-bottom": "150px" }
+        },
+        [
+          _c("div", { staticClass: "avatar-about margin-auto" }, [
+            _c("img", { attrs: { src: member.url } })
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c("h4", { staticClass: "white font-sub" }, [
+            _vm._v(_vm._s(member.first_name) + " " + _vm._s(member.last_name))
+          ]),
+          _vm._v(" "),
+          _c("h4", { staticClass: "white" }, [
+            _vm._v(_vm._s(member.role) + ", " + _vm._s(member.major))
+          ]),
+          _vm._v(" "),
+          _c("br"),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "text-center margin-auto",
+              staticStyle: { width: "140px", height: "40px" }
+            },
+            [
+              _c(
+                "div",
+                {
+                  staticClass: "margin-auto",
+                  staticStyle: { height: "40px", width: "40px" }
+                },
+                [
+                  _c("a", { attrs: { href: member.facebook_link } }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/images/facebook.png",
+                        height: "40",
+                        width: "40"
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "margin-auto",
+                  staticStyle: {
+                    height: "40px",
+                    width: "40px",
+                    "background-color": "#fff"
+                  }
+                },
+                [
+                  _c("a", { attrs: { href: member.twitter_link } }, [
+                    _c("img", {
+                      attrs: {
+                        src: "/images/twitter.png",
+                        height: "40",
+                        width: "40"
+                      }
+                    })
+                  ])
+                ]
+              )
+            ]
+          )
+        ]
+      )
     })
   )
 }
@@ -85381,8 +85388,8 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports = {
-	//API_KEY: "http://www.mongolianblackfish.com/",
-	API_KEY: "http://localhost:8000/",
+	API_KEY: "http://www.mongolianblackfish.com/",
+	//API_KEY: "http://localhost:8000/",
 	DEBUG: true
 };
 
