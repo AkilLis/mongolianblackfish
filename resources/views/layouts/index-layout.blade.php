@@ -132,7 +132,7 @@
             <img src="/images/logo.png" width="30" height="30" />
         </a>
 
-        <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
+        <script type="text/javascript" src="{!! mix('js/app.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('js/photoswipe.min.js') !!}"></script>
         <script type="text/javascript" src="{!! asset('js/photoswipe-ui-default.min.js') !!}"></script>
         <script type="text/javascript">

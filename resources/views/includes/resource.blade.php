@@ -3,6 +3,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Mongolian Black Fish</title>
-<link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
+<link href="{!! mix('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <link href="{!! asset('css/photoswipe.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <link href="{!! asset('js/default-skin/default-skin.css') !!}" media="all" rel="stylesheet" type="text/css" />
