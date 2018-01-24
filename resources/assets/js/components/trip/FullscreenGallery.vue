@@ -85,8 +85,8 @@
                     img.onload = function(){
                         items.push({
                             src: photo.url,
-                            w: img.width,
-                            h: img.height,
+                            w: 1024,
+                            h: 768,
                             title: photo.pivot.caption
                         })
                     }
