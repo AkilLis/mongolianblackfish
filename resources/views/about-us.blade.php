@@ -6,7 +6,7 @@
         <div class="container" style="padding-bottom: 80px;">
     		<form>
     			</br>
-    			<h1 class="white text-center">Why choose or company?</h1>
+    			<h1 class="white text-center">Why choose our company?</h1>
 				</br>
     			<h4 class="white" style="line-height: 1.5em;">
     				- Khuvsgul province is the motherland of Taimen fish of the world, which has the most and the biggest Taimen. Our company owned 2 hectares fine located field in the fish motherland.
