@@ -46,14 +46,14 @@
     			</h4>
 	    		</br>
 	    		</br>
-          <h4 style="color: #FECA08; line-height: 1.5em;">
+          <h4 class="text-center" style="color: #FECA08; line-height: 1.5em;">
               Hope you will choose our service. See you soon.
           </h4>
-          <h4 style="color: #FECA08; line-height: 1.5em;">
+          <h4 class="text-center" style="color: #FECA08; line-height: 1.5em;">
           Don’t worry about anything. Just let’s go fishing.
           </h4>
 
-          <h4 style="color: #FECA08; line-height: 1.5em;">
+          <h4 class="text-center" style="color: #FECA08; line-height: 1.5em;">
           “The world is a book and those who do not travel read only one page.” St. Augustine
           </h4>
 	    		</br>
