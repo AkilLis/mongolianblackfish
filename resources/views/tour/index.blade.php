@@ -1,6 +1,13 @@
 @extends('layouts.index-layout', ['currentView' => 'tour-page', 'data' => 'tour'])
 @section('content') 
     <div id="scene" style="position: relative;">
+
+        <fullscreen-gallery 
+            ref="full"
+            :photos="{{ json_encode($tour->photos) }}"
+        >
+        </fullscreen-gallery>
+
         
         <div data-depth="1.00" class="row tour-cover-image text-center" 
              style="background-image:url({{$tour->url}})">
@@ -35,6 +42,7 @@
         <div class="row portfolio-container">
             <trip-gallery
                 :photos="{{ json_encode($tour->photos) }}"
+                @opened="openPhotoSwipe"
             >
             </trip-gallery>
         </div>

@@ -133,6 +133,8 @@
         </a>
 
         <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/photoswipe.min.js') !!}"></script>
+        <script type="text/javascript" src="{!! asset('js/photoswipe-ui-default.min.js') !!}"></script>
         <script type="text/javascript">
             // ===== Scroll to Top ==== 
             $(window).scroll(function() {

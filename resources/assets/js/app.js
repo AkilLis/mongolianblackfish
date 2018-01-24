@@ -20,6 +20,7 @@ Vue.component('lake-list', require('./components/river/LakeList.vue'));
 Vue.component('trip-list', require('./components/trip/TripList.vue'));
 Vue.component('member-list', require('./components/MemberList.vue'));
 Vue.component('trip-gallery', require('./components/trip/TripGallery.vue'));
+Vue.component('fullscreen-gallery', require('./components/trip/FullscreenGallery.vue'));
 Vue.component('trip-schedule', require('./components/trip/TripSchedule.vue'));
 Vue.component('custom-map', require('./components/CustomMap.vue'));
 

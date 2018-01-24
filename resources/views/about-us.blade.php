@@ -6,14 +6,61 @@
         <div class="container" style="padding-bottom: 80px;">
     		<form>
     			</br>
-    			<h1 class="white text-center">Our team</h1>
+    			<h1 class="white text-center">Why choose or company?</h1>
 				</br>
     			<h4 class="white" style="line-height: 1.5em;">
-    				Since 2008, some family friends gathered and collaborates, making round trip through Mongolian territory and fishing. Since 2015, the friends are working for tourism industry and especially working on developing fish tour. Our company not only running fish tour, but we are contributing and starting in campaign since 2017, which preserving and breeding this endangered –fish kind. In the scope of this campaign, we working on the exploration, which shows Taimen fish’s distribution of Mongolian territory, water and regional aspects. 
+    				- Khuvsgul province is the motherland of Taimen fish of the world, which has the most and the biggest Taimen. Our company owned 2 hectares fine located field in the fish motherland.
+          </h4>
+          <h4 class="white" style="line-height: 1.5em;">
+            - We are one of the fewer companies which has the fishing permit for Taimen fish. In Mongolia, it is very difficult to get a fishing permit for Taimen fish.
+          </h4>
+          <h4 class="white" style="line-height: 1.5em;">
+              - Has team of fisherman with long lasting experience.
+          </h4>
+
+          <h4 class="white" style="line-height: 1.5em;">
+              - Has well-acquainted guides with wide knowledge of geography and region.
+          </h4>
+
+          <h4 class="white" style="line-height: 1.5em;">
+              - One of the top 10 cook in Mongolia, will serve you with fresh and best quality food.
+          </h4>
+
+          <h4 class="white" style="line-height: 1.5em;">
+              - Will serve customers by Land Rover, Land Cruiser 4x4 off road SUV cars equipped with high quality gears.
+          </h4>
+
+          <h4 class="white" style="line-height: 1.5em;">
+               - Will provide you great opportunity to go fishing by motored and non-motored-boat and by horses to your wishful destination.
+          </h4>
+
+          <h4 class="white" style="line-height: 1.5em;">
+            - We have a plan to receive a few amount of tourists within a year. Therefore, we will provide great service with great quality.
+          </h4>
+            
+          <h4 class="white" style="line-height: 1.5em;">
+            - A fishing trip has a team of professional producer and photo shooting. You can let the video team to take a recording of your moments of fishing and traveling through Mongolia, and we will make a short memorable film only for you.
+          </h4>
+          <h4 class="white" style="line-height: 1.5em;">
+              - Our company is doing best fishing service for providing the most convenient sphere at the finest places.
     			</h4>
 	    		</br>
 	    		</br>
+          <h4 style="color: #FECA08; line-height: 1.5em;">
+              Hope you will choose our service. See you soon.
+          </h4>
+          <h4 style="color: #FECA08; line-height: 1.5em;">
+          Don’t worry about anything. Just let’s go fishing.
+          </h4>
+
+          <h4 style="color: #FECA08; line-height: 1.5em;">
+          “The world is a book and those who do not travel read only one page.” St. Augustine
+          </h4>
 	    		</br>
+          </br>
+          <h1 class="white text-center">Our team</h1>
+          </br>
+          </br>
 	    		<member-list>
 	    		</member-list>
 			</form>

@@ -19,6 +19,10 @@ Route::get('/tailor-made', function() {
 	return view('tailor-made');
 });
 
+Route::get('/donate', function() {
+	return view('donate');
+});
+
 Route::get('/member-ship', function() {
 	return view('member-ship');
 });

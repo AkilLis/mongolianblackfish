@@ -10,6 +10,9 @@
 		 },
 
 		 methods: {
+		 	openPhotoSwipe() {
+		 		this.$refs.full.openPhotoSwipe()
+		 	},
             dateFormat: (date) => {
                 return moment(date).format("MMM, DD")
             },

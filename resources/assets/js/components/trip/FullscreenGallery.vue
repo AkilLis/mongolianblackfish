@@ -1,17 +1,5 @@
 <template>
-    <div class="carousel">
-      <div class="carousel-img" v-for="photo in photos" @click="onOpenGallery()">
-        <img 
-            class="carousel-img" 
-            :src="photo.url" 
-        />
-        <div class="caption">
-            <h5 class="white">{{photo.pivot.caption}}</h5>
-        </div>
-      </div>
-
-
-      <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
 
     <!-- Background of PhotoSwipe. 
          It's a separate element, as animating opacity is faster than rgba(). -->
@@ -75,37 +63,46 @@
                 </div>
 
         </div>
-    </div>
 </template>
 
 <script>
-    import _ from 'lodash'
-    import Flickity from 'flickity'
-    //import { mapGetters, mapActions } from 'vuex'
-
     export default {
         props: {
             photos: [],
-            openGallery: {},
         },
         // created () {
         //     this.$store.dispatch('getRivers')
         // }, 
-
-        mounted() {
-            var flkty = new Flickity('.carousel', {
-              // options
-              cellAlign: 'left',
-              contain: true
-            });
-        },
         methods: {
-            onOpenGallery() {
-               // alert("WTF")
-               this.$emit('opened');
-               //debugger
-                //this.$parent.$options.methods.openPhotoSwipe()
-            }
+            openPhotoSwipe() {
+		 		var pswpElement = document.querySelectorAll('.pswp')[0]
+
+		 		var items = []
+
+		 		this.photos.forEach(function(photo) {
+		 			items.push({
+		 				src: photo.url,
+		 				w: 964,
+			            h: 1024
+		 			})
+		 		})
+		    // build items array
+			   
+			    
+			    // define options (if needed)
+			    var options = {
+						 // history & focus options are disabled on CodePen        
+			      	history: false,
+			      	focus: false,
+
+			        showAnimationDuration: 0,
+			        hideAnimationDuration: 0
+			        
+			    }
+			    
+			    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
+			    gallery.init()
+		 	},
         }
 
         // computed: mapGetters({
