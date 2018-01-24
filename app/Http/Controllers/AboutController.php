@@ -60,7 +60,7 @@ class AboutController extends Controller
         $member->role = $request->role;
         $member->facebook_link = $request->facebook_link;
         $member->twitter_link = $request->twitter_link;
-
+        $member->mail = $request->mail;
         $member->url = PhotoController::savePhoto($request->cover, 'member');
 
         $member->save();
@@ -107,6 +107,7 @@ class AboutController extends Controller
         $member->role = $request->role;
         $member->facebook_link = $request->facebook_link;
         $member->twitter_link = $request->twitter_link;
+        $member->mail = $request->mail;
 
         if($request->cover) {
             $member->cover = PhotoController::savePhoto($request->cover, 'tour');

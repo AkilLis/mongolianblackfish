@@ -8736,6 +8736,14 @@ footer {
   -webkit-filter: grayscale(100%);
   /* Safari 6.0 - 9.0 */
   filter: grayscale(100%);
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+.avatar-about img:hover {
+  -webkit-filter: none;
+  /* Safari 6.0 - 9.0 */
+  filter: none;
 }
 
 .tour-box {

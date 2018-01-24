@@ -79,6 +79,13 @@
 										id="twitter" type="text" placeholder="twitter">
 									</div>
 								</div>
+								<div class="col-md-12">
+									<div class="form-group">
+										<label>Email link</label>
+										<input class="form-control" v-model="item.mail" 
+										id="email" type="text" placeholder="email">
+									</div>
+								</div>
 							</div>
 						</div>
 					</form>
@@ -106,6 +113,7 @@
 					major: "",
 					facebook_link: "",
 					twitter_link: "",
+					mail: "",
 				},
 			}
 		},
@@ -130,6 +138,7 @@
 				this.item.major = this.editable.major
 				this.item.facebook_link = this.editable.facebook_link
 				this.item.twitter_link = this.editable.twitter_link
+				this.item.mail = this.editable.mail
 				$('#backImage').attr("src", this.editable.url)
 			},
 
@@ -215,6 +224,7 @@
 				//fd.append('cover', this.item.url)
 				fd.append('facebook_link', this.item.facebook_link)
 				fd.append('twitter_link', this.item.twitter_link)
+				fd.append('mail', this.item.mail)
 
 				if(this.editable) {
 					fd.append('_method', 'PATCH');

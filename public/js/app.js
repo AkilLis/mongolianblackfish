@@ -4086,6 +4086,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 //require('bootstrap-datetimepicker')
 
@@ -4104,7 +4111,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 				role: '',
 				major: "",
 				facebook_link: "",
-				twitter_link: ""
+				twitter_link: "",
+				mail: ""
 			}
 		};
 	},
@@ -4130,6 +4138,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			this.item.major = this.editable.major;
 			this.item.facebook_link = this.editable.facebook_link;
 			this.item.twitter_link = this.editable.twitter_link;
+			this.item.mail = this.editable.mail;
 			$('#backImage').attr("src", this.editable.url);
 		},
 
@@ -4214,6 +4223,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 			//fd.append('cover', this.item.url)
 			fd.append('facebook_link', this.item.facebook_link);
 			fd.append('twitter_link', this.item.twitter_link);
+			fd.append('mail', this.item.mail);
 
 			if (this.editable) {
 				fd.append('_method', 'PATCH');
@@ -5372,6 +5382,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__env__ = __webpack_require__("./resources/assets/js/env.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__env___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__env__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -68732,15 +68752,20 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "text-center margin-auto",
-              staticStyle: { width: "140px", height: "40px" }
+              staticClass: "text-center row margin-auto",
+              staticStyle: { width: "120px", height: "40px" }
             },
             [
               _c(
                 "div",
                 {
-                  staticClass: "margin-auto",
-                  staticStyle: { height: "40px", width: "40px" }
+                  staticClass: "col-md-4",
+                  staticStyle: {
+                    height: "40px",
+                    width: "40px",
+                    "padding-left": "0px",
+                    "padding-right": "0px"
+                  }
                 },
                 [
                   _c("a", { attrs: { href: member.facebook_link } }, [
@@ -68758,11 +68783,13 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "margin-auto",
+                  staticClass: "col-md-4",
                   staticStyle: {
                     height: "40px",
                     width: "40px",
-                    "background-color": "#fff"
+                    "background-color": "#fff",
+                    "padding-left": "0px",
+                    "padding-right": "0px"
                   }
                 },
                 [
@@ -68772,6 +68799,32 @@ var render = function() {
                         src: "/images/twitter.png",
                         height: "40",
                         width: "40"
+                      }
+                    })
+                  ])
+                ]
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "col-md-4",
+                  staticStyle: {
+                    height: "40px",
+                    width: "40px",
+                    "background-color": "#fff",
+                    "padding-left": "0px",
+                    "padding-right": "0px"
+                  }
+                },
+                [
+                  _c("a", { attrs: { href: member.mail } }, [
+                    _c("img", {
+                      staticStyle: { "margin-top": "12px" },
+                      attrs: {
+                        src: "/images/gmail.png",
+                        height: "15",
+                        width: "20"
                       }
                     })
                   ])
@@ -69056,6 +69109,38 @@ var render = function() {
                             "twitter_link",
                             $event.target.value
                           )
+                        }
+                      }
+                    })
+                  ])
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "col-md-12" }, [
+                  _c("div", { staticClass: "form-group" }, [
+                    _c("label", [_vm._v("Email link")]),
+                    _vm._v(" "),
+                    _c("input", {
+                      directives: [
+                        {
+                          name: "model",
+                          rawName: "v-model",
+                          value: _vm.item.mail,
+                          expression: "item.mail"
+                        }
+                      ],
+                      staticClass: "form-control",
+                      attrs: {
+                        id: "email",
+                        type: "text",
+                        placeholder: "email"
+                      },
+                      domProps: { value: _vm.item.mail },
+                      on: {
+                        input: function($event) {
+                          if ($event.target.composing) {
+                            return
+                          }
+                          _vm.$set(_vm.item, "mail", $event.target.value)
                         }
                       }
                     })
@@ -85906,8 +85991,8 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports = {
-	//API_KEY: "http://www.mongolianblackfish.com/",
-	API_KEY: "http://localhost:8000/",
+	API_KEY: "http://www.mongolianblackfish.com/",
+	//API_KEY: "http://localhost:8000/",
 	DEBUG: true
 };
 

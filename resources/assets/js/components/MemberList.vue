@@ -10,8 +10,8 @@
             <h4 class="white font-sub">{{member.first_name}} {{member.last_name}}</h4>
             <h4 class="white">{{member.role}}, {{member.major}}</h4>
             </br>
-            <div class="text-center margin-auto" style="width: 140px; height: 40px; ">
-                <div class="margin-auto" style="height: 40px; width: 40px;">
+            <div class="text-center row margin-auto" style="width: 120px; height: 40px; ">
+                <div class="col-md-4" style="height: 40px; width: 40px; padding-left: 0px; padding-right: 0px;">
                     <a :href="member.facebook_link">
                         <img 
                             src="/images/facebook.png"
@@ -20,12 +20,22 @@
                         />
                     </a>
                 </div>
-                <div class="margin-auto" style="height: 40px; width: 40px; background-color: #fff">
+                <div class="col-md-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
                     <a :href="member.twitter_link">
                         <img 
                             src="/images/twitter.png"
                             height="40"
                             width="40"
+                        />
+                    </a>
+                </div>
+                <div class="col-md-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
+                    <a :href="member.mail">
+                        <img 
+                            src="/images/gmail.png"
+                            height="15"
+                            width="20"
+                            style="margin-top: 12px;"
                         />
                     </a>
                 </div>
