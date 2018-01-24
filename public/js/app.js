@@ -5795,14 +5795,19 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var items = [];
 
             this.photos.forEach(function (photo) {
-                items.push({
-                    src: photo.url,
-                    w: 964,
-                    h: 1024
-                });
-            });
-            // build items array
+                var img = new Image();
 
+                img.onload = function () {
+                    items.push({
+                        src: photo.url,
+                        w: img.width,
+                        h: img.height,
+                        title: photo.pivot.caption
+                    });
+                };
+
+                img.src = photo.url;
+            });
 
             // define options (if needed)
             var options = {
