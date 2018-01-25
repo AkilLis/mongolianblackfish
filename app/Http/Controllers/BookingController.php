@@ -49,7 +49,7 @@ class BookingController extends Controller
         //dd($booking);
         //return view('emails.booking.done');
         // $booking = "123";
-        Mail::to('gan.tuvshinbat@gmail.com')->send(new BookingDone($booking));
+        Mail::to('info@mongolianblackfish.com')->send(new BookingDone($booking));
 
         return view('booking.done');
     }
