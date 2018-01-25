@@ -27,6 +27,13 @@ Route::get('/member-ship', function() {
 	return view('member-ship');
 });
 
+Route::get('/sign-member', function() {
+	return view('sign-member');
+});
+
+
+Route::post('/member-ship/request', 'MemberShipController@signUp');
+
 Route::post('/booking/request', 'BookingController@bookginTourDone');
 
 Route::get('/booking/{tour}', 'BookingController@bookTour');

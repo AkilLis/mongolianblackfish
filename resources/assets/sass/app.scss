@@ -301,6 +301,26 @@ footer {
     color: #FECA08 !important;
 }
 
+.member-cover-image {
+  background-image: url('http://localhost:8000/images/member.jpg');
+  //background-attachment: fixed;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+
+    //opacity: .7; 
+  }
+}
+
 .ready-for-tour {
   height: 500px;
   position: relative;
