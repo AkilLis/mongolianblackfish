@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'driver' => env('MAIL_DRIVER', 'smtp'),
+    'driver' => env('MAIL_DRIVER', 'mailgun'),
 
     /*
     |--------------------------------------------------------------------------
@@ -56,9 +56,15 @@ return [
     */
 
     'from' => [
-        'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'address' => env('MAIL_FROM_ADDRESS', 'no.replay@mongolianblackfish.com'),
+        'name' => env('MAIL_FROM_NAME', 'Mongolian Black Fish'),
     ],
+
+    'mailgun' => [
+        'domain' => 'sandbox459b3fae45db495a9d01e4ce9cf9c78c.mailgun.org',
+        'secret' => 'key-d23924100c1868eb8d5214a35d887d97',
+    ],
+
 
     /*
     |--------------------------------------------------------------------------

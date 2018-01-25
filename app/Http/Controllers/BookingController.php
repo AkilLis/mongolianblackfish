@@ -5,12 +5,14 @@ namespace App\Http\Controllers;
 use App\Contentable;
 use App\Http\Controllers\PhotoController;
 use App\Tour;
+use App\Mail\BookingDone;
 use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
 use Response;
+use Illuminate\Support\Facades\Mail;
 
 class BookingController extends Controller
 {
@@ -30,6 +32,26 @@ class BookingController extends Controller
     public function bookTour(Tour $tour) 
     {
         return view('booking.index')->with(compact('tour'));
+    }
+
+    public function bookginTourDone(Request $request) 
+    {
+        $tour = Tour::find($request->tour_id);
+        $booking = new \stdClass;
+
+        $booking->tour_name = $tour->name;
+        $booking->tour_departure_date = $tour->departure_date;
+
+        $booking->personal_name = $request->first_name . " " . $request->last_name;
+        $booking->email = $request->email;
+        $booking->group_size = $request->group_size;
+        $booking->additional_information = $request->additional_information;
+        //dd($booking);
+        //return view('emails.booking.done');
+        // $booking = "123";
+        Mail::to('gan.tuvshinbat@gmail.com')->send(new BookingDone($booking));
+
+        return view('booking.done');
     }
 
     public function currentNews(Tour $tour)
