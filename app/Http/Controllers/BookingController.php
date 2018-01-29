@@ -6,6 +6,7 @@ use App\Contentable;
 use App\Http\Controllers\PhotoController;
 use App\Tour;
 use App\Mail\BookingDone;
+use App\TailorDone;
 use Illuminate\Database\QueryBuilder;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Http\Request;
@@ -36,7 +37,29 @@ class BookingController extends Controller
 
     public function tailorMadeDone(Request $request) 
     {
-        dd($request->all());
+        
+        $custom = new \stdClass;
+
+        $custom->personal_name = $request->first_name . " " . $request->last_name;
+        $custom->email = $request->email;
+        $custom->country = $request->country;
+        $custom->city = $request->city;
+        $custom->address = $request->address;
+        $custom->phone = $request->phone;
+        $custom->alergy = $request->alergy;
+        $custom->alergy_description = $request->alergy_description;
+        $custom->trip = $request->trip;
+        $custom->traveller_count = $request->traveller_count;
+        $custom->age_group = $request->age_group;
+        $custom->start_date = $request->start_date;
+        $custom->end_date = $request->end_date;
+        $custom->hotel = $request->hotel;
+        $custom->ride = $request->ride;
+
+        //dd($custom);
+        Mail::to('info@mongolianblackfish.com')->send(new TailorDone($custom));
+
+        return view('booking.done');
     }
 
     public function bookginTourDone(Request $request) 

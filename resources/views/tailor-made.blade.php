@@ -10,6 +10,7 @@
         </div>
         <div class="container" style="padding-bottom: 80px;">
     		<form action="tailor-made" method="POST">
+          {{ csrf_field() }}
     			</br>
     			<h1 class="white">Tailormade Trip</h1>
 				</br>
