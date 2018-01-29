@@ -34,6 +34,11 @@ class BookingController extends Controller
         return view('booking.index')->with(compact('tour'));
     }
 
+    public function tailorMadeDone(Request $request) 
+    {
+        dd($request->all());
+    }
+
     public function bookginTourDone(Request $request) 
     {
         $tour = Tour::find($request->tour_id);

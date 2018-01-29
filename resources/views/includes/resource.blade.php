@@ -6,3 +6,4 @@
 <link href="{!! mix('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <link href="{!! asset('css/photoswipe.css') !!}" media="all" rel="stylesheet" type="text/css" />
 <link href="{!! asset('js/default-skin/default-skin.css') !!}" media="all" rel="stylesheet" type="text/css" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" type="text/css">

@@ -19,6 +19,8 @@ Route::get('/tailor-made', function() {
 	return view('tailor-made');
 });
 
+Route::post('/tailor-made', 'BookingController@tailorMadeDone');
+
 Route::get('/donate', function() {
 	return view('donate');
 });

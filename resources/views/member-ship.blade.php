@@ -25,7 +25,7 @@
         				<div class="col-md-12">
         					<h1 style="color: #FECA08">10% discount</h1>
         					</br>
-        					<h4 class="white" style="line-height: 1.5em;">We would like to recommend you to join as member of MBF team, you can get 1 coupon free to book trip with 10% discount.
+        					<h3 class="white" style="line-height: 1.5em;">We would like to recommend you to join as member of MBF team, you can get 1 coupon free to book trip with 10% discount.
         				</div>
         			</div>
         			</br>
@@ -36,9 +36,20 @@
         				<div class="col-md-12">
         					<h1 style="color: #FECA08">About Coupon</h1>
         					</br>
-        					<h4 class="white" style="line-height: 1.5em;">Also this coupon can offer 10% discount for your friend. Some of your membership fee will be donated in the activity of preserving and breeding this scarce-fish </h4>
+        					<h3 class="white" style="line-height: 1.5em;">Also this coupon can offer 10% discount for your friend. Some of your membership fee will be donated in the activity of preserving and breeding this scarce-fish </h3>
         				</div>
         			</div>
+
+                    </br>
+                    </br>
+                    </br>
+                    </br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            </br>
+                            <h3 class="white" style="line-height: 1.5em;"> We happy to say, your membership amount 40% of all will be donated to in the Taimen Conversational Funds.</h3>
+                        </div>
+                    </div>
 
                     </br>
                     </br>
