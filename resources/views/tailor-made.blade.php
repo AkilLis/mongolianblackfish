@@ -39,10 +39,11 @@ We love coming up with new ideas or twists on old favourites to ensure that your
 					  </div>
 					  <div class="form-group col-md-6">
 					  	<label for="exampleInputPassword1" class="white">Gender</label></br>
-					  	<div class="btn-group" role="group" aria-label="Basic example">
-	  						<button type="button" class="btn btn-secondary">Male</button>
-	  						<button type="button" class="btn btn-secondary btn-primary">Female</button>
-					  	</div>
+					  	<select name="gender" class="btn-group form-control" role="group" aria-label="Basic example" required>
+                <option value="" selected="selected">Select Gender</option> 
+                <option>Male</option>
+                <option>Female</option>
+              </select>
 					  </div>
 
 					  <div class="form-group col-md-6">

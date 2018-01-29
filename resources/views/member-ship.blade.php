@@ -47,7 +47,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             </br>
-                            <h3 class="white" style="line-height: 1.5em;"> We happy to say, your membership amount 40% of all will be donated to in the Taimen Conversational Funds.</h3>
+                            <h3 class="white text-center" style="line-height: 1.5em;"> We happy to say, your membership amount 40% of all will be donated to in the Taimen Conversational Funds.</h3>
                         </div>
                     </div>
 

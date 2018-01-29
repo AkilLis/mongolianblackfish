@@ -29,6 +29,12 @@
                             </h2>
                         </div>
                         <div class="form-group">
+                            <label for="exampleInputEmail1" class="white">Gender</label>
+                            <h2>
+                                {{ $custom->gender }}
+                            </h2>
+                        </div>
+                        <div class="form-group">
                             <label for="exampleInputEmail1" class="white">Country</label>
                             <h2>
                                 {{ $custom->country }}

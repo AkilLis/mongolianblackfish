@@ -46,6 +46,7 @@ class BookingController extends Controller
         $custom->city = $request->city;
         $custom->address = $request->address;
         $custom->phone = $request->phone;
+        $custom->gender = $request->gender;
         $custom->alergy = $request->alergy;
         $custom->alergy_description = $request->alergy_description;
         $custom->trip = $request->trip;
