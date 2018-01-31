@@ -1,13 +1,13 @@
 <template>
 
-    <div class="container row trip-container main-carousel" style="padding-top: 580px; ">
+    <div class="container row trip-container main-carousel" style="padding-top: 620px; ">
             
         <horizontal-slide 
             :slide-width="100" 
             width-type="%" 
             :step="1" 
             :items="tours.data" 
-            :slide-height="580"
+            :slide-height="620"
             arrow-class="white-arrow">
         </horizontal-slide>
     </div>

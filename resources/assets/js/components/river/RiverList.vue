@@ -59,7 +59,7 @@
                     prevNextButtons: false
                 });
                 this.isLoaded = true
-
+                this.flkty.select(1)
                 // this.flkty.on('select', () => {
                 //     console.log(this.rivers.data[this.flkty.selectedIndex])
                 //     this.onRiverClicked(this.rivers.data[this.flkty.selectedIndex])

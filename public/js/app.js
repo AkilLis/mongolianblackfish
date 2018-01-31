@@ -5776,7 +5776,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                 prevNextButtons: false
             });
             _this.isLoaded = true;
-
+            _this.flkty.select(1);
             // this.flkty.on('select', () => {
             //     console.log(this.rivers.data[this.flkty.selectedIndex])
             //     this.onRiverClicked(this.rivers.data[this.flkty.selectedIndex])
@@ -70558,7 +70558,7 @@ var render = function() {
     "div",
     {
       staticClass: "container row trip-container main-carousel",
-      staticStyle: { "padding-top": "580px" }
+      staticStyle: { "padding-top": "620px" }
     },
     [
       _c("horizontal-slide", {
@@ -70567,7 +70567,7 @@ var render = function() {
           "width-type": "%",
           step: 1,
           items: _vm.tours.data,
-          "slide-height": 580,
+          "slide-height": 620,
           "arrow-class": "white-arrow"
         }
       })
@@ -86046,7 +86046,7 @@ var mutations = (_mutations = {}, _defineProperty(_mutations, __WEBPACK_IMPORTED
 
 	state.rivers.fetching = false;
 	state.rivers.data = rivers;
-	if (rivers.length > 1) state.selectedRiver = rivers[0];
+	if (rivers.length > 1) state.selectedRiver = rivers[1];
 }), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_0__RiverConstant__["c" /* GET_RIVER_TOURS */], function (state) {
 	state.tours.fetching = true;
 }), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_0__RiverConstant__["d" /* GET_RIVER_TOURS_FULFILLED */], function (state, _ref2) {
@@ -86288,8 +86288,8 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports = {
-	//API_KEY: "http://www.mongolianblackfish.com/",
-	API_KEY: "http://localhost:8000/",
+	API_KEY: "http://www.mongolianblackfish.com/",
+	//API_KEY: "http://localhost:8000/",
 	DEBUG: true
 };
 
