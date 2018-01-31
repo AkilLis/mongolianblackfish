@@ -7,7 +7,7 @@
             width-type="%" 
             :step="1" 
             :items="tours.data" 
-            :slide-height="475"
+            :slide-height="580"
             arrow-class="white-arrow">
         </horizontal-slide>
     </div>
@@ -94,8 +94,8 @@
 
 <style lang="scss">
     .trip-container {
-        padding-left: 140px;
-        padding-right: 140px;
+        //padding-left: 140px;
+        //padding-right: 140px;
         margin-left: auto;
         margin-right: auto;
         margin-bottom: 120px;

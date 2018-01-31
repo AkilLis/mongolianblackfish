@@ -32,6 +32,18 @@
                         </h2>
                     </div>
                     <div class="form-group">
+                        <label for="exampleInputEmail1" class="white">Date of birth</label>
+                        <h2>
+                            {{ $member->date_of_birth }}
+                        </h2>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1" class="white">Gender</label>
+                        <h2>
+                            {{ $member->gender }}
+                        </h2>
+                    </div>
+                    <div class="form-group">
                         <label for="exampleInputEmail1" class="white">Country</label>
                         <h2>
                             {{ $member->country }}

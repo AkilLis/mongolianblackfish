@@ -3,7 +3,8 @@
         <div class="river-container river-carousel" v-show="!rivers.fetching">
                 <div 
                     v-for="(river, index) in rivers.data" 
-                    class="col-md-4 river-card"
+                    class="col-md-4"
+                    :class="river.id == selectedRiver.id ? 'river-card-selected': 'river-card'" 
                     :id="'river-card'+index" 
                     @click="onRiverClicked(river)"
                 >
@@ -16,7 +17,7 @@
                     
                     <div class="row text-center" >
                         <h3 class="font-sub">RIVER</h3>
-                        <h2 class="font-sub" :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h2>
+                        <h3 class="font-sub" :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h3>
                     </div>
                     
                     <div class="triangle"></div>
@@ -41,6 +42,7 @@
         data() {
             return {
                 isLoaded: false,
+                flkty: {},
             }
         },
 
@@ -51,10 +53,17 @@
 
         mounted() {
             setTimeout(() => {
-                var flkty = new Flickity('.river-carousel', {
-                    wrapAround: true
+                this.flkty = new Flickity('.river-carousel', {
+                    wrapAround: true,
+                    draggable: false,
+                    prevNextButtons: false
                 });
                 this.isLoaded = true
+
+                // this.flkty.on('select', () => {
+                //     console.log(this.rivers.data[this.flkty.selectedIndex])
+                //     this.onRiverClicked(this.rivers.data[this.flkty.selectedIndex])
+                // })
             }, 1000)
         },
         methods: {
@@ -68,20 +77,10 @@
             },
 
             onRiverClicked: function(river) {
+                this.flkty.select(river.id - 1)
                 this.$store.dispatch('setRiver', { river })
             }
         },
-
-        watch: {
-            rivers: function(rivers) {
-                alert("123")
-                var flkty = new Flickity('.carousel', {
-                  // options
-                    wrapAround: true
-                });
-            }
-        }
-
     }
 </script>
 
@@ -155,33 +154,6 @@
         z-index: 3;
         border-bottom: 2px solid #fff !important;
     }
-
-    .river-card-selected::after{
-        content: '';
-        position: absolute;
-        left: 0;
-        top: calc(100% + 1px);
-        width: 0;
-        height: 0;
-        border-left: 173px solid transparent;
-        border-right: 173px solid transparent;
-        border-top: 40px solid #fff;
-        clear: both;
-        transition: all 200ms ease-in;
-        -ms-transition: all 200ms ease-in;
-        -moz-transition: all 200ms ease-in;
-        -webkit-transition: all 200ms ease-in;
-    }
-
-    .river-card-selected:before {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 100px 150px 0 150px;
-        border-color: #007bff #007bff #007bff #007bff;
-    }
-
-
 
     .lake-cover {
         background-size: cover; 

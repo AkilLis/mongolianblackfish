@@ -37,7 +37,7 @@ const mutations = {
 		state.rivers.fetching = false
 		state.rivers.data = rivers
 		if(rivers.length > 1)
-			state.selectedRiver = rivers[1]
+			state.selectedRiver = rivers[0]
 	},
 
 	[types.GET_RIVER_TOURS] (state) {

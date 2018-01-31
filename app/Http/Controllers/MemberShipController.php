@@ -15,6 +15,8 @@ class MemberShipController extends Controller
         $member->first_name = $request->first_name;
         $member->last_name = $request->last_name;
         $member->email = $request->email;
+        $member->gender = $request->gender;
+        $member->date_of_birth = $request->date_of_birth;
 
         $member->country = $request->country;
         $member->state = $request->state;

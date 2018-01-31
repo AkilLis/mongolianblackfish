@@ -11,7 +11,7 @@
             <h4 class="white">{{member.role}}, {{member.major}}</h4>
             </br>
             <div class="text-center row margin-auto" style="width: 120px; height: 40px; ">
-                <div class="col-md-4" style="height: 40px; width: 40px; padding-left: 0px; padding-right: 0px;">
+                <div class="col-xs-4" style="height: 40px; width: 40px; padding-left: 0px; padding-right: 0px;">
                     <a :href="member.facebook_link">
                         <img 
                             src="/images/facebook.png"
@@ -20,7 +20,7 @@
                         />
                     </a>
                 </div>
-                <div class="col-md-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
+                <div class="col-xs-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
                     <a :href="member.twitter_link">
                         <img 
                             src="/images/twitter.png"
@@ -29,7 +29,7 @@
                         />
                     </a>
                 </div>
-                <div class="col-md-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
+                <div class="col-xs-4" style="height: 40px; width: 40px; background-color: #fff; padding-left: 0px; padding-right: 0px;">
                     <a :href="member.mail">
                         <img 
                             src="/images/gmail.png"

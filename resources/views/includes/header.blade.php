@@ -54,7 +54,7 @@
                         <h5 class="header-text font-sub">ABOUT US</h5>
                     </a>
                 </div>
-                <div class="col-md-4" style="margin-top: -20px;">
+                <div class="col-md-4" class="main-logo">
                     <a href="/"> 
                         <img src="/images/logo_white.png" width="70" height="70" />
                         <h4 class="font-sub" style="color: #fff">MONGOLIAN BLACK FISH</h4>

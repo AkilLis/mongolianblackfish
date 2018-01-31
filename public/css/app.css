@@ -8798,6 +8798,11 @@ footer {
     text-align: justify;
     padding-left: 40px;
   }
+
+  .main-logo {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+  }
 }
 
 .taimen-cover-image {

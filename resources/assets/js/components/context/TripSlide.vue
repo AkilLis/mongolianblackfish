@@ -17,20 +17,20 @@
                 <h1>{{item.name}}</h1>
             </a>
 
-            <div class="row trip-detail">
-                <div class="col-md-3 text-center trip-row" style="background: #9BD2E6">
+            <div class="row trip-detail" style="margin-bottom: 40px;">
+                <div class="col-md-3 col-xs-6 text-center trip-row" style="background: #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
                     <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateFormat(item.departure_date) }}</h5>
                 </div>
-                <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
+                <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
                     <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.group_size}} MEMBER</h5>
                 </div>
-                <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
+                <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
                     <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateBetween(item.start_date, item.end_date) }}</h5>
                 </div>
-                <div class="col-md-3 text-center trip-row" style="border-left: 1px dashed #9BD2E6">
+                <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
                     <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.type}}</h5>
                 </div>
@@ -39,8 +39,8 @@
             <p class="hidden-xs white">
                 {{item.info[0].description}}
             </p>
-            <div class="row" style="margin-left: 15px; margin-top: 30px;">
-                <div class="col-md-3 row purchase-btn">
+            <div class="row" style="margin-left: 30px; margin-top: 30px; margin-top: 100px;">
+                <div class="col-md-3 col-xs-10 row purchase-btn margin-auto">
                     <a :href="'/booking/' + item.id">
                         <h4 class="font-sub" style="color: #fff; text-align: center">BOOK TRIP</h4>
                     </a>

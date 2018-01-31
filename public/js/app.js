@@ -5743,6 +5743,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
 
 
 
@@ -5754,7 +5755,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
     data: function data() {
         return {
-            isLoaded: false
+            isLoaded: false,
+            flkty: {}
         };
     },
 
@@ -5768,10 +5770,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         var _this = this;
 
         setTimeout(function () {
-            var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.river-carousel', {
-                wrapAround: true
+            _this.flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.river-carousel', {
+                wrapAround: true,
+                draggable: false,
+                prevNextButtons: false
             });
             _this.isLoaded = true;
+
+            // this.flkty.on('select', () => {
+            //     console.log(this.rivers.data[this.flkty.selectedIndex])
+            //     this.onRiverClicked(this.rivers.data[this.flkty.selectedIndex])
+            // })
         }, 1000);
     },
 
@@ -5790,20 +5799,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         },
 
         onRiverClicked: function onRiverClicked(river) {
+            this.flkty.select(river.id - 1);
             this.$store.dispatch('setRiver', { river: river });
         }
-    },
-
-    watch: {
-        rivers: function rivers(_rivers) {
-            alert("123");
-            var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.carousel', {
-                // options
-                wrapAround: true
-            });
-        }
     }
-
 });
 
 /***/ }),
@@ -11116,7 +11115,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.river-container {\n  width: 100%;\n  height: 700px;\n  position: absolute;\n  z-index: 2;\n  top: 500px;\n}\n.river-card {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.river-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.river-card-selected {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.river-card-selected::after {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: calc(100% + 1px);\n  width: 0;\n  height: 0;\n  border-left: 173px solid transparent;\n  border-right: 173px solid transparent;\n  border-top: 40px solid #fff;\n  clear: both;\n  transition: all 200ms ease-in;\n  -ms-transition: all 200ms ease-in;\n  -moz-transition: all 200ms ease-in;\n  -webkit-transition: all 200ms ease-in;\n}\n.river-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
+exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.river-container {\n  width: 100%;\n  height: 700px;\n  position: absolute;\n  z-index: 2;\n  top: 500px;\n}\n.river-card {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.river-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.river-card-selected {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
 
 // exports
 
@@ -11191,7 +11190,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.trip-container {\n  padding-left: 140px;\n  padding-right: 140px;\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 120px;\n}\n.carousel-cell {\n  width: 100%;\n}\n.trip-cover {\n  background-size: cover;\n  background-position: center;\n  height: 528px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  border: 4px solid #fff;\n}\n.trip-cover:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n}\n.trip-detail {\n  background: #fff;\n  height: 87px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n  margin-left: 5px;\n  margin-right: 5px;\n  border-radius: 5px;\n}\n.trip-row {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  background: #fff;\n}\n.purchase-btn {\n  background: #E56451;\n  border-radius: 5px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  height: 60px;\n}\n.purchase-btn:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n  background: #DA5542;\n}\n@media only screen and (max-width: 768px) {\n.trip-cover {\n    height: 200px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.trip-container {\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 120px;\n}\n.carousel-cell {\n  width: 100%;\n}\n.trip-cover {\n  background-size: cover;\n  background-position: center;\n  height: 528px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  border: 4px solid #fff;\n}\n.trip-cover:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n}\n.trip-detail {\n  background: #fff;\n  height: 87px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n  margin-left: 5px;\n  margin-right: 5px;\n  border-radius: 5px;\n}\n.trip-row {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  background: #fff;\n}\n.purchase-btn {\n  background: #E56451;\n  border-radius: 5px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  height: 60px;\n}\n.purchase-btn:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n  background: #DA5542;\n}\n@media only screen and (max-width: 768px) {\n.trip-cover {\n    height: 200px;\n}\n}\n", ""]);
 
 // exports
 
@@ -68873,7 +68872,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-md-4",
+                  staticClass: "col-xs-4",
                   staticStyle: {
                     height: "40px",
                     width: "40px",
@@ -68897,7 +68896,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-md-4",
+                  staticClass: "col-xs-4",
                   staticStyle: {
                     height: "40px",
                     width: "40px",
@@ -68922,7 +68921,7 @@ var render = function() {
               _c(
                 "div",
                 {
-                  staticClass: "col-md-4",
+                  staticClass: "col-xs-4",
                   staticStyle: {
                     height: "40px",
                     width: "40px",
@@ -69600,7 +69599,11 @@ var render = function() {
           return _c(
             "div",
             {
-              staticClass: "col-md-4 river-card",
+              staticClass: "col-md-4",
+              class:
+                river.id == _vm.selectedRiver.id
+                  ? "river-card-selected"
+                  : "river-card",
               attrs: { id: "river-card" + index },
               on: {
                 click: function($event) {
@@ -69619,7 +69622,7 @@ var render = function() {
                 _c("h3", { staticClass: "font-sub" }, [_vm._v("RIVER")]),
                 _vm._v(" "),
                 _c(
-                  "h2",
+                  "h3",
                   {
                     staticClass: "font-sub",
                     style: { color: _vm.colorFilter(index) }
@@ -70564,7 +70567,7 @@ var render = function() {
           "width-type": "%",
           step: 1,
           items: _vm.tours.data,
-          "slide-height": 475,
+          "slide-height": 580,
           "arrow-class": "white-arrow"
         }
       })
@@ -70859,137 +70862,153 @@ var render = function() {
         _c("h1", [_vm._v(_vm._s(_vm.item.name))])
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "row trip-detail" }, [
-        _c(
-          "div",
-          {
-            staticClass: "col-md-3 text-center trip-row",
-            staticStyle: { background: "#9BD2E6" }
-          },
-          [
-            _c(
-              "h6",
-              {
-                staticClass: "font-sub",
-                staticStyle: { "font-weight": "bold", color: "#fff" }
-              },
-              [_vm._v("DEPARTURE")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h5",
-              {
-                staticClass: "font-sub",
-                staticStyle: {
-                  "font-weight": "bold",
-                  "margin-top": "15px",
-                  color: "#0d0d0d"
-                }
-              },
-              [_vm._v(_vm._s(_vm.dateFormat(_vm.item.departure_date)))]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-md-3 text-center trip-row",
-            staticStyle: { "border-left": "1px dashed #9BD2E6" }
-          },
-          [
-            _c(
-              "h6",
-              {
-                staticClass: "font-sub",
-                staticStyle: { "font-weight": "bold", color: "#60B383" }
-              },
-              [_vm._v("GROUP SIZE")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h5",
-              {
-                staticClass: "font-sub",
-                staticStyle: {
-                  "font-weight": "bold",
-                  "margin-top": "15px",
-                  color: "#0d0d0d"
-                }
-              },
-              [_vm._v(_vm._s(_vm.item.group_size) + " MEMBER")]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-md-3 text-center trip-row",
-            staticStyle: { "border-left": "1px dashed #9BD2E6" }
-          },
-          [
-            _c(
-              "h6",
-              {
-                staticClass: "font-sub",
-                staticStyle: { "font-weight": "bold", color: "#DCA852" }
-              },
-              [_vm._v("DURATION")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h5",
-              {
-                staticClass: "font-sub",
-                staticStyle: {
-                  "font-weight": "bold",
-                  "margin-top": "15px",
-                  color: "#0d0d0d"
-                }
-              },
-              [
-                _vm._v(
-                  _vm._s(
-                    _vm.dateBetween(_vm.item.start_date, _vm.item.end_date)
+      _c(
+        "div",
+        {
+          staticClass: "row trip-detail",
+          staticStyle: { "margin-bottom": "40px" }
+        },
+        [
+          _c(
+            "div",
+            {
+              staticClass: "col-md-3 col-xs-6 text-center trip-row",
+              staticStyle: { background: "#9BD2E6" }
+            },
+            [
+              _c(
+                "h6",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: { "font-weight": "bold", color: "#fff" }
+                },
+                [_vm._v("DEPARTURE")]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: {
+                    "font-weight": "bold",
+                    "margin-top": "15px",
+                    color: "#0d0d0d"
+                  }
+                },
+                [_vm._v(_vm._s(_vm.dateFormat(_vm.item.departure_date)))]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-3 col-xs-6 text-center trip-row",
+              staticStyle: {
+                "border-left": "1px dashed #9BD2E6",
+                "border-bottom": "1px dashed #9BD2E6"
+              }
+            },
+            [
+              _c(
+                "h6",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: { "font-weight": "bold", color: "#60B383" }
+                },
+                [_vm._v("GROUP SIZE")]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: {
+                    "font-weight": "bold",
+                    "margin-top": "15px",
+                    color: "#0d0d0d"
+                  }
+                },
+                [_vm._v(_vm._s(_vm.item.group_size) + " MEMBER")]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-3 col-xs-6 text-center trip-row",
+              staticStyle: {
+                "border-left": "1px dashed #9BD2E6",
+                "border-bottom": "1px dashed #9BD2E6"
+              }
+            },
+            [
+              _c(
+                "h6",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: { "font-weight": "bold", color: "#DCA852" }
+                },
+                [_vm._v("DURATION")]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: {
+                    "font-weight": "bold",
+                    "margin-top": "15px",
+                    color: "#0d0d0d"
+                  }
+                },
+                [
+                  _vm._v(
+                    _vm._s(
+                      _vm.dateBetween(_vm.item.start_date, _vm.item.end_date)
+                    )
                   )
-                )
-              ]
-            )
-          ]
-        ),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass: "col-md-3 text-center trip-row",
-            staticStyle: { "border-left": "1px dashed #9BD2E6" }
-          },
-          [
-            _c(
-              "h6",
-              {
-                staticClass: "font-sub",
-                staticStyle: { "font-weight": "bold", color: "#C58093" }
-              },
-              [_vm._v("TYPE")]
-            ),
-            _vm._v(" "),
-            _c(
-              "h5",
-              {
-                staticClass: "font-sub",
-                staticStyle: {
-                  "font-weight": "bold",
-                  "margin-top": "15px",
-                  color: "#0d0d0d"
-                }
-              },
-              [_vm._v(_vm._s(_vm.item.type))]
-            )
-          ]
-        )
-      ]),
+                ]
+              )
+            ]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              staticClass: "col-md-3 col-xs-6 text-center trip-row",
+              staticStyle: {
+                "border-left": "1px dashed #9BD2E6",
+                "border-bottom": "1px dashed #9BD2E6"
+              }
+            },
+            [
+              _c(
+                "h6",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: { "font-weight": "bold", color: "#C58093" }
+                },
+                [_vm._v("TYPE")]
+              ),
+              _vm._v(" "),
+              _c(
+                "h5",
+                {
+                  staticClass: "font-sub",
+                  staticStyle: {
+                    "font-weight": "bold",
+                    "margin-top": "15px",
+                    color: "#0d0d0d"
+                  }
+                },
+                [_vm._v(_vm._s(_vm.item.type))]
+              )
+            ]
+          )
+        ]
+      ),
       _vm._v(" "),
       _c("p", { staticClass: "hidden-xs white" }, [
         _vm._v(
@@ -71003,21 +71022,25 @@ var render = function() {
         "div",
         {
           staticClass: "row",
-          staticStyle: { "margin-left": "15px", "margin-top": "30px" }
+          staticStyle: { "margin-left": "30px", "margin-top": "100px" }
         },
         [
-          _c("div", { staticClass: "col-md-3 row purchase-btn" }, [
-            _c("a", { attrs: { href: "/booking/" + _vm.item.id } }, [
-              _c(
-                "h4",
-                {
-                  staticClass: "font-sub",
-                  staticStyle: { color: "#fff", "text-align": "center" }
-                },
-                [_vm._v("BOOK TRIP")]
-              )
-            ])
-          ])
+          _c(
+            "div",
+            { staticClass: "col-md-3 col-xs-10 row purchase-btn margin-auto" },
+            [
+              _c("a", { attrs: { href: "/booking/" + _vm.item.id } }, [
+                _c(
+                  "h4",
+                  {
+                    staticClass: "font-sub",
+                    staticStyle: { color: "#fff", "text-align": "center" }
+                  },
+                  [_vm._v("BOOK TRIP")]
+                )
+              ])
+            ]
+          )
         ]
       )
     ])
@@ -86023,7 +86046,7 @@ var mutations = (_mutations = {}, _defineProperty(_mutations, __WEBPACK_IMPORTED
 
 	state.rivers.fetching = false;
 	state.rivers.data = rivers;
-	if (rivers.length > 1) state.selectedRiver = rivers[1];
+	if (rivers.length > 1) state.selectedRiver = rivers[0];
 }), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_0__RiverConstant__["c" /* GET_RIVER_TOURS */], function (state) {
 	state.tours.fetching = true;
 }), _defineProperty(_mutations, __WEBPACK_IMPORTED_MODULE_0__RiverConstant__["d" /* GET_RIVER_TOURS_FULFILLED */], function (state, _ref2) {
