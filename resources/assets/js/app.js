@@ -17,6 +17,7 @@ import store from './store'
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('partner-list', require('./components/PartnerList.vue'));
 Vue.component('lake-list', require('./components/river/LakeList.vue'));
+Vue.component('river-list', require('./components/river/RiverList.vue'));
 Vue.component('trip-list', require('./components/trip/TripList.vue'));
 Vue.component('member-list', require('./components/MemberList.vue'));
 Vue.component('trip-gallery', require('./components/trip/TripGallery.vue'));

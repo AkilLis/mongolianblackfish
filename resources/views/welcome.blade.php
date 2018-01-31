@@ -3,6 +3,8 @@
     <div id="scene" style="position: relative;">
         <lake-list>
         </lake-list>
+        <river-list>
+        </river-list>
         <div class="cover-text">
             <h1 class="cover-text-header">
                 TAIMEN<br />ADVENTURE

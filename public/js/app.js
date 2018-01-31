@@ -5673,17 +5673,107 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-
 /* harmony default export */ __webpack_exports__["default"] = ({
     created: function created() {
         this.$store.dispatch('getRivers');
     },
 
-
     computed: Object(__WEBPACK_IMPORTED_MODULE_1_vuex__["b" /* mapGetters */])({
         rivers: 'allRivers',
         selectedRiver: 'selectedRiver'
     }),
+    methods: {
+        colorFilter: function colorFilter(index) {
+            switch (index) {
+                case 0:
+                    return "#FECA08";
+                case 1:
+                    return "#0075F2";
+                case 2:
+                    return "#F13030";
+                default:
+                    return "#FECA08";
+            }
+        },
+        onRiverClicked: function onRiverClicked(river) {
+            this.$store.dispatch('setRiver', { river: river });
+        }
+    }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash__ = __webpack_require__("./node_modules/lodash/lodash.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_lodash___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_lodash__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity__ = __webpack_require__("./node_modules/flickity/js/index.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_flickity___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_flickity__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_vuex__ = __webpack_require__("./node_modules/vuex/dist/vuex.esm.js");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+    created: function created() {
+        this.$store.dispatch('getRivers');
+    },
+    data: function data() {
+        return {
+            isLoaded: false
+        };
+    },
+
+
+    computed: Object(__WEBPACK_IMPORTED_MODULE_2_vuex__["b" /* mapGetters */])({
+        rivers: 'allRivers',
+        selectedRiver: 'selectedRiver'
+    }),
+
+    mounted: function mounted() {
+        var _this = this;
+
+        setTimeout(function () {
+            var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.river-carousel', {
+                wrapAround: true
+            });
+            _this.isLoaded = true;
+        }, 1000);
+    },
 
     methods: {
         colorFilter: function colorFilter(index) {
@@ -5701,6 +5791,16 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
         onRiverClicked: function onRiverClicked(river) {
             this.$store.dispatch('setRiver', { river: river });
+        }
+    },
+
+    watch: {
+        rivers: function rivers(_rivers) {
+            alert("123");
+            var flkty = new __WEBPACK_IMPORTED_MODULE_1_flickity___default.a('.carousel', {
+                // options
+                wrapAround: true
+            });
         }
     }
 
@@ -11002,6 +11102,21 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 // module
 exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.lake-container {\n  position: absolute;\n  top: 500px;\n  width: calc(1170px - 30px);\n  height: 700px;\n  padding-left: 125px;\n  padding-right: 125px;\n}\n.lake-card {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.lake-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.lake-card-selected {\n  position: absolute;\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: calc(33% - 30px);\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.lake-card-selected::after {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: calc(100% + 1px);\n  width: 0;\n  height: 0;\n  border-left: 173px solid transparent;\n  border-right: 173px solid transparent;\n  border-top: 40px solid #fff;\n  clear: both;\n  transition: all 200ms ease-in;\n  -ms-transition: all 200ms ease-in;\n  -moz-transition: all 200ms ease-in;\n  -webkit-transition: all 200ms ease-in;\n}\n.lake-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/css-base.js")(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.river-container {\n  width: 100%;\n  height: 700px;\n  position: absolute;\n  z-index: 2;\n  top: 500px;\n}\n.river-card {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.river-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.river-card-selected {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.river-card-selected::after {\n  content: '';\n  position: absolute;\n  left: 0;\n  top: calc(100% + 1px);\n  width: 0;\n  height: 0;\n  border-left: 173px solid transparent;\n  border-right: 173px solid transparent;\n  border-top: 40px solid #fff;\n  clear: both;\n  transition: all 200ms ease-in;\n  -ms-transition: all 200ms ease-in;\n  -moz-transition: all 200ms ease-in;\n  -webkit-transition: all 200ms ease-in;\n}\n.river-card-selected:before {\n  width: 0;\n  height: 0;\n  border-style: solid;\n  border-width: 100px 150px 0 150px;\n  border-color: #007bff #007bff #007bff #007bff;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
 
 // exports
 
@@ -69389,7 +69504,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
+  return _c("div", { staticClass: "container hidden-xs hidden-sm" }, [
     _c("div", { staticClass: "lake-container" }, [
       _c(
         "div",
@@ -69449,6 +69564,85 @@ if (false) {
   module.hot.accept()
   if (module.hot.data) {
     require("vue-hot-reload-api")      .rerender("data-v-303b7167", module.exports)
+  }
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4052b020\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    {
+      staticClass: "container hidden-md hidden-lg",
+      staticStyle: { position: "relative" }
+    },
+    [
+      _c(
+        "div",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: !_vm.rivers.fetching,
+              expression: "!rivers.fetching"
+            }
+          ],
+          staticClass: "river-container river-carousel"
+        },
+        _vm._l(_vm.rivers.data, function(river, index) {
+          return _c(
+            "div",
+            {
+              staticClass: "col-md-4 river-card",
+              attrs: { id: "river-card" + index },
+              on: {
+                click: function($event) {
+                  _vm.onRiverClicked(river)
+                }
+              }
+            },
+            [
+              _c("div", {
+                staticClass: "lake-cover",
+                class: river.id == _vm.selectedRiver.id ? "large-cover" : "",
+                style: "background-image:url(" + river.url + ")"
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "row text-center" }, [
+                _c("h3", { staticClass: "font-sub" }, [_vm._v("RIVER")]),
+                _vm._v(" "),
+                _c(
+                  "h2",
+                  {
+                    staticClass: "font-sub",
+                    style: { color: _vm.colorFilter(index) }
+                  },
+                  [_vm._v(_vm._s(river.name.toUpperCase()))]
+                )
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "triangle" })
+            ]
+          )
+        })
+      )
+    ]
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+module.exports = { render: render, staticRenderFns: staticRenderFns }
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+    require("vue-hot-reload-api")      .rerender("data-v-4052b020", module.exports)
   }
 }
 
@@ -72270,6 +72464,33 @@ if(false) {
  if(!content.locals) {
    module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-303b7167\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./LakeList.vue", function() {
      var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-303b7167\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./LakeList.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+
+/***/ "./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__("./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue");
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__("./node_modules/vue-style-loader/lib/addStylesClient.js")("9d9a8b88", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./RiverList.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./RiverList.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });
@@ -85083,6 +85304,7 @@ __webpack_require__("./resources/assets/js/bootstrap.js");
 Vue.component('example', __webpack_require__("./resources/assets/js/components/Example.vue"));
 Vue.component('partner-list', __webpack_require__("./resources/assets/js/components/PartnerList.vue"));
 Vue.component('lake-list', __webpack_require__("./resources/assets/js/components/river/LakeList.vue"));
+Vue.component('river-list', __webpack_require__("./resources/assets/js/components/river/RiverList.vue"));
 Vue.component('trip-list', __webpack_require__("./resources/assets/js/components/trip/TripList.vue"));
 Vue.component('member-list', __webpack_require__("./resources/assets/js/components/MemberList.vue"));
 Vue.component('trip-gallery', __webpack_require__("./resources/assets/js/components/trip/TripGallery.vue"));
@@ -85701,6 +85923,59 @@ var GET_RIVER_TOURS_FULFILLED = "GET_RIVER_TOURS_FULFILLED";
 
 /***/ }),
 
+/***/ "./resources/assets/js/components/river/RiverList.vue":
+/***/ (function(module, exports, __webpack_require__) {
+
+var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__("./node_modules/vue-style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-4052b020\",\"scoped\":false,\"hasInlineConfig\":true}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue")
+}
+var normalizeComponent = __webpack_require__("./node_modules/vue-loader/lib/component-normalizer.js")
+/* script */
+var __vue_script__ = __webpack_require__("./node_modules/babel-loader/lib/index.js?{\"cacheDirectory\":true,\"presets\":[[\"env\",{\"modules\":false,\"targets\":{\"browsers\":[\"> 2%\"],\"uglify\":true}}]],\"plugins\":[\"transform-object-rest-spread\"]}!./node_modules/vue-loader/lib/selector.js?type=script&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue")
+/* template */
+var __vue_template__ = __webpack_require__("./node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-4052b020\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0&bustCache!./resources/assets/js/components/river/RiverList.vue")
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = injectStyle
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __vue_script__,
+  __vue_template__,
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+Component.options.__file = "resources/assets/js/components/river/RiverList.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {  return key !== "default" && key.substr(0, 2) !== "__"})) {  console.error("named exports are not supported in *.vue files.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-4052b020", Component.options)
+  } else {
+    hotAPI.reload("data-v-4052b020", Component.options)
+' + '  }
+  module.hot.dispose(function (data) {
+    disposed = true
+  })
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+
 /***/ "./resources/assets/js/components/river/index.js":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -85716,7 +85991,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 var state = {
 	rivers: {
-		fetching: false,
+		fetching: true,
 		data: []
 	},
 	selectedRiver: {},
@@ -85990,8 +86265,8 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports = {
-	API_KEY: "http://www.mongolianblackfish.com/",
-	//API_KEY: "http://localhost:8000/",
+	//API_KEY: "http://www.mongolianblackfish.com/",
+	API_KEY: "http://localhost:8000/",
 	DEBUG: true
 };
 

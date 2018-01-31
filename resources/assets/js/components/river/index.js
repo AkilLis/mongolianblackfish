@@ -3,7 +3,7 @@ import * as actions from './RiverActions'
 
 const state = {
   rivers: {
-  	fetching: false,
+  	fetching: true,
   	data: []
   },
   selectedRiver: {},
