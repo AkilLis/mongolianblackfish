@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                    <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.type}}</h5>
+                    <h5 class="font-sub" style="font-weight: bold; margin-top: 0px !important; margin-bottom: 0px !important; color: #0d0d0d;">{{item.type}}</h5>
                 </div>
             </div>
 

@@ -71006,7 +71006,8 @@ var render = function() {
                   staticClass: "font-sub",
                   staticStyle: {
                     "font-weight": "bold",
-                    "margin-top": "15px",
+                    "margin-top": "0px !important",
+                    "margin-bottom": "0px !important",
                     color: "#0d0d0d"
                   }
                 },
