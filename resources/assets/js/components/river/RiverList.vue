@@ -1,6 +1,4 @@
-<template>
-    <div  class="container hidden-md hidden-lg" style="position: relative;">
-        <div class="river-container river-carousel" v-show="!rivers.fetching">
+<!-- <div class="river-container river-carousel" v-show="!rivers.fetching">
                 <div 
                     v-for="(river, index) in rivers.data" 
                     class="col-md-4"
@@ -22,9 +20,30 @@
                     
                     <div class="triangle"></div>
                 </div>
-            <!-- Clicked: {{ $store.state.count }} times
-            <button @click="increment">+</button>
-            <button @click="decrement">-</button> -->
+        </div> -->
+
+<template>
+    <div class="river-container river-carousel hidden-md hidden-lg">
+        <div 
+            v-for="(river, index) in rivers.data" 
+            class="col-md-4"
+            :class="river.id == selectedRiver.id ? 'river-card-selected': 'river-card'" 
+            :id="'river-card'+index" 
+            @click="onRiverClicked(river)"
+        >
+            <div 
+                class="river-cover" 
+                :style="'background-image:url(' + river.url + ')'"
+                :class="river.id == selectedRiver.id ? 'river-large-cover': ''"
+            >
+            </div>
+            
+            <div class="row text-center" >
+                <h3 class="font-sub">RIVER</h3>
+                <h3 class="font-sub" :style="{color: colorFilter(index)}">{{river.name.toUpperCase()}}</h3>
+            </div>
+            
+            <div class="triangle"></div>
         </div>
     </div>
 </template>
@@ -95,16 +114,17 @@
 
     .river-container {
         width: 100%;
-        height: 700px;
+        height: 500px;
         position: absolute;
         z-index: 2;
-        top: 500px;
+        top: 600px;
+        overflow: hidden;
     }
 
     .river-card {
         background: #fff;
         top: 48px;
-        height: 546px;
+        height: 446px;
         padding-right: 0px;
         padding-left: 0px;
         -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
@@ -133,7 +153,7 @@
     .river-card-selected {
         background: #fff;
         top: 48px;
-        height: 546px;
+        height: 446px;
         padding-right: 0px;
         padding-left: 0px;
         -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
@@ -155,15 +175,15 @@
         border-bottom: 2px solid #fff !important;
     }
 
-    .lake-cover {
+    .river-cover {
         background-size: cover; 
         background-position: center;
         height: 228px;
         transition: height 200ms ease-in;
     }
 
-    .large-cover {
-        height: 368px;
+    .river-large-cover {
+        height: 260px;
         transition: height 200ms ease-in;
     }
 </style>

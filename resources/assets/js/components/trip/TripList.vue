@@ -106,7 +106,7 @@
     .trip-cover {
         background-size: cover; 
         background-position: center;
-        height: 528px;
+        height: 628px;
         transition: height 200ms ease-in;
         -webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
         -moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.75);
@@ -121,7 +121,6 @@
         transition: all 200ms ease-in;
     }
     .trip-detail {
-        background:#fff; 
         height: 87px; 
         margin-top: 30px;
         margin-bottom: 30px;

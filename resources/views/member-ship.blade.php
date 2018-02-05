@@ -58,11 +58,11 @@
 
                     <div class="row">
                         <div class="col-md-12 text-center">
-                            <button class="btn btn-primary outline" style="width: 200px; margin-right: 20px; margin-left: 20px;">
-                                SIGNUP
+                            <button class="btn btn-primary" style="width: 200px; margin-right: 20px; margin-left: 20px;">
+                                <h2 class="font-sub" style="color: #0d0d0d;">SIGNUP</h2>
                             </button>
-                            <button class="btn btn-primary outline" style="width: 200px; margin-left: 20px; margin-right: 20px;">
-                                LOGIN
+                            <button class="btn btn-primary" style="width: 200px; margin-left: 20px; margin-right: 20px;">
+                                <h2 class="font-sub" style="color: #0d0d0d;">LOGIN</h2>
                             </button>
                         </div>
                     </div>

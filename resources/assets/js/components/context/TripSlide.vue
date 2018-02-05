@@ -2,7 +2,7 @@
 	<div 
         class="carousel-cell"
     >
-        <div class="col-md-4 col-sm-12">
+        <div class="col-md-4 col-xs-12">
             <a :href="'/tour/' + item.id">
                 <div 
                     class="trip-cover" 
@@ -17,7 +17,7 @@
                 <h1>{{item.name}}</h1>
             </a>
 
-            <div class="row trip-detail" style="margin-bottom: 40px;">
+            <div class="row trip-detail" style="margin-bottom: 40px; background: transparent !important;">
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="background: #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
                     <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateFormat(item.departure_date) }}</h5>

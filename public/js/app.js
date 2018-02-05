@@ -5744,6 +5744,25 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -11115,7 +11134,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.river-container {\n  width: 100%;\n  height: 700px;\n  position: absolute;\n  z-index: 2;\n  top: 500px;\n}\n.river-card {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.river-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.river-card-selected {\n  background: #fff;\n  top: 48px;\n  height: 546px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.lake-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.large-cover {\n  height: 368px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
+exports.push([module.i, "\n.triangle {\n  width: 0;\n  height: 0;\n  border: solid calc(33% - 30px);\n  border-color: transparent transparent black transparent;\n}\n.river-container {\n  width: 100%;\n  height: 500px;\n  position: absolute;\n  z-index: 2;\n  top: 600px;\n  overflow: hidden;\n}\n.river-card {\n  background: #fff;\n  top: 48px;\n  height: 446px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n}\n.river-card:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.1);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.1);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.1);\n  transition: all 200ms ease-in;\n  transform: scale(1.1);\n  z-index: 4;\n}\n.river-card-selected {\n  background: #fff;\n  top: 48px;\n  height: 446px;\n  padding-right: 0px;\n  padding-left: 0px;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  z-index: 2;\n  width: 66%;\n  padding-top: 4px;\n  -webkit-transition: height 0.25s ease-out;\n  transition: height 0.25s ease-out;\n  -webkit-transition: all 200ms ease-in;\n  -webkit-transform: scale(1.2);\n  -ms-transition: all 200ms ease-in;\n  -ms-transform: scale(1.2);\n  -moz-transition: all 200ms ease-in;\n  -moz-transform: scale(1.2);\n  transition: all 200ms ease-in;\n  transform: scale(1.2);\n  z-index: 3;\n  border-bottom: 2px solid #fff !important;\n}\n.river-cover {\n  background-size: cover;\n  background-position: center;\n  height: 228px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n.river-large-cover {\n  height: 260px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n}\n", ""]);
 
 // exports
 
@@ -11190,7 +11209,7 @@ exports = module.exports = __webpack_require__("./node_modules/css-loader/lib/cs
 
 
 // module
-exports.push([module.i, "\n.trip-container {\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 120px;\n}\n.carousel-cell {\n  width: 100%;\n}\n.trip-cover {\n  background-size: cover;\n  background-position: center;\n  height: 528px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  border: 4px solid #fff;\n}\n.trip-cover:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n}\n.trip-detail {\n  background: #fff;\n  height: 87px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n  margin-left: 5px;\n  margin-right: 5px;\n  border-radius: 5px;\n}\n.trip-row {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  background: #fff;\n}\n.purchase-btn {\n  background: #E56451;\n  border-radius: 5px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  height: 60px;\n}\n.purchase-btn:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n  background: #DA5542;\n}\n@media only screen and (max-width: 768px) {\n.trip-cover {\n    height: 200px;\n}\n}\n", ""]);
+exports.push([module.i, "\n.trip-container {\n  margin-left: auto;\n  margin-right: auto;\n  margin-bottom: 120px;\n}\n.carousel-cell {\n  width: 100%;\n}\n.trip-cover {\n  background-size: cover;\n  background-position: center;\n  height: 628px;\n  -webkit-transition: height 200ms ease-in;\n  transition: height 200ms ease-in;\n  -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.75);\n  border: 4px solid #fff;\n}\n.trip-cover:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n}\n.trip-detail {\n  height: 87px;\n  margin-top: 30px;\n  margin-bottom: 30px;\n  margin-left: 5px;\n  margin-right: 5px;\n  border-radius: 5px;\n}\n.trip-row {\n  padding-top: 10px;\n  padding-bottom: 10px;\n  background: #fff;\n}\n.purchase-btn {\n  background: #E56451;\n  border-radius: 5px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n      -ms-flex-align: center;\n          align-items: center;\n  -webkit-box-pack: center;\n      -ms-flex-pack: center;\n          justify-content: center;\n  height: 60px;\n}\n.purchase-btn:hover {\n  cursor: pointer;\n  -webkit-transition: all 200ms ease-in;\n  transition: all 200ms ease-in;\n  background: #DA5542;\n}\n@media only screen and (max-width: 768px) {\n.trip-cover {\n    height: 200px;\n}\n}\n", ""]);
 
 // exports
 
@@ -69577,66 +69596,47 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    {
-      staticClass: "container hidden-md hidden-lg",
-      staticStyle: { position: "relative" }
-    },
-    [
-      _c(
+    { staticClass: "river-container river-carousel hidden-md hidden-lg" },
+    _vm._l(_vm.rivers.data, function(river, index) {
+      return _c(
         "div",
         {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: !_vm.rivers.fetching,
-              expression: "!rivers.fetching"
+          staticClass: "col-md-4",
+          class:
+            river.id == _vm.selectedRiver.id
+              ? "river-card-selected"
+              : "river-card",
+          attrs: { id: "river-card" + index },
+          on: {
+            click: function($event) {
+              _vm.onRiverClicked(river)
             }
-          ],
-          staticClass: "river-container river-carousel"
+          }
         },
-        _vm._l(_vm.rivers.data, function(river, index) {
-          return _c(
-            "div",
-            {
-              staticClass: "col-md-4",
-              class:
-                river.id == _vm.selectedRiver.id
-                  ? "river-card-selected"
-                  : "river-card",
-              attrs: { id: "river-card" + index },
-              on: {
-                click: function($event) {
-                  _vm.onRiverClicked(river)
-                }
-              }
-            },
-            [
-              _c("div", {
-                staticClass: "lake-cover",
-                class: river.id == _vm.selectedRiver.id ? "large-cover" : "",
-                style: "background-image:url(" + river.url + ")"
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "row text-center" }, [
-                _c("h3", { staticClass: "font-sub" }, [_vm._v("RIVER")]),
-                _vm._v(" "),
-                _c(
-                  "h3",
-                  {
-                    staticClass: "font-sub",
-                    style: { color: _vm.colorFilter(index) }
-                  },
-                  [_vm._v(_vm._s(river.name.toUpperCase()))]
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "triangle" })
-            ]
-          )
-        })
+        [
+          _c("div", {
+            staticClass: "river-cover",
+            class: river.id == _vm.selectedRiver.id ? "river-large-cover" : "",
+            style: "background-image:url(" + river.url + ")"
+          }),
+          _vm._v(" "),
+          _c("div", { staticClass: "row text-center" }, [
+            _c("h3", { staticClass: "font-sub" }, [_vm._v("RIVER")]),
+            _vm._v(" "),
+            _c(
+              "h3",
+              {
+                staticClass: "font-sub",
+                style: { color: _vm.colorFilter(index) }
+              },
+              [_vm._v(_vm._s(river.name.toUpperCase()))]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "triangle" })
+        ]
       )
-    ]
+    })
   )
 }
 var staticRenderFns = []
@@ -70848,7 +70848,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "carousel-cell" }, [
-    _c("div", { staticClass: "col-md-4 col-sm-12" }, [
+    _c("div", { staticClass: "col-md-4 col-xs-12" }, [
       _c("a", { attrs: { href: "/tour/" + _vm.item.id } }, [
         _c("div", {
           staticClass: "trip-cover",
@@ -70866,7 +70866,10 @@ var render = function() {
         "div",
         {
           staticClass: "row trip-detail",
-          staticStyle: { "margin-bottom": "40px" }
+          staticStyle: {
+            "margin-bottom": "40px",
+            background: "transparent !important"
+          }
         },
         [
           _c(
@@ -86288,8 +86291,8 @@ module.exports = Component.exports
 /***/ (function(module, exports) {
 
 module.exports = {
-	API_KEY: "http://www.mongolianblackfish.com/",
-	//API_KEY: "http://localhost:8000/",
+	//API_KEY: "http://www.mongolianblackfish.com/",
+	API_KEY: "http://localhost:8000/",
 	DEBUG: true
 };
 

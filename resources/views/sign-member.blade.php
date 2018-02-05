@@ -313,7 +313,9 @@
                       </div>
                       
                       
-                      <button type="submit" class="btn btn-primary" style="width: 120px; margin-top: 10px;">Send Request</button>
+                      <button type="submit" class="btn btn-primary">
+                          <h2 class="font-sub" style="color: #0d0d0d;">Send Request</h2>
+                      </button>
                 </div>
             </form>
         </div>
