@@ -1,5 +1,5 @@
 <template>
-    <div class="row carousel" style="margin-left: 50px; margin-top: 50px;">
+    <div class="row carousel" style="margin-left: 50px; margin-top: 50px; overflow: hidden;">
         <div 
             class="partner-circle"
             v-for="(partner, i) in partners"

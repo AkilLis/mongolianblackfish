@@ -69917,7 +69917,11 @@ var render = function() {
     "div",
     {
       staticClass: "row carousel",
-      staticStyle: { "margin-left": "50px", "margin-top": "50px" }
+      staticStyle: {
+        "margin-left": "50px",
+        "margin-top": "50px",
+        overflow: "hidden"
+      }
     },
     _vm._l(_vm.partners, function(partner, i) {
       return _c("div", { staticClass: "partner-circle" }, [
