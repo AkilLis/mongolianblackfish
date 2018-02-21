@@ -1,5 +1,5 @@
 <template>
-    <div class="carousel">
+    <div class="carousel" style="overflow: hidden;">
       <div class="carousel-img" v-for="photo in photos" @click="onOpenGallery()">
         <img 
             class="carousel-img" 

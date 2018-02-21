@@ -63,6 +63,20 @@
           </br>
 	    		<member-list>
 	    		</member-list>
+
+          <h1 class="white text-center">GUIDE SERVICE</h1>
+          <h1 class="white text-center">A GREAT GUIDE FOR YOU</h1>
+          </br>
+          <h4 class="white" style="line-height: 1.5em;">
+                Our guide experts work together as a great team, share information on a daily basis, integrate talents, ideas and everyday experience. That’s why we are one of the most successful fishing service provider in Khuvsgul province, Northern Mongolia.
+          </h4>
+
+          </br>
+
+          <h4 class="white" style="line-height: 1.5em;">
+                We’ve been guiding fly fishermen in the surrounding rivers and streams since 2010.  We know the ropes and we are the only company which holding the permits for Shishged, Tengis, Sharga, Orkhon, Khalkh gol, Balj, Onon river, and all the regional rivers, streams, and fisheries issued by the Ministry of nature and Environment. 
+          </h4>
+          </br>
 			</form>
 			</br>
 			</br>

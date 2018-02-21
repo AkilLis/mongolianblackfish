@@ -20,19 +20,19 @@
             <div class="row trip-detail" style="margin-bottom: 40px; background: transparent !important;">
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="background: #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #fff">DEPARTURE</h6>
-                    <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateFormat(item.departure_date) }}</h5>
+                    <h6 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateFormat(item.departure_date) }}</h6>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #60B383">GROUP SIZE</h6>
-                    <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.group_size}} MEMBER</h5>
+                    <h6 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.group_size}} MEMBER</h6>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #DCA852">DURATION</h6>
-                    <h5 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateBetween(item.start_date, item.end_date) }}</h5>
+                    <h6 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{ dateBetween(item.start_date, item.end_date) }}</h6>
                 </div>
                 <div class="col-md-3 col-xs-6 text-center trip-row" style="border-left: 1px dashed #9BD2E6; border-bottom: 1px dashed #9BD2E6">
                     <h6 class="font-sub" style="font-weight: bold; color: #C58093">TYPE</h6>
-                    <h5 class="font-sub" style="font-weight: bold; margin-top: 0px !important; margin-bottom: 0px !important; color: #0d0d0d;">{{item.type}}</h5>
+                    <h6 class="font-sub" style="font-weight: bold; margin-top: 15px; color: #0d0d0d;">{{item.type}}</h6>
                 </div>
             </div>
 

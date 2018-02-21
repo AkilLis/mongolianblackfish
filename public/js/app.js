@@ -70893,7 +70893,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "h5",
+                "h6",
                 {
                   staticClass: "font-sub",
                   staticStyle: {
@@ -70927,7 +70927,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "h5",
+                "h6",
                 {
                   staticClass: "font-sub",
                   staticStyle: {
@@ -70961,7 +70961,7 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "h5",
+                "h6",
                 {
                   staticClass: "font-sub",
                   staticStyle: {
@@ -71001,13 +71001,12 @@ var render = function() {
               ),
               _vm._v(" "),
               _c(
-                "h5",
+                "h6",
                 {
                   staticClass: "font-sub",
                   staticStyle: {
                     "font-weight": "bold",
-                    "margin-top": "0px !important",
-                    "margin-bottom": "0px !important",
+                    "margin-top": "15px",
                     color: "#0d0d0d"
                   }
                 },
@@ -71075,7 +71074,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "carousel" },
+    { staticClass: "carousel", staticStyle: { overflow: "hidden" } },
     [
       _vm._l(_vm.photos, function(photo) {
         return _c(
