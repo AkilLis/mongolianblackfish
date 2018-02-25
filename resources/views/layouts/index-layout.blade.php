@@ -1,11 +1,7 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
-       
         @include('includes.resource')
-
-
-        
     </head>
     <body>
         <script

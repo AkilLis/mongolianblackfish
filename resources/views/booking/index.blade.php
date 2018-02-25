@@ -15,7 +15,7 @@
                 <h1 class="white text-center">Booking Tour</h1>
                 </br>
 
-                <h3 class="white font-sub">ANGLERS</h3>
+                {{-- <h3 class="white font-sub">ANGLERS</h3>
 
                 <h4 class="white" style="line-height: 1.5em;">
                   A tour group consists of four people and we can arrange up to six people per request.
@@ -43,7 +43,7 @@
 
                 <h4 class="white" style="line-height: 1.5em;">
                    Our organization holds a special permission of fishing as per the local law and cooperate with local Natural Conservation Department and Department of Specially Protected zone.
-                </h4>
+                </h4> --}}
 
                 <input name="tour_id" type="hidden" value="{{$tour->id}}">
                 <div class="col-sm-12 row">

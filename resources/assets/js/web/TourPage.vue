@@ -9,6 +9,24 @@
 		 	}
 		 },
 
+		 mounted() {
+		 	const width = $(window).width()
+		 	if(width < 544) {
+		 		$('#gMap').width(width)
+		 		return
+		 	}
+		 	if(width < 768) {
+		 		$('#gMap').width(width - 20)
+		 		return
+		 	}
+		 	if(width < 1024) {
+		 		$('#gMap').width(width - 310)
+		 		return
+		 	}
+
+		 	$('#gMap').width(width - 1024)
+		 		return
+		 },
 		 methods: {
 		 	openPhotoSwipe() {
 		 		this.$refs.full.openPhotoSwipe()

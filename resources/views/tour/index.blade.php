@@ -58,7 +58,7 @@
                 Travel map to {{ $tour->river->name }}
             </h1>
             <div id="map">
-                <iframe src="{{$tour->map_url}}" width="1170" height="600"></iframe>
+                <iframe id="gMap" src="{{$tour->map_url}}" width="1170" height="600"></iframe>
 
                 <!-- <iframe src="https://www.google.com/maps/d/embed?mid=1D2N6tVsjt88-oSxNQ9IZrT-1m9Y" width="1170" height="600"></iframe> -->
             </div>

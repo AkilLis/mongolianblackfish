@@ -8,17 +8,22 @@
         </div>
         <div data-depth="1.00" class="row cover-image" style="background-image:url('/images/cover.jpg')">
         </div>
-        <div class="member-cover-image" style="padding-bottom: 100px; padding-top: 100px; ">
+        <div class="member-cover-image" style="padding-bottom: 80px; padding-top: 100px; ">
             <div class="container member-cover-content">
         		<form action="/sign-member">
         			</br>
                     <div class="row">
                         <div class="col-md-12">
-                            <h1 class="text-center" style="color: #FECA08">Member</h1>
+                            <h1 class="text-center" style="color: #FECA08">Members</h1>
                             <h1 class="white text-center">150$ PER YEAR</h1>
+                            </br>
+                            </br>
+
+                            <h3 class="white" style="line-height: 1.5em;">
+                                Welcome to become member for our Taimen Conservation Fund, this means supporting to Taimen Conservation work activities with research work and breeding species from Listed as Rare Species under the Mongolian Red book. Taimen is only existing most of species in North side of Mongolia, Khuvsgul province and rare in Siberia. Therefore, you are able to following benefits, when you become member
+                            </h3>
                         </div>
                     </div>
-    				</br>
                     </br>
                     </br>
         			<div class="row">
